@@ -1,30 +1,30 @@
-<header class="hero"><div class="wrap">
-  <div>
-    <div class="kick eye">{{ section.settings.eyebrow }}</div>
-    <h1>{{ section.settings.heading }}</h1>
-    <p>{{ section.settings.body }}</p>
-    <div class="ar">{{ section.settings.arabic }}</div>
-    <div class="cta">
-      <a class="btn dark" href="{{ section.settings.cta1_url }}">{{ section.settings.cta1 }}</a>
-      <a class="btn ghost" href="{{ section.settings.cta2_url }}">{{ section.settings.cta2 }}</a>
-    </div>
-    <div class="trust"><span><i>✦</i>Lab-certified stones</span><span><i>✦</i>Real oud, infused by hand</span><span><i>✦</i>UAE delivery 1–3 days</span></div>
+<section class="hbanner">
+  <div class="hslides" id="hslides">
+    {% for b in section.blocks %}
+      <div class="hslide {% if forloop.first %}on{% endif %}">
+        <a href="{{ b.settings.url }}">
+          <picture>
+            {% if b.settings.mobile != blank %}<source media="(max-width:700px)" srcset="{{ b.settings.mobile | asset_url }}">{% endif %}
+            <img src="{{ b.settings.desktop | asset_url }}" alt="{{ b.settings.alt | escape }}" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>
+          </picture>
+        </a>
+      </div>
+    {% endfor %}
+    {% if section.blocks.size > 1 %}
+      <button class="harrow prev" id="hprev" aria-label="Previous">&lsaquo;</button>
+      <button class="harrow next" id="hnext" aria-label="Next">&rsaquo;</button>
+      <div class="hdots" id="hdots"></div>
+    {% endif %}
   </div>
-  <div class="stage">
-    <div class="ped p1"></div><div class="ped p2"></div>
-    <div class="brac b1"></div><div class="brac b2"></div>
-    <div class="oudchip"><div class="l">Signature</div><div class="v">Crystal + Oud</div></div>
-  </div>
-</div></header>
+</section>
 {% schema %}
-{"name":"Hero","settings":[
-  {"type":"text","id":"eyebrow","label":"Eyebrow","default":"The House of Crystal & Oud"},
-  {"type":"html","id":"heading","label":"Heading","default":"Energy you can wear.<br>And <span class=\"i\">breathe.</span>"},
-  {"type":"textarea","id":"body","label":"Body","default":"Certified natural crystals, infused with real Cambodian oud. A remedy that happens to be the most beautiful thing on your wrist."},
-  {"type":"text","id":"arabic","label":"Arabic line","default":"طاقة تُلبس… وتُشتمّ"},
-  {"type":"text","id":"cta1","label":"Button 1","default":"Find your stone"},
-  {"type":"url","id":"cta1_url","label":"Button 1 link"},
-  {"type":"text","id":"cta2","label":"Button 2","default":"The Crystal + Oud house"},
-  {"type":"url","id":"cta2_url","label":"Button 2 link"}
-],"presets":[{"name":"Hero"}]}
+{"name":"Hero banner","max_blocks":6,
+ "blocks":[{"type":"slide","name":"Slide","settings":[
+   {"type":"text","id":"desktop","label":"Desktop image filename (in assets)","default":"aa-hero-zodiac.jpg"},
+   {"type":"text","id":"mobile","label":"Mobile image filename (in assets)"},
+   {"type":"text","id":"alt","label":"Alt text"},
+   {"type":"url","id":"url","label":"Link"}]}],
+ "presets":[{"name":"Hero banner","blocks":[
+   {"type":"slide","settings":{"desktop":"aa-hero-zodiac.jpg","mobile":"aa-hero-zodiac-mobile.webp","alt":"Zodiac bracelets"}},
+   {"type":"slide","settings":{"desktop":"aa-hero-bracelets.jpg","mobile":"aa-hero-bracelets-mobile.webp","alt":"Crystal bracelets"}}]}]}
 {% endschema %}

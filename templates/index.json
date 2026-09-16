@@ -1,45 +1,303 @@
 {
   "sections": {
-    "hero": { "type": "hero", "settings": {} },
-    "trust": { "type": "trust-strip", "blocks": {
-      "b1": {"type":"item","settings":{"text":"40,000+ wrists across the Gulf"}},
-      "b2": {"type":"item","settings":{"text":"Independently lab-certified"}},
-      "b3": {"type":"item","settings":{"text":"Real Cambodian oud"}},
-      "b4": {"type":"item","settings":{"text":"★ 4.8 average rating"}}
-    }, "block_order": ["b1","b2","b3","b4"] },
-    "shopby": { "type": "shop-by", "blocks": {
-      "t1": {"type":"tile","settings":{"title":"Wealth & Fortune","stones":"Pyrite · Citrine · Green Aventurine","style":"t1"}},
-      "t2": {"type":"tile","settings":{"title":"Calm","stones":"Amethyst · Selenite","style":"t2"}},
-      "t3": {"type":"tile","settings":{"title":"Protection","stones":"Black Tourmaline · Tiger Eye","style":"t3"}}
-    }, "block_order": ["t1","t2","t3"] },
-    "build": { "type": "select-a-build", "blocks": {
-      "a": {"type":"tier","settings":{"name":"Crystal","desc":"The certified stone, energised and ready to wear.","features":"Lab-certified natural stone\nSteel-core clasp\nEnergised before dispatch","price":"from AED 249"}},
-      "b": {"type":"tier","settings":{"name":"Crystal + Oud","desc":"The stone, infused with real Cambodian oud. Energy you wear and breathe.","features":"Everything in Crystal\nHand-infused pure oud\nSignature scent, lasts weeks","price":"from AED 349","badge":"Most loved","featured":true}},
-      "c": {"type":"tier","settings":{"name":"Oud Reserve","desc":"Aged oud, gold-finished clasp, presented in the keepsake box.","features":"Everything in Crystal + Oud\nAged reserve oud + gold clasp\nKeepsake gift box","price":"from AED 549"}}
-    }, "block_order": ["a","b","c"] },
-    "rail": { "type": "product-rail", "blocks": {
-      "p1": {"type":"card","settings":{"title":"Pyrite Prosperity","sub":"Wealth · steel clasp · oud-infused","swatch":"radial-gradient(circle at 42% 34%,#efd39a,#B98E3E 46%,#7a5a28 82%)"}},
-      "p2": {"type":"card","settings":{"title":"Amethyst Stillness","sub":"Calm · steel clasp · oud-infused","rating":"4.9","swatch":"radial-gradient(circle at 42% 34%,#cbb6e2,#6A4E76 50%,#33223d 84%)"}},
-      "p3": {"type":"card","settings":{"title":"Aventurine Fortune","sub":"Luck · steel clasp · oud-infused","swatch":"radial-gradient(circle at 42% 34%,#a6dcb5,#3f6b4e 50%,#1e3327 84%)"}},
-      "p4": {"type":"card","settings":{"title":"Tourmaline Shield","sub":"Protection · steel clasp · oud-infused","rating":"4.9","swatch":"radial-gradient(circle at 42% 34%,#4a463e,#141210 62%)"}}
-    }, "block_order": ["p1","p2","p3","p4"] },
-    "craft": { "type": "craft", "blocks": {
-      "c1": {"type":"pillar","settings":{"icon":"◈","title":"Certified & natural","body":"Every stone independently lab-verified. No dyed glass, no imitations — the real material or nothing."}},
-      "c2": {"type":"pillar","settings":{"icon":"❋","title":"Real Cambodian oud","body":"Pure oud, hand-infused into the stone. A scent that lingers for weeks — the luxury nobody else offers."}},
-      "c3": {"type":"pillar","settings":{"icon":"✧","title":"Energised before dispatch","body":"Each piece is cleansed and energised by hand, then sealed in the keepsake box, ready to wear."}}
-    }, "block_order": ["c1","c2","c3"] },
-    "packaging": { "type": "packaging", "settings": {} },
-    "reviews": { "type": "reviews", "blocks": {
-      "r1": {"type":"review","settings":{"quote":"The oud is unreal. I get asked what I'm wearing every single day.","who":"Layla · Dubai Marina"}},
-      "r2": {"type":"review","settings":{"quote":"Packaging alone felt like a AED 1,000 gift. Bought three more as presents.","who":"Omar · Abu Dhabi"}},
-      "r3": {"type":"review","settings":{"quote":"Finally a crystal brand that looks luxury, not hippie. The clasp is beautiful.","who":"Sara · Sharjah"}}
-    }, "block_order": ["r1","r2","r3"] },
-    "delivery": { "type": "delivery", "blocks": {
-      "d1": {"type":"promise","settings":{"n":"1–3 days","l":"UAE delivery, tracked"}},
-      "d2": {"type":"promise","settings":{"n":"Live","l":"WhatsApp updates, every step"}},
-      "d3": {"type":"promise","settings":{"n":"Free","l":"Shipping & easy returns"}},
-      "d4": {"type":"promise","settings":{"n":"Tabby","l":"Card · Apple Pay · COD"}}
-    }, "block_order": ["d1","d2","d3","d4"] }
+    "hero": {
+      "type": "hero",
+      "blocks": {
+        "s1": {
+          "type": "slide",
+          "settings": {
+            "desktop": "aa-hero-zodiac.jpg",
+            "mobile": "aa-hero-zodiac-mobile.webp",
+            "alt": "Zodiac bracelets",
+            "url": "/collections/all"
+          }
+        },
+        "s2": {
+          "type": "slide",
+          "settings": {
+            "desktop": "aa-hero-bracelets.jpg",
+            "mobile": "aa-hero-bracelets-mobile.webp",
+            "alt": "Crystal bracelets",
+            "url": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2"
+      ]
+    },
+    "trust": {
+      "type": "trust-strip",
+      "blocks": {
+        "b1": {
+          "type": "item",
+          "settings": {
+            "text": "40,000+ wrists across the Gulf"
+          }
+        },
+        "b2": {
+          "type": "item",
+          "settings": {
+            "text": "Independently lab-certified"
+          }
+        },
+        "b3": {
+          "type": "item",
+          "settings": {
+            "text": "Real Cambodian oud"
+          }
+        },
+        "b4": {
+          "type": "item",
+          "settings": {
+            "text": "★ 4.8 average rating"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ]
+    },
+    "shopby": {
+      "type": "shop-by",
+      "blocks": {
+        "t1": {
+          "type": "tile",
+          "settings": {
+            "title": "Wealth & Fortune",
+            "stones": "Pyrite · Citrine · Green Aventurine",
+            "style": "t1"
+          }
+        },
+        "t2": {
+          "type": "tile",
+          "settings": {
+            "title": "Calm",
+            "stones": "Amethyst · Selenite",
+            "style": "t2"
+          }
+        },
+        "t3": {
+          "type": "tile",
+          "settings": {
+            "title": "Protection",
+            "stones": "Black Tourmaline · Tiger Eye",
+            "style": "t3"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ]
+    },
+    "build": {
+      "type": "select-a-build",
+      "blocks": {
+        "a": {
+          "type": "tier",
+          "settings": {
+            "name": "Crystal",
+            "desc": "The certified stone, energised and ready to wear.",
+            "features": "Lab-certified natural stone\nSteel-core clasp\nEnergised before dispatch",
+            "price": "from AED 249"
+          }
+        },
+        "b": {
+          "type": "tier",
+          "settings": {
+            "name": "Crystal + Oud",
+            "desc": "The stone, infused with real Cambodian oud. Energy you wear and breathe.",
+            "features": "Everything in Crystal\nHand-infused pure oud\nSignature scent, lasts weeks",
+            "price": "from AED 349",
+            "badge": "Most loved",
+            "featured": true
+          }
+        },
+        "c": {
+          "type": "tier",
+          "settings": {
+            "name": "Oud Reserve",
+            "desc": "Aged oud, gold-finished clasp, presented in the keepsake box.",
+            "features": "Everything in Crystal + Oud\nAged reserve oud + gold clasp\nKeepsake gift box",
+            "price": "from AED 549"
+          }
+        }
+      },
+      "block_order": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    "rail": {
+      "type": "product-rail",
+      "blocks": {
+        "p1": {
+          "type": "card",
+          "settings": {
+            "title": "Pyrite Prosperity",
+            "sub": "Wealth · steel clasp · oud-infused",
+            "swatch": "radial-gradient(circle at 42% 34%,#efd39a,#B98E3E 46%,#7a5a28 82%)"
+          }
+        },
+        "p2": {
+          "type": "card",
+          "settings": {
+            "title": "Amethyst Stillness",
+            "sub": "Calm · steel clasp · oud-infused",
+            "rating": "4.9",
+            "swatch": "radial-gradient(circle at 42% 34%,#cbb6e2,#6A4E76 50%,#33223d 84%)"
+          }
+        },
+        "p3": {
+          "type": "card",
+          "settings": {
+            "title": "Aventurine Fortune",
+            "sub": "Luck · steel clasp · oud-infused",
+            "swatch": "radial-gradient(circle at 42% 34%,#a6dcb5,#3f6b4e 50%,#1e3327 84%)"
+          }
+        },
+        "p4": {
+          "type": "card",
+          "settings": {
+            "title": "Tourmaline Shield",
+            "sub": "Protection · steel clasp · oud-infused",
+            "rating": "4.9",
+            "swatch": "radial-gradient(circle at 42% 34%,#4a463e,#141210 62%)"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4"
+      ]
+    },
+    "craft": {
+      "type": "craft",
+      "blocks": {
+        "c1": {
+          "type": "pillar",
+          "settings": {
+            "icon": "◈",
+            "title": "Certified & natural",
+            "body": "Every stone independently lab-verified. No dyed glass, no imitations — the real material or nothing."
+          }
+        },
+        "c2": {
+          "type": "pillar",
+          "settings": {
+            "icon": "❋",
+            "title": "Real Cambodian oud",
+            "body": "Pure oud, hand-infused into the stone. A scent that lingers for weeks — the luxury nobody else offers."
+          }
+        },
+        "c3": {
+          "type": "pillar",
+          "settings": {
+            "icon": "✧",
+            "title": "Energised before dispatch",
+            "body": "Each piece is cleansed and energised by hand, then sealed in the keepsake box, ready to wear."
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ]
+    },
+    "packaging": {
+      "type": "packaging",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "reviews",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "quote": "The oud is unreal. I get asked what I'm wearing every single day.",
+            "who": "Layla · Dubai Marina"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "quote": "Packaging alone felt like a AED 1,000 gift. Bought three more as presents.",
+            "who": "Omar · Abu Dhabi"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "quote": "Finally a crystal brand that looks luxury, not hippie. The clasp is beautiful.",
+            "who": "Sara · Sharjah"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ]
+    },
+    "delivery": {
+      "type": "delivery",
+      "blocks": {
+        "d1": {
+          "type": "promise",
+          "settings": {
+            "n": "1–3 days",
+            "l": "UAE delivery, tracked"
+          }
+        },
+        "d2": {
+          "type": "promise",
+          "settings": {
+            "n": "Live",
+            "l": "WhatsApp updates, every step"
+          }
+        },
+        "d3": {
+          "type": "promise",
+          "settings": {
+            "n": "Free",
+            "l": "Shipping & easy returns"
+          }
+        },
+        "d4": {
+          "type": "promise",
+          "settings": {
+            "n": "Tabby",
+            "l": "Card · Apple Pay · COD"
+          }
+        }
+      },
+      "block_order": [
+        "d1",
+        "d2",
+        "d3",
+        "d4"
+      ]
+    }
   },
-  "order": ["hero","trust","shopby","build","rail","craft","packaging","reviews","delivery"]
+  "order": [
+    "hero",
+    "trust",
+    "shopby",
+    "build",
+    "rail",
+    "craft",
+    "packaging",
+    "reviews",
+    "delivery"
+  ]
 }

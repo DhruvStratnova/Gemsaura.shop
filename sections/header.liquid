@@ -1,13 +1,28 @@
-<nav class="nav"><div class="wrap row">
-  <div class="links">
-    <a href="{{ routes.root_url }}">Crystal + Oud</a>
-    <a href="{{ routes.root_url }}">Shop by Intent</a>
-    <a href="{{ routes.all_products_collection_url }}">Bracelets</a>
-    <a href="{{ routes.root_url }}">Oud Reserve</a>
+<nav class="mnav" id="mnav"><div class="wrap row">
+  <div class="left">
+    <button class="ic" id="menuBtn" aria-label="Menu">&#9776;</button>
+    <button class="ic" aria-label="Search">&#9906;</button>
   </div>
-  <a class="brand" href="{{ routes.root_url }}">GEMS<span>AURA</span></a>
-  <div class="ico"><span>⌕</span><span>♡</span><a href="{{ routes.cart_url }}" style="text-decoration:none;color:inherit">Bag<b>{{ cart.item_count }}</b></a></div>
+  <a class="logo" href="{{ routes.root_url }}">GEMS<span>AURA</span></a>
+  <div class="right">
+    <a class="ic" href="#" aria-label="Wishlist">&#9825;</a>
+    <a class="bag" href="{{ routes.cart_url }}">Bag<b>{{ cart.item_count }}</b></a>
+  </div>
 </div></nav>
+<div class="drawer" id="drawer">
+  <div class="bg" data-close></div>
+  <div class="panel">
+    <button class="dx" data-close aria-label="Close">&times;</button>
+    <div class="dhead">GEMS<span>AURA</span></div>
+    <nav style="margin-top:22px">
+      <a href="#">Crystal + Oud</a>
+      <a href="#">Shop by Intent</a>
+      <a href="{{ routes.all_products_collection_url }}">Bracelets</a>
+      <a href="#">Oud Reserve</a>
+      <a href="#">Gifting</a>
+    </nav>
+  </div>
+</div>
 {% schema %}
 {"name":"Header","settings":[]}
 {% endschema %}
