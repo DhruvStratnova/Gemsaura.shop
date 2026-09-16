@@ -31,41 +31,7 @@
       "type": "shop-by",
       "settings": {
         "heading": "Shop by intent, stone, or ritual"
-      },
-      "blocks": {
-        "t1": {
-          "type": "tile",
-          "settings": {
-            "title": "Wealth & Fortune",
-            "stones": "Pyrite · Citrine · Green Aventurine",
-            "image": "aa-banner-purpose-wealth-prosperity.jpg",
-            "url": "/collections/money"
-          }
-        },
-        "t2": {
-          "type": "tile",
-          "settings": {
-            "title": "Peace & Calm",
-            "stones": "Amethyst · Selenite · Moonstone",
-            "image": "aa-banner-purpose-peace-calm.jpg",
-            "url": "/collections/purpose-peace-calm"
-          }
-        },
-        "t3": {
-          "type": "tile",
-          "settings": {
-            "title": "Protection",
-            "stones": "Black Tourmaline · Tiger Eye",
-            "image": "aa-banner-purpose-protection.jpg",
-            "url": "/collections/purpose-health-wellness"
-          }
-        }
-      },
-      "block_order": [
-        "t1",
-        "t2",
-        "t3"
-      ]
+      }
     },
     "build": {
       "type": "select-a-build",
