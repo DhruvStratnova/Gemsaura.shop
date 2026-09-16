@@ -1,5 +1,5 @@
 <section class="section catnav"><div class="wrap">
-  <div class="sechead"><div class="kick">Shop by category</div><h2 class="t">{{ section.settings.heading }}</h2></div>
+  <div class="sechead"><div class="kick">Shop by category</div><h2 class="t">Find your <span class="i">form</span></h2></div>
   <div class="catgrid">
     {%- assign rows = "crystal-bracelets|Bracelets;;rashi-bracelets|Zodiac;;silver-bracelets|Silver;;anklets|Anklets;;pendants|Pendants;;crystals|Crystals;;rudraksha|Rudraksha;;pyramids|Home & Vastu" | split:";;" -%}
     {%- for row in rows -%}{%- assign c = row | split:"|" -%}{%- assign col = collections[c[0]] -%}

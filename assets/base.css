@@ -386,3 +386,44 @@ h2.t{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.4vw,48px);l
   .story-b{padding:58px 50px;display:flex;flex-direction:column;justify-content:center}
   .story-p{font-size:16px}
 }
+
+/* ===== v9: premium pass (warm, editorial, soft) ===== */
+:root{--bg:#FCFAF5; --serif:"Fraunces",Georgia,serif}
+body{background:var(--bg)}
+.section{padding:118px 0}
+.kick{letter-spacing:.28em;font-weight:600}
+h2.t{font-weight:500;font-size:clamp(32px,4.9vw,56px);letter-spacing:-.015em;line-height:1.03}
+h2.t .i,.hero h1 .i,.story-b .t .i{font-style:italic;color:var(--gold)}
+.sub{font-size:16px}
+.btn{border-radius:999px;padding:14px 27px;letter-spacing:.1em}
+.btn.dark{box-shadow:0 16px 34px -18px rgba(28,24,19,.55)}
+.btn.dark:hover{transform:translateY(-2px)}
+
+/* category cards -> portrait, soft, lifted */
+.catgrid{gap:16px}
+.catcard-im{aspect-ratio:4/5;border-radius:20px;box-shadow:0 24px 46px -30px rgba(80,60,30,.45);transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.catcard:hover .catcard-im{transform:translateY(-6px) scale(1.01);box-shadow:0 36px 62px -30px rgba(80,60,30,.55)}
+.catcard-t{font-family:var(--serif);font-weight:600;font-size:19px;margin-top:14px;color:var(--ink);letter-spacing:0}
+
+/* product cards -> softer, taller, lifted */
+.pc{border-radius:20px;border-color:transparent;box-shadow:0 22px 44px -34px rgba(80,60,30,.4)}
+.pc:hover{box-shadow:0 40px 64px -34px rgba(80,60,30,.5);transform:translateY(-6px)}
+.pc .im{height:300px}
+.pc h4{font-size:22px}
+.pc .oud{background:linear-gradient(90deg,#C6A15B,#B08A3C);box-shadow:0 8px 18px -8px rgba(176,138,60,.6)}
+
+/* intent cards -> soft, lifted */
+.intentcard{border-radius:20px;box-shadow:0 24px 46px -30px rgba(80,60,30,.42);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.intentcard:hover{transform:translateY(-6px);box-shadow:0 36px 62px -30px rgba(80,60,30,.55)}
+.intentcard-t{font-size:23px}
+
+/* story block -> rounded, lifted, warm */
+.story{background:var(--cream)}
+.story-grid{border-radius:24px;border-color:transparent;box-shadow:0 40px 80px -50px rgba(80,60,30,.45);background:#fff}
+.story-b .t{font-size:clamp(30px,4vw,48px)}
+.story-p{font-size:16px}
+
+/* rhythm */
+.rail-cream{background:var(--cream)}
+.sechead{margin-bottom:10px}
+@media(max-width:719px){.section{padding:64px 0}.pc .im{height:230px}.catcard-t{font-size:17px}}

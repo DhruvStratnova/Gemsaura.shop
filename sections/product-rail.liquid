@@ -1,5 +1,5 @@
 <section class="section"><div class="wrap">
-  <div class="prow"><div><div class="kick">The Collection</div><h2 class="t" style="margin-top:8px">{{ section.settings.heading }}</h2></div><a class="btn ghost" href="{{ section.settings.view_all_url }}">View all</a></div>
+  <div class="prow"><div><div class="kick">The Collection</div><h2 class="t" style="margin-top:8px">Worn this <span class="i">season</span></h2></div><a class="btn ghost" href="{{ section.settings.view_all_url }}">View all</a></div>
   <div class="cards">
     {% if section.settings.collection != blank %}
       {% assign col = collections[section.settings.collection] %}
