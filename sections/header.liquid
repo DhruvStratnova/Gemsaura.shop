@@ -1,7 +1,7 @@
 <nav class="mnav" id="mnav"><div class="wrap row">
   <div class="left">
     <button class="ic" id="menuBtn" aria-label="Menu">&#9776;</button>
-    <button class="ic" aria-label="Search">&#9906;</button>
+    <button class="ic" id="searchBtn" aria-label="Search">&#9906;</button>
   </div>
   <a class="logo" href="{{ routes.root_url }}">GEMS<span>AURA</span></a>
   <div class="right">
@@ -9,19 +9,72 @@
     <a class="bag" href="{{ routes.cart_url }}">Bag<b>{{ cart.item_count }}</b></a>
   </div>
 </div></nav>
-<div class="drawer" id="drawer">
-  <div class="bg" data-close></div>
-  <div class="panel">
-    <button class="dx" data-close aria-label="Close">&times;</button>
-    <div class="dhead">GEMS<span>AURA</span></div>
-    <nav style="margin-top:22px">
-      <a href="#">Crystal + Oud</a>
-      <a href="#">Shop by Intent</a>
-      <a href="{{ routes.all_products_collection_url }}">Bracelets</a>
-      <a href="#">Oud Reserve</a>
-      <a href="#">Gifting</a>
-    </nav>
-  </div>
+
+<div class="mega" id="mega">
+  <div class="mega-bg" data-mclose></div>
+  <div class="mega-panel"><div class="wrap">
+    <div class="mega-grid">
+      <div class="mcol">
+        <div class="mlabel">By Intent</div>
+        {%- assign intents = "money:Wealth & Fortune,purpose-peace-calm:Peace & Calm,purpose-health-wellness:Health & Wellness" | split:"," -%}
+        {%- for it in intents -%}{%- assign p = it | split:":" -%}{%- assign c = collections[p[0]] -%}
+          <a class="mcard" href="{{ c.url }}" style="background-image:url('{{ c.image | default: c.products.first.featured_image | image_url: width: 500 }}')"><span class="mcard-t">{{ p[1] }}</span></a>
+        {%- endfor -%}
+      </div>
+      <div class="mcol">
+        <div class="mlabel">By Category</div>
+        <div class="mcat-grid">
+          {%- assign cats = "crystal-bracelets:Bracelets,silver-bracelets:Silver Bracelets,rashi-bracelets:Zodiac,anklets:Anklets,pendants:Pendants,rudraksha:Rudraksha,crystals:Crystals,pyramids:Home & Vastu" | split:"," -%}
+          {%- for ct in cats -%}{%- assign p = ct | split:":" -%}{%- assign c = collections[p[0]] -%}
+            <a class="mtile" href="{{ c.url }}"><span class="mtile-im" style="background-image:url('{{ c.image | default: c.products.first.featured_image | image_url: width: 400 }}')"></span><span class="mtile-t">{{ p[1] }}</span></a>
+          {%- endfor -%}
+        </div>
+      </div>
+      <div class="mcol">
+        <div class="mlabel">Shop the House</div>
+        <div class="mgender"><a class="gbtn" href="/collections/crystal-bracelets">Crystal + Oud</a><a class="gbtn" href="/collections/silver-bracelets">Oud Reserve</a></div>
+        <div class="mlabel" style="margin-top:20px">By Collection</div>
+        {%- assign colls = "new-arrival:New Arrivals,crystal-bracelets:Bestsellers,money:Wealth,mala:Malas" | split:"," -%}
+        {%- for cl in colls -%}{%- assign p = cl | split:":" -%}{%- assign c = collections[p[0]] -%}
+          <a class="mrow" href="{{ c.url }}"><span>{{ p[1] }}</span><img src="{{ c.image | default: c.products.first.featured_image | image_url: width: 140 }}" alt="" loading="lazy"></a>
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="mega-foot">
+      <div class="mdisc"><b>Discover</b><a href="#">About the brand</a><a href="#">Our natural stones</a><a href="#">Certification</a><a href="#">Reviews · 4.8&#9733;</a><a href="#">Help &amp; contact</a></div>
+      <div class="mdisc-r"><a href="#">Gifting &amp; Bulk Orders</a><a href="#">Wholesale</a></div>
+    </div>
+  </div></div>
+</div>
+
+<div class="srch" id="srch">
+  <div class="srch-bg" data-sclose></div>
+  <div class="srch-panel"><div class="wrap">
+    <form action="{{ routes.search_url }}" method="get" class="srch-bar">
+      <button type="button" class="sic" data-sclose aria-label="Close">&larr;</button>
+      <input type="search" name="q" placeholder="Search stones, intentions…" autocomplete="off">
+      <button type="submit" class="sic" aria-label="Search">&#9906;</button>
+    </form>
+    <div class="srch-body">
+      <p class="srch-hint">Every stone carries an intention. Start with what you need most.</p>
+      <div class="mlabel">Bestsellers</div>
+      <div class="srch-cards">
+        {%- assign bc = collections['crystal-bracelets'] -%}
+        {%- for product in bc.products limit: 4 -%}
+          <div class="scard">
+            <a href="{{ product.url }}"><span class="scard-im" style="background-image:url('{{ product.featured_image | image_url: width: 400 }}')"><span class="scard-rt">&#9733; 4.8</span></span></a>
+            <div class="scard-b">
+              <a href="{{ product.url }}" class="scard-t">{{ product.title | truncatewords: 5 }}</a>
+              <div class="scard-p">{{ product.price | money }}{% if product.compare_at_price > product.price %} <s>{{ product.compare_at_price | money }}</s>{% endif %}</div>
+              {% form 'product', product %}<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><button class="scard-add" type="submit">+ Add to cart</button>{% endform %}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      <a class="btn dark" style="display:flex;width:100%;justify-content:center;margin-top:16px" href="{{ bc.url }}">Explore bestsellers</a>
+      <p class="srch-ship">Complimentary UAE shipping · COD available</p>
+    </div>
+  </div></div>
 </div>
 {% schema %}
 {"name":"Header","settings":[]}

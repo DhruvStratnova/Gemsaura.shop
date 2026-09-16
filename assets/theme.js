@@ -2,14 +2,17 @@
   var nav=document.getElementById('mnav');
   if(nav){
     if(!document.querySelector('.hbanner')){ nav.classList.add('solid'); }
-    else{
-      var f=function(){ if(window.scrollY>60) nav.classList.add('solid'); else nav.classList.remove('solid'); };
-      window.addEventListener('scroll',f,{passive:true}); f();
-    }
+    else{ var f=function(){ nav.classList.toggle('solid', window.scrollY>60); }; window.addEventListener('scroll',f,{passive:true}); f(); }
   }
-  var drawer=document.getElementById('drawer'), mb=document.getElementById('menuBtn');
-  if(mb&&drawer){ mb.addEventListener('click',function(){drawer.classList.add('open')});
-    drawer.querySelectorAll('[data-close]').forEach(function(el){el.addEventListener('click',function(){drawer.classList.remove('open')})}); }
+  var mega=document.getElementById('mega'), srch=document.getElementById('srch');
+  var mb=document.getElementById('menuBtn'), sb=document.getElementById('searchBtn');
+  function close(el){ if(el) el.classList.remove('open'); }
+  if(mb&&mega){ mb.addEventListener('click',function(){ close(srch); mega.classList.toggle('open'); });
+    mega.querySelectorAll('[data-mclose]').forEach(function(e){e.addEventListener('click',function(){close(mega)})}); }
+  if(sb&&srch){ sb.addEventListener('click',function(){ close(mega); srch.classList.add('open'); var i=srch.querySelector('input'); if(i) setTimeout(function(){i.focus()},120); });
+    srch.querySelectorAll('[data-sclose]').forEach(function(e){e.addEventListener('click',function(){close(srch)})}); }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ close(mega); close(srch); } });
+
   var slides=[].slice.call(document.querySelectorAll('.hslide'));
   if(slides.length>1){
     var dots=document.getElementById('hdots'), i=0;
@@ -18,6 +21,6 @@
     var nx=document.getElementById('hnext'),pv=document.getElementById('hprev');
     if(nx)nx.addEventListener('click',function(){go(i+1)});
     if(pv)pv.addEventListener('click',function(){go(i-1)});
-    var t=setInterval(function(){go(i+1)},6000);
+    setInterval(function(){go(i+1)},6000);
   }
 })();
