@@ -27,41 +27,6 @@
         "s2"
       ]
     },
-    "trust": {
-      "type": "trust-strip",
-      "blocks": {
-        "b1": {
-          "type": "item",
-          "settings": {
-            "text": "40,000+ wrists across the Gulf"
-          }
-        },
-        "b2": {
-          "type": "item",
-          "settings": {
-            "text": "Independently lab-certified"
-          }
-        },
-        "b3": {
-          "type": "item",
-          "settings": {
-            "text": "Real Cambodian oud"
-          }
-        },
-        "b4": {
-          "type": "item",
-          "settings": {
-            "text": "★ 4.8 average rating"
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
-      ]
-    },
     "shopby": {
       "type": "shop-by",
       "settings": {
@@ -260,7 +225,6 @@
   },
   "order": [
     "hero",
-    "trust",
     "shopby",
     "build",
     "rail",
