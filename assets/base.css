@@ -233,3 +233,10 @@ h2.t{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.4vw,48px);l
 .scard-add:hover{background:#000}
 .srch-ship{text-align:center;color:var(--muted);font-size:12px;margin-top:18px;letter-spacing:.04em}
 @media(max-width:900px){.mega-grid{grid-template-columns:1fr}.mcat-grid{grid-template-columns:1fr 1fr}.srch-cards{grid-template-columns:1fr 1fr}}
+
+/* ===== v5: floating rounded pill nav (Mesmerize-style) ===== */
+.mnav{position:sticky;top:0;z-index:60;background:transparent!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;border:none!important;box-shadow:none!important;padding:14px 0 0}
+.mnav .row{height:60px;border-radius:999px;padding:0 16px 0 30px;background:rgba(250,246,238,.5);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.55);box-shadow:0 16px 44px -22px rgba(60,45,20,.45)}
+.mnav.solid .row{background:rgba(255,255,255,.9)}
+.mnav .bag{border:1px solid rgba(120,100,60,.3);border-radius:12px;padding:7px 11px}
+.hbanner{margin-top:-74px}
