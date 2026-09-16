@@ -18,7 +18,7 @@
             "desktop": "aa-hero-bracelets.jpg",
             "mobile": "aa-hero-bracelets-mobile.webp",
             "alt": "Crystal bracelets",
-            "url": "/collections/all"
+            "url": "/collections/crystal-bracelets"
           }
         }
       },
@@ -27,51 +27,50 @@
         "s2"
       ]
     },
-    "rail": {
-      "type": "product-rail",
+    "fstrip": {
+      "type": "feature-strip"
+    },
+    "circles": {
+      "type": "category-circles"
+    },
+    "promos": {
+      "type": "promo-cards"
+    },
+    "fprod": {
+      "type": "featured-products",
       "settings": {
-        "heading": "Bestsellers",
-        "collection": "crystal-bracelets",
-        "view_all_url": "/collections/crystal-bracelets"
+        "collection": "crystal-bracelets"
       }
     },
-    "catnav": {
-      "type": "category-nav",
+    "fcoll": {
+      "type": "featured-collections",
       "settings": {
-        "heading": "Find your form"
+        "big": "crystal-bracelets"
       }
     },
-    "story": {
-      "type": "story"
-    },
-    "intent": {
-      "type": "intent",
+    "bsell": {
+      "type": "best-sellers",
       "settings": {
-        "heading": "What do you want to invite in?"
+        "collection": "our-products",
+        "view_url": "/collections/all"
       }
     },
-    "usp": {
-      "type": "usp"
+    "aboutb": {
+      "type": "about-banner"
     },
-    "difference": {
-      "type": "difference"
-    },
-    "faq": {
-      "type": "faq"
-    },
-    "finalcta": {
-      "type": "final-cta"
+    "vstrip": {
+      "type": "value-strip"
     }
   },
   "order": [
     "hero",
-    "usp",
-    "catnav",
-    "rail",
-    "story",
-    "intent",
-    "difference",
-    "faq",
-    "finalcta"
+    "fstrip",
+    "circles",
+    "promos",
+    "fprod",
+    "fcoll",
+    "bsell",
+    "aboutb",
+    "vstrip"
   ]
 }

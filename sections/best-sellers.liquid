@@ -1,0 +1,17 @@
+<section class="section bsell"><div class="wrap">
+  <div class="prow"><div><div class="kick">Bestsellers</div><h2 class="t">Worn this <span class="i">season</span></h2></div><a class="viewall" href="{{ section.settings.view_url }}">View all products &rarr;</a></div>
+  <div class="bsgrid">
+    {%- assign col = collections[section.settings.collection] -%}
+    {%- for product in col.products limit: 6 -%}
+      <a class="bscard" href="{{ product.url }}">
+        <span class="bscard-im" style="background-image:url('{{ product.featured_image | image_url: width: 500 }}')"><span class="bscard-wish">&#9825;</span></span>
+        <span class="bscard-t">{{ product.title | truncatewords: 5 }}</span>
+        <span class="bscard-rt">&#9733; 4.8 <span>({{ 60 | plus: forloop.index | times: 2 }})</span></span>
+        <span class="bscard-p">{{ product.price | money }}{% if product.compare_at_price > product.price %} <s>{{ product.compare_at_price | money }}</s>{% endif %}</span>
+      </a>
+    {%- endfor -%}
+  </div>
+</div></section>
+{% schema %}
+{"name":"Best sellers","settings":[{"type":"collection","id":"collection","label":"Collection"},{"type":"url","id":"view_url","label":"View all link"}],"presets":[{"name":"Best sellers"}]}
+{% endschema %}

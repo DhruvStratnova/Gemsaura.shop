@@ -1,17 +1,29 @@
-<header class="hero2 hero2--{% if section.settings.bg != blank %}img{% else %}light{% endif %}"{% if section.settings.bg != blank %} style="background-image:url('{{ section.settings.bg | asset_url }}')"{% endif %}>
-  <span class="hero2-scrim"></span>
-  <div class="hero2-inner">
-    <div class="hero2-kick">The House of Crystal &amp; Oud</div>
-    <h1 class="hero2-h">Energy you can wear.<br>And <span class="i">breathe.</span></h1>
-    <p class="hero2-p">Certified natural crystals, infused with real Cambodian oud — a remedy that happens to be the most beautiful thing on your wrist.</p>
-    <div class="hero2-cta">
-      <a class="btn dark" href="/collections/crystal-bracelets">Shop the collection</a>
-      <a class="btn light" href="#intent">Shop by intention</a>
-    </div>
-    <div class="hero2-ar">طاقة تُلبس… وتُشتمّ</div>
+<section class="hbanner">
+  <div class="hslides" id="hslides">
+    {% for b in section.blocks %}
+      <div class="hslide{% if forloop.first %} on{% endif %}">
+        <a href="{{ b.settings.url }}">
+          <picture>
+            {% if b.settings.mobile != blank %}<source media="(max-width:700px)" srcset="{{ b.settings.mobile | asset_url }}">{% endif %}
+            <img src="{{ b.settings.desktop | asset_url }}" alt="{{ b.settings.alt | escape }}" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>
+          </picture>
+        </a>
+      </div>
+    {% endfor %}
+    {% if section.blocks.size > 1 %}
+      <button class="harrow prev" id="hprev" aria-label="Previous">&lsaquo;</button>
+      <button class="harrow next" id="hnext" aria-label="Next">&rsaquo;</button>
+      <div class="hdots" id="hdots"></div>
+    {% endif %}
   </div>
-  <div class="hero2-mark">GEMSAURA</div>
-</header>
+</section>
 {% schema %}
-{"name":"Hero","settings":[{"type":"text","id":"bg","label":"Background image filename (assets) — optional"}],"presets":[{"name":"Hero"}]}
+{"name":"Hero banner","max_blocks":6,
+ "blocks":[{"type":"slide","name":"Slide","settings":[
+   {"type":"text","id":"desktop","label":"Desktop image (assets)","default":"aa-hero-zodiac.jpg"},
+   {"type":"text","id":"mobile","label":"Mobile image (assets)"},
+   {"type":"text","id":"alt","label":"Alt"},{"type":"url","id":"url","label":"Link"}]}],
+ "presets":[{"name":"Hero banner","blocks":[
+   {"type":"slide","settings":{"desktop":"aa-hero-zodiac.jpg","mobile":"aa-hero-zodiac-mobile.webp","alt":"Zodiac"}},
+   {"type":"slide","settings":{"desktop":"aa-hero-bracelets.jpg","mobile":"aa-hero-bracelets-mobile.webp","alt":"Crystal bracelets"}}]}]}
 {% endschema %}

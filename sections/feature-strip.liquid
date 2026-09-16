@@ -1,0 +1,9 @@
+<section class="fstrip"><div class="wrap"><div class="fstrip-row">
+  {%- assign rows = "&#128666;|Free UAE delivery|On orders over AED 200;;&#8635;|Easy returns|7-day return policy;;&#128737;|Secure checkout|Card · Tabby · COD;;&#10022;|Energised by hand|Sealed in a keepsake box" | split:";;" -%}
+  {%- for row in rows -%}{%- assign c = row | split:"|" -%}
+    <div class="fstrip-i"><span class="fstrip-ic">{{ c[0] }}</span><span class="fstrip-t"><b>{{ c[1] }}</b><span>{{ c[2] }}</span></span></div>
+  {%- endfor -%}
+</div></div></section>
+{% schema %}
+{"name":"Feature strip","settings":[],"presets":[{"name":"Feature strip"}]}
+{% endschema %}

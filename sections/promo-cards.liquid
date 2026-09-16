@@ -1,0 +1,11 @@
+<section class="section promos"><div class="wrap"><div class="promogrid">
+  {%- assign rows = "New Arrivals|Discover the latest, just for you.|new-arrival|light;;Trending Now|Our most-loved this season.|crystal-bracelets|light;;Bestsellers|Customer favourites worth wearing.|money|light;;Crystal + Oud|The signature — energy you breathe.|silver-bracelets|dark" | split:";;" -%}
+  {%- for row in rows -%}{%- assign c = row | split:"|" -%}{%- assign col = collections[c[2]] -%}
+    <a class="promo promo--{{ c[3] }}" href="{{ col.url }}" {% if c[3] == 'light' %}style="background-image:linear-gradient(90deg,rgba(250,246,238,.94) 40%,rgba(250,246,238,.2)),url('{{ col.products.first.featured_image | image_url: width: 500 }}');background-size:cover;background-position:right center"{% endif %}>
+      <div class="promo-b"><h3>{{ c[0] }}</h3><p>{{ c[1] }}</p><span class="promo-shop">Shop now &rarr;</span></div>
+    </a>
+  {%- endfor -%}
+</div></div></section>
+{% schema %}
+{"name":"Promo cards","settings":[],"presets":[{"name":"Promo cards"}]}
+{% endschema %}

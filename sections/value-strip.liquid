@@ -1,0 +1,9 @@
+<section class="section vstrip"><div class="wrap"><div class="vstrip-row">
+  {%- assign rows = "&#9878;|Lab-certified|Verified natural stones;;&#10022;|Real oud|Hand-infused, lasts weeks;;&#9733;|Trending in the Gulf|Loved across the Emirates;;&#128153;|40,000+ wrists|Happy customers" | split:";;" -%}
+  {%- for row in rows -%}{%- assign c = row | split:"|" -%}
+    <div class="vstrip-i"><span class="vstrip-ic">{{ c[0] }}</span><span class="vstrip-t"><b>{{ c[1] }}</b><span>{{ c[2] }}</span></span></div>
+  {%- endfor -%}
+</div></div></section>
+{% schema %}
+{"name":"Value strip","settings":[],"presets":[{"name":"Value strip"}]}
+{% endschema %}

@@ -1,0 +1,24 @@
+<section class="section fprod"><div class="wrap">
+  <div class="sechead"><div class="kick">Our collection</div><h2 class="t">Featured <span class="i">Products</span></h2><p class="sub">Explore our most-loved pieces.</p></div>
+  <div class="fprod-track" id="fprodTrack">
+    {%- assign col = collections[section.settings.collection] -%}
+    {%- assign tags = "New,Trending,Bestseller,Popular,New,Trending,Bestseller,Popular" | split:"," -%}
+    {%- for product in col.products limit: 8 -%}
+      <div class="fcard">
+        <span class="fcard-tag">{{ tags[forloop.index0] }}</span>
+        <a href="{{ product.url }}" class="fcard-im" style="background-image:url('{{ product.featured_image | image_url: width: 500 }}')"></a>
+        <div class="fcard-b">
+          <h4>{{ product.title | truncatewords: 5 }}</h4>
+          <div class="fcard-rt">&#9733; 4.8 <span>({{ 40 | plus: forloop.index | times: 3 }})</span></div>
+          <div class="fcard-foot">
+            <span class="fcard-p">{{ product.price | money }}</span>
+            {% form 'product', product %}<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><button class="fcard-add" type="submit" aria-label="Add to cart">&#128722;</button>{% endform %}
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div></section>
+{% schema %}
+{"name":"Featured products","settings":[{"type":"collection","id":"collection","label":"Collection"}],"presets":[{"name":"Featured products"}]}
+{% endschema %}
