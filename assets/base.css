@@ -427,3 +427,27 @@ h2.t .i,.hero h1 .i,.story-b .t .i{font-style:italic;color:var(--gold)}
 .rail-cream{background:var(--cream)}
 .sechead{margin-bottom:10px}
 @media(max-width:719px){.section{padding:64px 0}.pc .im{height:230px}.catcard-t{font-size:17px}}
+
+/* ===== v10: overlay cards + shop pills (real UI upgrade) ===== */
+.catcard{position:relative;display:block;aspect-ratio:4/5;border-radius:20px;overflow:hidden;text-decoration:none;box-shadow:0 24px 46px -30px rgba(80,60,30,.45);transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .45s;background-color:#efe7d5}
+.catcard:hover{transform:translateY(-6px);box-shadow:0 38px 64px -30px rgba(80,60,30,.55)}
+.catcard-im{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .75s cubic-bezier(.2,.7,.2,1)}
+.catcard:hover .catcard-im{transform:scale(1.07)}
+.catcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,19,13,0) 42%,rgba(24,19,13,.72));z-index:1}
+.catcard-b{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px 18px 20px;display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.catcard-t{font-family:var(--serif);font-weight:600;font-size:22px;color:#fff;margin:0;line-height:1.05}
+.catcard-shop{flex:none;font:600 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 13px;display:inline-flex;align-items:center;gap:6px;transition:background .3s,border-color .3s;opacity:.92}
+.catcard:hover .catcard-shop{background:var(--gold);border-color:var(--gold)}
+.catcard-shop i{font-style:normal;transition:transform .3s}
+.catcard:hover .catcard-shop i{transform:translateX(3px)}
+
+.intentcard{position:relative;display:flex;align-items:flex-end;aspect-ratio:3/4;border-radius:20px;overflow:hidden;background-size:cover;background-position:center;text-decoration:none;background-color:#efe7d5}
+.intentcard-b{padding:22px;color:#fff;display:flex;flex-direction:column;width:100%}
+.intentcard-t{font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.05}
+.intentcard-s{font:400 12px var(--sans);opacity:.85;margin-top:3px;letter-spacing:.02em}
+.intentcard-shop{align-self:flex-start;margin-top:14px;font:600 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 13px;display:inline-flex;align-items:center;gap:6px;opacity:0;transform:translateY(8px);transition:.35s}
+.intentcard:hover .intentcard-shop{opacity:1;transform:none;background:var(--gold);border-color:var(--gold)}
+
+/* product cards: cleaner pill tag */
+.pc .oud{top:14px;left:14px;font-size:9px;padding:5px 11px}
+@media(max-width:719px){.catcard-t{font-size:19px}.intentcard-t{font-size:19px}}

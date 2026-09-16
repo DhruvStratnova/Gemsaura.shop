@@ -4,12 +4,12 @@
     {%- assign rows = "crystal-bracelets|Bracelets;;rashi-bracelets|Zodiac;;silver-bracelets|Silver;;anklets|Anklets;;pendants|Pendants;;crystals|Crystals;;rudraksha|Rudraksha;;pyramids|Home & Vastu" | split:";;" -%}
     {%- for row in rows -%}{%- assign c = row | split:"|" -%}{%- assign col = collections[c[0]] -%}
       <a class="catcard" href="{{ col.url }}">
-        <span class="catcard-im" style="background-image:url('{{ col.image | default: col.products.first.featured_image | image_url: width: 500 }}')"></span>
-        <span class="catcard-t">{{ c[1] }}</span>
+        <span class="catcard-im" style="background-image:url('{{ col.image | default: col.products.first.featured_image | image_url: width: 600 }}')"></span>
+        <span class="catcard-b"><span class="catcard-t">{{ c[1] }}</span><span class="catcard-shop">Shop <i>&rarr;</i></span></span>
       </a>
     {%- endfor -%}
   </div>
 </div></section>
 {% schema %}
-{"name":"Category nav","settings":[{"type":"text","id":"heading","label":"Heading","default":"Find your form"}],"presets":[{"name":"Category nav"}]}
+{"name":"Category nav","settings":[],"presets":[{"name":"Category nav"}]}
 {% endschema %}
