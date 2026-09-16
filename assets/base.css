@@ -634,3 +634,12 @@ h2.t .i,.hero h1 .i,.story-b .t .i{font-style:italic;color:var(--gold)}
 .promo--dark .promo-shop{color:var(--gold-lt)}
 @media(min-width:720px){.promogrid{grid-template-columns:repeat(4,1fr)}.promo{min-height:224px}.promo--dark{grid-column:auto}}
 @media(max-width:719px){.promo{min-height:150px}.promo-im{width:42%}.promo-b h3{font-size:23px}}
+
+/* ===== v14: wider container + tighter circles/promos rhythm ===== */
+.wrap{max-width:1440px}
+.circles{padding-top:60px;padding-bottom:40px}
+.promos{padding-top:26px;padding-bottom:82px}
+@media(max-width:719px){
+  .circles{padding-top:40px;padding-bottom:26px}
+  .promos{padding-top:18px;padding-bottom:52px}
+}
