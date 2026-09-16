@@ -1,0 +1,18 @@
+<section class="section cou"><div class="wrap">
+  <div style="text-align:center;max-width:640px;margin:0 auto"><div class="kick">The House</div><h2 class="t" style="margin-top:8px">{{ section.settings.heading }}</h2></div>
+  <div class="pill">{% for b in section.blocks %}
+    <div class="p"><div class="ic">{{ b.settings.icon }}</div><h5>{{ b.settings.title }}</h5><p>{{ b.settings.body }}</p></div>
+  {% endfor %}</div>
+</div></section>
+{% schema %}
+{"name":"Craft","max_blocks":3,
+ "settings":[{"type":"text","id":"heading","label":"Heading","default":"Certified stones. Real oud. Energised by hand."}],
+ "blocks":[{"type":"pillar","name":"Pillar","settings":[
+   {"type":"text","id":"icon","label":"Icon","default":"◈"},
+   {"type":"text","id":"title","label":"Title","default":"Certified & natural"},
+   {"type":"textarea","id":"body","label":"Body"}]}],
+ "presets":[{"name":"Craft","blocks":[
+   {"type":"pillar","settings":{"icon":"◈","title":"Certified & natural","body":"Every stone independently lab-verified. No dyed glass, no imitations — the real material or nothing."}},
+   {"type":"pillar","settings":{"icon":"❋","title":"Real Cambodian oud","body":"Pure oud, hand-infused into the stone. A scent that lingers for weeks — the luxury nobody else offers."}},
+   {"type":"pillar","settings":{"icon":"✧","title":"Energised before dispatch","body":"Each piece is cleansed and energised by hand, then sealed in the keepsake box, ready to wear."}}]}]}
+{% endschema %}

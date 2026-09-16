@@ -1,0 +1,30 @@
+<header class="hero"><div class="wrap">
+  <div>
+    <div class="kick eye">{{ section.settings.eyebrow }}</div>
+    <h1>{{ section.settings.heading }}</h1>
+    <p>{{ section.settings.body }}</p>
+    <div class="ar">{{ section.settings.arabic }}</div>
+    <div class="cta">
+      <a class="btn dark" href="{{ section.settings.cta1_url }}">{{ section.settings.cta1 }}</a>
+      <a class="btn ghost" href="{{ section.settings.cta2_url }}">{{ section.settings.cta2 }}</a>
+    </div>
+    <div class="trust"><span><i>✦</i>Lab-certified stones</span><span><i>✦</i>Real oud, infused by hand</span><span><i>✦</i>UAE delivery 1–3 days</span></div>
+  </div>
+  <div class="stage">
+    <div class="ped p1"></div><div class="ped p2"></div>
+    <div class="brac b1"></div><div class="brac b2"></div>
+    <div class="oudchip"><div class="l">Signature</div><div class="v">Crystal + Oud</div></div>
+  </div>
+</div></header>
+{% schema %}
+{"name":"Hero","settings":[
+  {"type":"text","id":"eyebrow","label":"Eyebrow","default":"The House of Crystal & Oud"},
+  {"type":"html","id":"heading","label":"Heading","default":"Energy you can wear.<br>And <span class=\"i\">breathe.</span>"},
+  {"type":"textarea","id":"body","label":"Body","default":"Certified natural crystals, infused with real Cambodian oud. A remedy that happens to be the most beautiful thing on your wrist."},
+  {"type":"text","id":"arabic","label":"Arabic line","default":"طاقة تُلبس… وتُشتمّ"},
+  {"type":"text","id":"cta1","label":"Button 1","default":"Find your stone"},
+  {"type":"url","id":"cta1_url","label":"Button 1 link"},
+  {"type":"text","id":"cta2","label":"Button 2","default":"The Crystal + Oud house"},
+  {"type":"url","id":"cta2_url","label":"Button 2 link"}
+],"presets":[{"name":"Hero"}]}
+{% endschema %}

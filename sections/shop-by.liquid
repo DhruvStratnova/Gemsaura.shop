@@ -1,0 +1,23 @@
+<section class="section"><div class="wrap">
+  <div class="kick">Explore</div>
+  <h2 class="t" style="margin-top:8px">{{ section.settings.heading }}</h2>
+  <div class="tabs"><button class="on">By Intent</button><button>By Stone</button><button>By Ritual</button></div>
+  <div class="tiles">
+    {% for b in section.blocks %}
+      <a class="tile {{ b.settings.style }}" href="{{ b.settings.url }}"><div class="tn">{{ b.settings.title }}</div><div class="ts">{{ b.settings.stones }}</div></a>
+    {% endfor %}
+  </div>
+</div></section>
+{% schema %}
+{"name":"Shop by","max_blocks":3,
+ "settings":[{"type":"text","id":"heading","label":"Heading","default":"Shop by intent, stone, or ritual"}],
+ "blocks":[{"type":"tile","name":"Tile","settings":[
+   {"type":"text","id":"title","label":"Title","default":"Wealth & Fortune"},
+   {"type":"text","id":"stones","label":"Stones","default":"Pyrite · Citrine"},
+   {"type":"select","id":"style","label":"Colour","default":"t1","options":[{"value":"t1","label":"Gold"},{"value":"t2","label":"Amethyst"},{"value":"t3","label":"Green"}]},
+   {"type":"url","id":"url","label":"Link"}]}],
+ "presets":[{"name":"Shop by","blocks":[
+   {"type":"tile","settings":{"title":"Wealth & Fortune","stones":"Pyrite · Citrine · Green Aventurine","style":"t1"}},
+   {"type":"tile","settings":{"title":"Calm","stones":"Amethyst · Selenite","style":"t2"}},
+   {"type":"tile","settings":{"title":"Protection","stones":"Black Tourmaline · Tiger Eye","style":"t3"}}]}]}
+{% endschema %}

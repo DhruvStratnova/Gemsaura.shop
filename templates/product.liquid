@@ -1,0 +1,11 @@
+<section class="section"><div class="wrap" style="max-width:900px">
+  <div class="kick">GemsAura</div>
+  <h2 class="t">{{ product.title }}</h2>
+  <p class="sub" style="margin-top:10px">{{ product.description | strip_html | truncatewords: 40 }}</p>
+  <p style="margin-top:16px;font-weight:600;font-size:20px">{{ product.price | money }}</p>
+  {% form 'product', product %}
+    <select name="id">{% for v in product.variants %}<option value="{{ v.id }}">{{ v.title }} — {{ v.price | money }}</option>{% endfor %}</select>
+    <button class="btn dark" type="submit" style="margin-left:10px">Add to cart</button>
+  {% endform %}
+  <p class="sub" style="margin-top:30px">PDP build coming next.</p>
+</div></section>

@@ -1,0 +1,16 @@
+<section class="section cou"><div class="wrap">
+  <div class="revhead"><div class="kick">Loved across the Emirates</div><h2 class="t" style="margin-top:8px">{{ section.settings.heading }}</h2></div>
+  <div class="rev">{% for b in section.blocks %}
+    <div class="rc"><div class="st">★★★★★</div><p>"{{ b.settings.quote }}"</p><div class="who">{{ b.settings.who }}</div></div>
+  {% endfor %}</div>
+</div></section>
+{% schema %}
+{"name":"Reviews","max_blocks":6,
+ "settings":[{"type":"text","id":"heading","label":"Heading","default":"★ 4.8 · from real wearers"}],
+ "blocks":[{"type":"review","name":"Review","settings":[
+   {"type":"textarea","id":"quote","label":"Quote"},{"type":"text","id":"who","label":"Name · City"}]}],
+ "presets":[{"name":"Reviews","blocks":[
+   {"type":"review","settings":{"quote":"The oud is unreal. I get asked what I'm wearing every single day.","who":"Layla · Dubai Marina"}},
+   {"type":"review","settings":{"quote":"Packaging alone felt like a AED 1,000 gift. Bought three more as presents.","who":"Omar · Abu Dhabi"}},
+   {"type":"review","settings":{"quote":"Finally a crystal brand that looks luxury, not hippie. The clasp is beautiful.","who":"Sara · Sharjah"}}]}]}
+{% endschema %}

@@ -1,0 +1,13 @@
+<nav class="nav"><div class="wrap row">
+  <div class="links">
+    <a href="{{ routes.root_url }}">Crystal + Oud</a>
+    <a href="{{ routes.root_url }}">Shop by Intent</a>
+    <a href="{{ routes.all_products_collection_url }}">Bracelets</a>
+    <a href="{{ routes.root_url }}">Oud Reserve</a>
+  </div>
+  <a class="brand" href="{{ routes.root_url }}">GEMS<span>AURA</span></a>
+  <div class="ico"><span>⌕</span><span>♡</span><a href="{{ routes.cart_url }}" style="text-decoration:none;color:inherit">Bag<b>{{ cart.item_count }}</b></a></div>
+</div></nav>
+{% schema %}
+{"name":"Header","settings":[]}
+{% endschema %}

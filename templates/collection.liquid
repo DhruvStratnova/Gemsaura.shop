@@ -1,0 +1,9 @@
+<section class="section"><div class="wrap">
+  <div class="kick">Collection</div><h2 class="t">{{ collection.title }}</h2>
+  <div class="cards" style="margin-top:30px">
+    {% for product in collection.products %}
+      <a class="pc" href="{{ product.url }}"><div class="im" style="background-image:url('{{ product.featured_image | image_url: width:600 }}');background-size:cover"></div>
+      <div class="pb"><h4>{{ product.title }}</h4><div class="pr">{{ product.price | money }}</div></div></a>
+    {% endfor %}
+  </div>
+</div></section>

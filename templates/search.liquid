@@ -1,0 +1,4 @@
+<section class="section"><div class="wrap"><h2 class="t">Search</h2>
+  <form action="{{ routes.search_url }}" method="get" style="margin-top:16px"><input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search stones…" style="padding:12px;border:1px solid var(--line);border-radius:4px;width:280px"></form>
+  <div class="cards" style="margin-top:24px">{% for item in search.results %}<a class="pc" href="{{ item.url }}"><div class="pb"><h4>{{ item.title }}</h4></div></a>{% endfor %}</div>
+</div></section>

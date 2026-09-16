@@ -1,0 +1,6 @@
+<section class="section"><div class="wrap" style="max-width:800px"><h2 class="t">Your bag</h2>
+  {% if cart.item_count == 0 %}<p class="sub" style="margin-top:14px">Your bag is empty.</p>
+  {% else %}{% form 'cart', cart %}{% for item in cart.items %}
+    <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line)"><span>{{ item.product.title }} × {{ item.quantity }}</span><span>{{ item.final_line_price | money }}</span></div>
+  {% endfor %}<div style="margin-top:20px"><button class="btn dark" name="checkout">Checkout — {{ cart.total_price | money }}</button></div>{% endform %}{% endif %}
+</div></section>
