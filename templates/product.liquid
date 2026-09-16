@@ -1,11 +1,407 @@
-<section class="section"><div class="wrap" style="max-width:900px">
-  <div class="kick">GemsAura</div>
-  <h2 class="t">{{ product.title }}</h2>
-  <p class="sub" style="margin-top:10px">{{ product.description | strip_html | truncatewords: 40 }}</p>
-  <p style="margin-top:16px;font-weight:600;font-size:20px">{{ product.price | money }}</p>
-  {% form 'product', product %}
-    <select name="id">{% for v in product.variants %}<option value="{{ v.id }}">{{ v.title }} — {{ v.price | money }}</option>{% endfor %}</select>
-    <button class="btn dark" type="submit" style="margin-left:10px">Add to cart</button>
-  {% endform %}
-  <p class="sub" style="margin-top:30px">PDP build coming next.</p>
-</div></section>
+{%- assign cv = product.selected_or_first_available_variant -%}
+{%- assign main_img = cv.image | default: product.featured_image -%}
+
+<style>
+/* ===== GemsAura PDP (Intentions system) — all classes pdp-* ===== */
+.pdp{padding:44px 0 90px}
+.pdp .wrap{max-width:1240px}
+.pdp-grid{display:grid;grid-template-columns:1fr;gap:34px}
+@media(min-width:960px){.pdp-grid{grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}}
+
+/* breadcrumb */
+.pdp-crumb{font:500 12px var(--sans);letter-spacing:.05em;color:var(--muted);margin-bottom:20px}
+.pdp-crumb a{color:var(--muted);text-decoration:none}
+.pdp-crumb a:hover{color:var(--gold)}
+.pdp-crumb span{margin:0 7px;opacity:.6}
+
+/* ---- gallery ---- */
+.pdp-gallery{position:relative}
+.pdp-stage{position:relative;aspect-ratio:1/1;border-radius:22px;overflow:hidden;background:var(--cream);border:1px solid var(--line)}
+.pdp-stage img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.pdp-stage:hover img{transform:scale(1.06)}
+.pdp-badge{position:absolute;top:16px;left:16px;z-index:2;font:600 9.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--gold);padding:7px 12px;border-radius:999px}
+.pdp-thumbs{display:flex;gap:12px;margin-top:14px;overflow-x:auto;padding-bottom:2px;scrollbar-width:thin}
+.pdp-thumb{flex:0 0 74px;width:74px;height:74px;border-radius:13px;overflow:hidden;border:1px solid var(--line);background:var(--cream);cursor:pointer;padding:0;transition:border-color .2s,transform .2s}
+.pdp-thumb img{width:100%;height:100%;object-fit:cover}
+.pdp-thumb:hover{transform:translateY(-2px)}
+.pdp-thumb.is-active{border-color:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 14%,transparent)}
+
+/* ---- info column ---- */
+.pdp-info{position:relative}
+@media(min-width:960px){.pdp-info{position:sticky;top:96px}}
+.pdp-kick{font:600 11px var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.pdp-title{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4vw,44px);line-height:1.06;letter-spacing:.005em;color:var(--ink);margin:12px 0 0;text-wrap:balance}
+.pdp-rate{display:flex;align-items:center;gap:9px;margin-top:12px;font:500 12.5px var(--sans);color:var(--muted)}
+.pdp-stars{color:var(--gold);letter-spacing:2px;font-size:14px}
+
+.pdp-price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:20px}
+.pdp-now{font-family:var(--serif);font-weight:600;font-size:30px;color:var(--ink)}
+.pdp-was{color:var(--muted);font-size:17px;font-weight:400}
+.pdp-disc{font:600 10.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--gold);padding:5px 10px;border-radius:999px}
+.pdp-disc[hidden],.pdp-was[hidden]{display:none}
+
+.pdp-intro{color:#5b5346;font-size:15px;line-height:1.7;margin-top:18px;max-width:52ch}
+
+/* option pills */
+.pdp-opts{margin-top:26px;display:flex;flex-direction:column;gap:20px}
+.pdp-opt-label{font:600 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px}
+.pdp-opt-label b{color:var(--ink);font-weight:600;margin-left:6px;text-transform:none;letter-spacing:.02em;font-size:13px}
+.pdp-pills{display:flex;flex-wrap:wrap;gap:10px}
+.pdp-pill{font:500 13px var(--sans);letter-spacing:.02em;padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:.2s}
+.pdp-pill:hover{border-color:var(--gold-lt)}
+.pdp-pill.is-active{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 8%,#fff);color:var(--gold);font-weight:600}
+.pdp-pill:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* qty + add */
+.pdp-buy{display:flex;gap:12px;margin-top:26px;align-items:stretch}
+.pdp-qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:3px;background:#fff;flex:0 0 auto}
+.pdp-qty button{width:44px;height:100%;min-height:52px;background:none;border:none;font-size:18px;color:var(--ink);cursor:pointer;line-height:1}
+.pdp-qty button:hover{color:var(--gold)}
+.pdp-qty input{width:40px;text-align:center;border:none;font:600 15px var(--sans);color:var(--ink);background:none;-moz-appearance:textfield}
+.pdp-qty input::-webkit-outer-spin-button,.pdp-qty input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.pdp-add{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;font:600 12.5px var(--sans);letter-spacing:.13em;text-transform:uppercase;color:#fff;background:var(--gold);border:1px solid var(--gold);border-radius:3px;cursor:pointer;transition:.2s}
+.pdp-add:hover:not(:disabled){background:var(--gold-deep);border-color:var(--gold-deep)}
+.pdp-add:disabled{background:var(--marble);border-color:var(--line);color:var(--muted);cursor:not-allowed}
+.pdp-add:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* trust row */
+.pdp-trust{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+.pdp-trust .it{display:flex;align-items:center;gap:9px;font:500 12.5px var(--sans);color:#5b5346}
+.pdp-trust .it i{color:var(--gold);font-style:normal;font-size:14px;flex:0 0 auto}
+@media(min-width:520px){.pdp-trust{grid-template-columns:repeat(2,1fr)}}
+
+/* accordions */
+.pdp-acc{margin-top:30px;border-top:1px solid var(--line)}
+.pdp-acc-item{border-bottom:1px solid var(--line)}
+.pdp-acc-head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;background:none;border:none;padding:18px 2px;cursor:pointer;text-align:left;font-family:var(--serif);font-weight:600;font-size:18px;color:var(--ink)}
+.pdp-acc-head:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.pdp-acc-ico{flex:0 0 auto;font-size:20px;color:var(--gold);transition:transform .3s;line-height:1}
+.pdp-acc-head[aria-expanded="true"] .pdp-acc-ico{transform:rotate(45deg)}
+.pdp-acc-panel{overflow:hidden;max-height:0;transition:max-height .35s ease}
+.pdp-acc-inner{padding:0 2px 20px;color:#5b5346;font-size:14.5px;line-height:1.75}
+.pdp-acc-inner p{margin-bottom:10px}
+.pdp-acc-inner ul{margin:0 0 6px 18px}
+.pdp-acc-inner li{margin-bottom:6px}
+
+/* dark oud teaser strip */
+.pdp-oud{margin-top:30px;border-radius:18px;overflow:hidden;background:linear-gradient(142deg,var(--gold),var(--gold-deep));color:#fff;padding:22px 24px;display:flex;align-items:center;gap:16px}
+.pdp-oud-orb{flex:0 0 46px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 40% 34%,var(--orb1),var(--orb2) 60%)}
+.pdp-oud-eye{font:600 9.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt)}
+.pdp-oud h4{font-family:var(--serif);font-weight:600;font-size:19px;margin-top:3px}
+.pdp-oud p{font-size:12.5px;color:rgba(255,255,255,.78);margin-top:2px}
+
+/* related */
+.pdp-rel{padding:20px 0 0}
+.pdp-rel .prow{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:6px}
+.pdp-rel .kick{font:600 11px var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.pdp-rel h2.t{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.2vw,38px);line-height:1.08;color:var(--ink);margin-top:6px}
+.pdp-rel h2.t .i{font-style:italic;color:var(--gold)}
+
+/* mobile sticky bar */
+.pdp-sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;transform:translateY(120%);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.pdp-sticky.is-on{transform:translateY(0)}
+.pdp-sticky-meta{flex:1;min-width:0}
+.pdp-sticky-t{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pdp-sticky-p{font:600 13px var(--sans);color:var(--gold)}
+.pdp-sticky-btn{flex:0 0 auto;font:600 11.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--gold);border:1px solid var(--gold);border-radius:3px;padding:13px 20px;cursor:pointer}
+.pdp-sticky-btn:disabled{background:var(--marble);border-color:var(--line);color:var(--muted)}
+@media(min-width:960px){.pdp-sticky{display:none}}
+
+@media(prefers-reduced-motion:reduce){
+  .pdp-stage img,.pdp-thumb,.pdp-acc-panel,.pdp-sticky,.pdp-acc-ico{transition:none}
+  .pdp-stage:hover img{transform:none}
+}
+</style>
+
+<section class="pdp section" style="--gold:#33406B">
+  <div class="wrap">
+
+    <nav class="pdp-crumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span>
+      {%- if product.collections.first -%}<a href="{{ product.collections.first.url }}">{{ product.collections.first.title }}</a><span>/</span>{%- endif -%}
+      {{ product.title }}
+    </nav>
+
+    <div class="pdp-grid">
+
+      {%- comment -%} ===== GALLERY ===== {%- endcomment -%}
+      <div class="pdp-gallery">
+        <div class="pdp-stage">
+          {%- if product.compare_at_price > product.price -%}<span class="pdp-badge">Sale</span>{%- endif -%}
+          <img id="pdpMain" src="{{ main_img | image_url: width: 1100 }}" alt="{{ product.title | escape }}" width="1100" height="1100" loading="eager">
+        </div>
+        {%- if product.images.size > 1 -%}
+        <div class="pdp-thumbs" role="list">
+          {%- for image in product.images -%}
+            <button type="button" class="pdp-thumb{% if image == main_img %} is-active{% endif %}" role="listitem" data-full="{{ image | image_url: width: 1100 }}" aria-label="View image {{ forloop.index }} of {{ product.title | escape }}">
+              <img src="{{ image | image_url: width: 160 }}" alt="{{ product.title | escape }} — view {{ forloop.index }}" width="160" height="160" loading="lazy">
+            </button>
+          {%- endfor -%}
+        </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} ===== INFO ===== {%- endcomment -%}
+      <div class="pdp-info">
+        <div class="pdp-kick">{% if product.type != blank %}{{ product.type }}{% else %}GemsAura{% endif %}</div>
+        <h1 class="pdp-title">{{ product.title }}</h1>
+
+        <div class="pdp-rate">
+          <span class="pdp-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span>5.0 &middot; Loved by our community</span>
+        </div>
+
+        <div class="pdp-price">
+          <span class="pdp-now" id="pdpPrice">{{ product.price | money }}</span>
+          {%- assign show_sale = false -%}
+          {%- if product.compare_at_price > product.price -%}{%- assign show_sale = true -%}{%- endif -%}
+          <s class="pdp-was" id="pdpWas"{% unless show_sale %} hidden{% endunless %}>{% if show_sale %}{{ product.compare_at_price | money }}{% endif %}</s>
+          <span class="pdp-disc" id="pdpDisc"{% unless show_sale %} hidden{% endunless %}>{% if show_sale %}{{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}% off{% endif %}</span>
+        </div>
+
+        <p class="pdp-intro">{{ product.description | strip_html | truncatewords: 45 }}</p>
+
+        {%- comment -%} ===== FORM ===== {%- endcomment -%}
+        {%- assign cur = product.selected_or_first_available_variant -%}
+        {% form 'product', product, id: 'pdpForm' %}
+
+          {%- unless product.has_only_default_variant -%}
+          <div class="pdp-opts">
+            {%- for option in product.options_with_values -%}
+              <div class="pdp-opt" data-opt-index="{{ forloop.index0 }}">
+                <span class="pdp-opt-label" id="pdpOptLbl{{ forloop.index0 }}">{{ option.name }}<b class="pdp-opt-current">{{ option.selected_value }}</b></span>
+                <div class="pdp-pills" role="group" aria-labelledby="pdpOptLbl{{ forloop.index0 }}">
+                  {%- for value in option.values -%}
+                    <button type="button" class="pdp-pill{% if value == option.selected_value %} is-active{% endif %}" data-opt="{{ forloop.parentloop.index0 }}" data-value="{{ value | escape }}">{{ value }}</button>
+                  {%- endfor -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+          {%- endunless -%}
+
+          <input type="hidden" name="id" id="pdpVariantId" value="{{ cur.id }}">
+
+          <div class="pdp-buy">
+            <div class="pdp-qty">
+              <button type="button" aria-label="Decrease quantity" data-step="-1">&minus;</button>
+              <input type="number" name="quantity" id="pdpQty" value="1" min="1" inputmode="numeric" aria-label="Quantity">
+              <button type="button" aria-label="Increase quantity" data-step="1">+</button>
+            </div>
+            <button type="submit" class="pdp-add" id="pdpAdd"{% unless cur.available %} disabled{% endunless %}>
+              <span id="pdpAddLabel">{% if cur.available %}Add to cart{% else %}Sold out{% endif %}</span>
+            </button>
+          </div>
+
+        {% endform %}
+
+        <div class="pdp-trust">
+          <div class="it"><i>&#10003;</i> Lab-certified authenticity</div>
+          <div class="it"><i>&#9737;</i> Energised by hand</div>
+          <div class="it"><i>&#9873;</i> Free UAE delivery</div>
+          <div class="it"><i>&#8635;</i> Easy 7-day returns</div>
+        </div>
+
+        {%- comment -%} ===== OUD TEASER ===== {%- endcomment -%}
+        <div class="pdp-oud" style="--gold:#6C3B78;--gold-deep:#2E1650;--gold-lt:#CBB2E6;--orb1:#8f6bff;--orb2:#2e1650">
+          <span class="pdp-oud-orb" aria-hidden="true"></span>
+          <div>
+            <div class="pdp-oud-eye">Crystal &amp; Oud</div>
+            <h4>Cleansed in oud smoke before it ships</h4>
+            <p>Every piece is smoke-cleansed and rested before it reaches your hands.</p>
+          </div>
+        </div>
+
+        {%- comment -%} ===== ACCORDIONS ===== {%- endcomment -%}
+        <div class="pdp-acc">
+          <div class="pdp-acc-item">
+            <button type="button" class="pdp-acc-head" aria-expanded="true"><span>Full description</span><span class="pdp-acc-ico" aria-hidden="true">+</span></button>
+            <div class="pdp-acc-panel"><div class="pdp-acc-inner">{{ product.description }}</div></div>
+          </div>
+          <div class="pdp-acc-item">
+            <button type="button" class="pdp-acc-head" aria-expanded="false"><span>How to wear</span><span class="pdp-acc-ico" aria-hidden="true">+</span></button>
+            <div class="pdp-acc-panel"><div class="pdp-acc-inner">
+              <p>Wear your piece on the left wrist to receive its energy, or on the right to project your intention into the world.</p>
+              <ul>
+                <li>Set a quiet intention as you put it on each morning.</li>
+                <li>Let it rest against bare skin whenever you can.</li>
+                <li>Remove it before bathing, swimming, or sleeping.</li>
+              </ul>
+            </div></div>
+          </div>
+          <div class="pdp-acc-item">
+            <button type="button" class="pdp-acc-head" aria-expanded="false"><span>Certification &amp; care</span><span class="pdp-acc-ico" aria-hidden="true">+</span></button>
+            <div class="pdp-acc-panel"><div class="pdp-acc-inner">
+              <p>Each GemsAura piece arrives with a certificate of authenticity confirming the natural stone and its origin.</p>
+              <ul>
+                <li>Cleanse under moonlight or with sound once a month.</li>
+                <li>Wipe gently with a soft, dry cloth. Avoid perfumes and harsh chemicals.</li>
+                <li>Store separately in the pouch provided to protect the beads.</li>
+              </ul>
+            </div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} ===== YOU MAY ALSO LIKE ===== {%- endcomment -%}
+{%- assign rel = product.collections.first.products -%}
+{%- if rel.size > 1 -%}
+<section class="pdp-rel section bsell" style="--gold:#1E5157;padding-top:20px">
+  <div class="wrap">
+    <div class="prow">
+      <div><div class="kick">Curated for you</div><h2 class="t">You may also <span class="i">like</span></h2></div>
+      {%- if product.collections.first.url -%}<a class="viewall" href="{{ product.collections.first.url }}">View all &rarr;</a>{%- endif -%}
+    </div>
+    <div class="bsgrid">
+      {%- assign shown = 0 -%}
+      {%- for p in rel -%}
+        {%- if p.id != product.id and shown < 6 -%}
+          {%- assign shown = shown | plus: 1 -%}
+          <a class="bscard" href="{{ p.url }}">
+            <span class="bscard-im" style="background-image:url('{{ p.featured_image | image_url: width: 500 }}')"><span class="bscard-wish">&#9825;</span></span>
+            <span class="bscard-t">{{ p.title | truncatewords: 5 }}</span>
+            <span class="bscard-rt">&#9733; 4.8 <span>({{ 60 | plus: forloop.index | times: 2 }})</span></span>
+            <span class="bscard-p">{{ p.price | money }}{% if p.compare_at_price > p.price %} <s>{{ p.compare_at_price | money }}</s>{% endif %}</span>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{%- comment -%} ===== MOBILE STICKY BAR ===== {%- endcomment -%}
+<div class="pdp-sticky" id="pdpSticky" aria-hidden="true">
+  <div class="pdp-sticky-meta">
+    <div class="pdp-sticky-t">{{ product.title }}</div>
+    <div class="pdp-sticky-p" id="pdpStickyPrice">{{ product.price | money }}</div>
+  </div>
+  <button type="button" class="pdp-sticky-btn" id="pdpStickyBtn"{% unless cv.available %} disabled{% endunless %}>{% if cv.available %}Add to cart{% else %}Sold out{% endif %}</button>
+</div>
+
+<script>
+(function(){
+  var variants = {{ product.variants | json }};
+  var form = document.getElementById('pdpForm');
+  if(!form) return;
+  var idInput = document.getElementById('pdpVariantId');
+  var priceEl = document.getElementById('pdpPrice');
+  var wasEl = document.getElementById('pdpWas');
+  var discEl = document.getElementById('pdpDisc');
+  var addBtn = document.getElementById('pdpAdd');
+  var addLabel = document.getElementById('pdpAddLabel');
+  var mainImg = document.getElementById('pdpMain');
+  var stickyPrice = document.getElementById('pdpStickyPrice');
+  var stickyBtn = document.getElementById('pdpStickyBtn');
+
+  function money(cents){
+    try{
+      return new Intl.NumberFormat('en-AE',{style:'currency',currency:{{ shop.currency | json }}}).format(cents/100);
+    }catch(e){ return (cents/100).toFixed(2); }
+  }
+
+  // ---- gallery thumb swap ----
+  var thumbs = document.querySelectorAll('.pdp-thumb');
+  thumbs.forEach(function(t){
+    t.addEventListener('click', function(){
+      if(mainImg) mainImg.src = t.getAttribute('data-full');
+      thumbs.forEach(function(x){ x.classList.remove('is-active'); });
+      t.classList.add('is-active');
+    });
+  });
+
+  // ---- variant selection ----
+  var pillGroups = document.querySelectorAll('.pdp-opt');
+  var selected = [];
+  pillGroups.forEach(function(g){
+    var active = g.querySelector('.pdp-pill.is-active');
+    selected.push(active ? active.getAttribute('data-value') : null);
+  });
+
+  function findVariant(){
+    return variants.find(function(v){
+      return v.options.every(function(opt, i){ return opt === selected[i]; });
+    });
+  }
+
+  function applyVariant(v){
+    if(!v){
+      addBtn.disabled = true; addLabel.textContent = 'Unavailable';
+      if(stickyBtn){ stickyBtn.disabled = true; stickyBtn.textContent = 'Unavailable'; }
+      return;
+    }
+    idInput.value = v.id;
+    priceEl.textContent = money(v.price);
+    if(stickyPrice) stickyPrice.textContent = money(v.price);
+    if(v.compare_at_price && v.compare_at_price > v.price){
+      var pct = Math.round((v.compare_at_price - v.price) / v.compare_at_price * 100);
+      wasEl.textContent = money(v.compare_at_price); wasEl.hidden = false;
+      discEl.textContent = pct + '% off'; discEl.hidden = false;
+    } else {
+      wasEl.hidden = true; discEl.hidden = true;
+    }
+    if(v.featured_image && v.featured_image.src && mainImg){
+      mainImg.src = v.featured_image.src.replace(/(\.[a-z]+)(\?|$)/i, '_1100x$1$2');
+    }
+    if(v.available){
+      addBtn.disabled = false; addLabel.textContent = 'Add to cart';
+      if(stickyBtn){ stickyBtn.disabled = false; stickyBtn.textContent = 'Add to cart'; }
+    } else {
+      addBtn.disabled = true; addLabel.textContent = 'Sold out';
+      if(stickyBtn){ stickyBtn.disabled = true; stickyBtn.textContent = 'Sold out'; }
+    }
+  }
+
+  document.querySelectorAll('.pdp-pill').forEach(function(pill){
+    pill.addEventListener('click', function(){
+      var idx = parseInt(pill.getAttribute('data-opt'), 10);
+      var group = pillGroups[idx];
+      group.querySelectorAll('.pdp-pill').forEach(function(p){ p.classList.remove('is-active'); });
+      pill.classList.add('is-active');
+      selected[idx] = pill.getAttribute('data-value');
+      var cur = group.querySelector('.pdp-opt-current');
+      if(cur) cur.textContent = pill.getAttribute('data-value');
+      applyVariant(findVariant());
+    });
+  });
+
+  // ---- quantity stepper ----
+  var qty = document.getElementById('pdpQty');
+  document.querySelectorAll('.pdp-qty button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var step = parseInt(b.getAttribute('data-step'), 10);
+      var val = Math.max(1, (parseInt(qty.value,10)||1) + step);
+      qty.value = val;
+    });
+  });
+
+  // ---- sticky button proxies the form submit ----
+  if(stickyBtn){ stickyBtn.addEventListener('click', function(){ if(!stickyBtn.disabled) form.requestSubmit(); }); }
+
+  // ---- accordions ----
+  document.querySelectorAll('.pdp-acc-head').forEach(function(head){
+    var panel = head.nextElementSibling;
+    function setOpen(open){
+      head.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.style.maxHeight = open ? panel.scrollHeight + 'px' : '0px';
+    }
+    if(head.getAttribute('aria-expanded') === 'true'){ setOpen(true); }
+    head.addEventListener('click', function(){
+      setOpen(head.getAttribute('aria-expanded') !== 'true');
+    });
+  });
+
+  // ---- mobile sticky bar on scroll ----
+  var sticky = document.getElementById('pdpSticky');
+  if(sticky && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ sticky.classList.toggle('is-on', !e.isIntersecting); });
+    }, {rootMargin:'-80px 0px 0px 0px'});
+    io.observe(addBtn);
+  }
+})();
+</script>

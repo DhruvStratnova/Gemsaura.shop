@@ -1,1 +1,37 @@
-<section class="section"><div class="wrap" style="max-width:820px"><h2 class="t">{{ page.title }}</h2><div class="sub" style="margin-top:16px">{{ page.content }}</div></div></section>
+<style>
+  .pg-wrap{max-width:760px;padding-top:16px}
+  .pg-head{text-align:center;margin-bottom:40px;padding-bottom:34px;border-bottom:1px solid var(--line)}
+  .pg-head .kick{color:var(--gold)}
+  .pg-head h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5vw,54px);line-height:1.05;color:var(--ink);margin-top:12px;text-wrap:balance}
+
+  .pg-prose{font-family:var(--sans);font-size:16.5px;line-height:1.75;color:#3f3a31}
+  .pg-prose > *:first-child{margin-top:0}
+  .pg-prose p{margin:0 0 1.15em}
+  .pg-prose h2{font-family:var(--serif);font-weight:600;font-size:clamp(26px,3.4vw,34px);line-height:1.14;color:var(--ink);margin:1.7em 0 .5em;text-wrap:balance}
+  .pg-prose h3{font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.6vw,25px);line-height:1.2;color:var(--ink);margin:1.5em 0 .45em}
+  .pg-prose h4{font:600 14px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:1.6em 0 .5em}
+  .pg-prose a{color:var(--gold);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color .2s}
+  .pg-prose a:hover{color:var(--gold-deep)}
+  .pg-prose strong{font-weight:600;color:var(--ink)}
+  .pg-prose em{font-style:italic}
+  .pg-prose ul,.pg-prose ol{margin:0 0 1.2em;padding-left:1.3em}
+  .pg-prose li{margin-bottom:.5em;padding-left:.2em}
+  .pg-prose ul li::marker{color:var(--gold)}
+  .pg-prose ol li::marker{color:var(--gold);font-weight:600}
+  .pg-prose blockquote{margin:1.5em 0;padding:6px 0 6px 24px;border-left:2px solid var(--gold);font-family:var(--serif);font-size:22px;font-style:italic;line-height:1.4;color:var(--ink)}
+  .pg-prose blockquote p{margin:0}
+  .pg-prose img{border-radius:16px;margin:1.5em 0;border:1px solid var(--line)}
+  .pg-prose hr{border:none;border-top:1px solid var(--line);margin:2.2em 0}
+  .pg-prose table{width:100%;border-collapse:collapse;margin:1.5em 0;font-size:15px}
+  .pg-prose th,.pg-prose td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+  .pg-prose th{font:600 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .pg-prose code{background:var(--cream);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:.9em}
+</style>
+
+<section class="section"><div class="wrap pg-wrap">
+  <header class="pg-head">
+    <div class="kick">GemsAura</div>
+    <h1>{{ page.title }}</h1>
+  </header>
+  <div class="pg-prose rte">{{ page.content }}</div>
+</div></section>

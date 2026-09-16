@@ -1,1 +1,35 @@
-<section class="section"><div class="wrap" style="text-align:center"><div class="kick">404</div><h2 class="t">This page drifted off its axis.</h2><p style="margin-top:20px"><a class="btn dark" href="{{ routes.root_url }}">Back to GemsAura</a></p></div></section>
+<style>
+  .e404-sec{display:grid;place-items:center;min-height:64vh;padding:80px 0}
+  .e404-wrap{text-align:center;max-width:600px}
+  .e404-ring{width:110px;height:110px;margin:0 auto 30px;border-radius:50%;display:grid;place-items:center;font-size:40px;color:var(--gold);border:2px solid color-mix(in srgb,var(--gold) 45%,var(--line));box-shadow:0 0 0 7px color-mix(in srgb,var(--gold) 8%,transparent)}
+  .e404-kick{font:600 11px var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+  .e404-wrap h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5.4vw,58px);line-height:1.04;color:var(--ink);margin:12px 0 0;text-wrap:balance}
+  .e404-wrap p{color:var(--muted);font-size:15.5px;line-height:1.6;margin:16px auto 0;max-width:40ch}
+  .e404-cta{margin-top:30px}
+  .e404-cta .btn{background:var(--gold);color:#fff;border:1px solid var(--gold)}
+  .e404-cta .btn:hover{background:var(--gold-deep);border-color:var(--gold-deep)}
+  .e404-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:40px;padding-top:34px;border-top:1px solid var(--line)}
+  .e404-links a{font:600 12px var(--sans);letter-spacing:.05em;color:var(--ink);text-decoration:none;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:11px 20px;transition:.2s}
+  .e404-links a:hover{border-color:var(--gold-lt);color:var(--gold);box-shadow:0 18px 32px -20px rgba(40,30,20,.4);transform:translateY(-2px)}
+  @media(prefers-reduced-motion:reduce){.e404-links a:hover{transform:none}}
+</style>
+
+<section class="e404-sec"><div class="wrap"><div class="e404-wrap">
+  <div class="e404-ring">&#9671;</div>
+  <div class="e404-kick">Error 404</div>
+  <h1>This page drifted off its axis</h1>
+  <p>The page you are seeking has moved or no longer exists. Let us guide you back to something beautiful.</p>
+  <div class="e404-cta">
+    <a class="btn" href="{{ routes.root_url }}">Back to home</a>
+  </div>
+  <nav class="e404-links" aria-label="Popular collections">
+    <a href="{{ routes.all_products_collection_url }}">Shop all</a>
+    {%- assign popular = 'bracelets,rings,necklaces,crystals' | split: ',' -%}
+    {%- for handle in popular -%}
+      {%- assign c = collections[handle] -%}
+      {%- if c != empty and c.products_count > 0 -%}
+        <a href="{{ c.url }}">{{ c.title }}</a>
+      {%- endif -%}
+    {%- endfor -%}
+  </nav>
+</div></div></section>

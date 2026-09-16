@@ -1,3 +1,69 @@
-<section class="section"><div class="wrap"><h2 class="t">Collections</h2>
-  <div class="tiles" style="margin-top:30px">{% for c in collections %}<a class="tile t1" href="{{ c.url }}"><div class="tn">{{ c.title }}</div></a>{% endfor %}</div>
-</div></section>
+<style>
+.lc-wrap{max-width:1440px;margin:0 auto;padding:0 34px}
+
+/* header */
+.lc-head{padding:56px 0 8px;text-align:center}
+.lc-kick{font:600 11px var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.lc-head h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5vw,56px);line-height:1.05;margin:14px 0 0;color:var(--ink);text-wrap:balance}
+.lc-head p{color:var(--muted);font-size:15.5px;max-width:52ch;margin:16px auto 0;line-height:1.6}
+
+/* grid */
+.lc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:42px 0 20px}
+@media(min-width:720px){.lc-grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+@media(min-width:1080px){.lc-grid{grid-template-columns:repeat(3,1fr);gap:24px}}
+
+.lc-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:340px;border-radius:22px;overflow:hidden;text-decoration:none;border:1px solid var(--line);background:linear-gradient(150deg,var(--acc,#33406B),var(--acc-deep,#171E38));color:#fff;isolation:isolate;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.lc-card:hover{transform:translateY(-5px);box-shadow:0 34px 58px -34px rgba(40,30,20,.4)}
+.lc-card:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.lc-im{position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;background-color:var(--acc,#33406B);transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.lc-card:hover .lc-im{transform:scale(1.05)}
+.lc-scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,16,11,0) 34%,rgba(20,16,11,.28) 58%,rgba(20,16,11,.8))}
+.lc-b{padding:26px 24px 24px;position:relative}
+.lc-count{display:inline-block;font:600 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);border-radius:999px;padding:5px 12px;margin-bottom:12px}
+.lc-t{display:block;font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.1;color:#fff}
+.lc-go{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font:600 10.5px var(--sans);letter-spacing:.13em;text-transform:uppercase;color:#fff;opacity:.85}
+.lc-card:hover .lc-go{opacity:1}
+
+/* rotate intention tones */
+.lc-grid .lc-card:nth-child(6n+1){--acc:#33406B;--acc-deep:#171E38}
+.lc-grid .lc-card:nth-child(6n+2){--acc:#1E5157;--acc-deep:#123236}
+.lc-grid .lc-card:nth-child(6n+3){--acc:#7A2938;--acc-deep:#4A181F}
+.lc-grid .lc-card:nth-child(6n+4){--acc:#B4573A;--acc-deep:#6E3220}
+.lc-grid .lc-card:nth-child(6n+5){--acc:#6C3B78;--acc-deep:#3B1E44}
+.lc-grid .lc-card:nth-child(6n+6){--acc:#3E6B47;--acc-deep:#25412C}
+
+.lc-empty{text-align:center;color:var(--muted);padding:60px 0 40px;font-size:15px}
+
+@media(prefers-reduced-motion:reduce){
+  .lc-card,.lc-card:hover,.lc-im,.lc-card:hover .lc-im{transition:none;transform:none}
+}
+</style>
+
+<section class="lc-wrap">
+  <div class="lc-head">
+    <div class="lc-kick">GemsAura</div>
+    <h1>Shop by collection</h1>
+    <p>Crystal jewellery and oud, gathered by intention. Choose the mood you want to carry.</p>
+  </div>
+
+  {%- if collections.size > 0 -%}
+    <div class="lc-grid">
+      {%- for collection in collections -%}
+        {%- assign lc_img = collection.image | default: collection.products.first.featured_image -%}
+        <a class="lc-card" href="{{ collection.url }}" aria-label="{{ collection.title | escape }}">
+          {%- if lc_img -%}
+            <span class="lc-im" style="background-image:url('{{ lc_img | image_url: width: 800 }}')" role="img" aria-label="{{ collection.title | escape }}"></span>
+            <span class="lc-scrim"></span>
+          {%- endif -%}
+          <span class="lc-b">
+            <span class="lc-count">{{ collection.all_products_count }} {% if collection.all_products_count == 1 %}piece{% else %}pieces{% endif %}</span>
+            <span class="lc-t">{{ collection.title }}</span>
+            <span class="lc-go">Explore &rarr;</span>
+          </span>
+        </a>
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <p class="lc-empty">No collections to show yet.</p>
+  {%- endif -%}
+</section>
