@@ -1,0 +1,12 @@
+<section class="section faq"><div class="wrap">
+  <div class="sechead"><div class="kick">Good to know</div><h2 class="t">Questions, <span class="i">answered</span></h2></div>
+  <div class="faqlist">
+    {%- assign rows = "Are the stones real and certified?|Every stone is independently lab-verified — natural material, never dyed glass or imitations. A certificate of authenticity is included in the box.;;What is the oud, and does it last?|Real Cambodian oud (agarwood), hand-infused into the stone. The scent is subtle and lingers for weeks; re-scent kits are available.;;How do I choose the right stone?|Shop by intention — Wealth, Calm, Protection, Love — and we pair you with the stone traditionally worn for it, in your chosen build.;;How is it delivered?|Complimentary tracked delivery across the UAE in 1–3 days, with live WhatsApp updates. Card, Tabby, Apple Pay and COD accepted.;;Can I gift it?|Yes. Every order arrives in a magnetic keepsake box with oud-scented tissue and a card — a gift before it's even given." | split:";;" -%}
+    {%- for row in rows -%}{%- assign c = row | split:"|" -%}
+      <details class="faqitem"><summary><span>{{ c[0] }}</span><i class="faqx">+</i></summary><div class="faqbody">{{ c[1] }}</div></details>
+    {%- endfor -%}
+  </div>
+</div></section>
+{% schema %}
+{"name":"FAQ","settings":[],"presets":[{"name":"FAQ"}]}
+{% endschema %}

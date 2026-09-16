@@ -1,0 +1,12 @@
+<section class="finalcta"{% if section.settings.bg != blank %} style="background-image:url('{{ section.settings.bg | asset_url }}')"{% endif %}>
+  <span class="finalcta-scrim"></span>
+  <div class="wrap finalcta-inner">
+    <div class="kick" style="color:var(--gold-lt)">Wear it. Breathe it.</div>
+    <h2 class="finalcta-h">Wear something that <span class="i">means more.</span></h2>
+    <p>Certified crystals. Real oud. Energised by hand, sealed in a keepsake box.</p>
+    <div class="finalcta-btns"><a class="btn light" href="/collections/crystal-bracelets">View bestsellers</a><a class="btn ghostlight" href="/collections/all">Shop the collection</a></div>
+  </div>
+</section>
+{% schema %}
+{"name":"Final CTA","settings":[{"type":"text","id":"bg","label":"Background image filename (assets) — optional"}],"presets":[{"name":"Final CTA"}]}
+{% endschema %}

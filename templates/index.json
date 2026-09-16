@@ -52,14 +52,26 @@
     },
     "usp": {
       "type": "usp"
+    },
+    "difference": {
+      "type": "difference"
+    },
+    "faq": {
+      "type": "faq"
+    },
+    "finalcta": {
+      "type": "final-cta"
     }
   },
   "order": [
     "hero",
+    "usp",
     "catnav",
     "rail",
     "story",
     "intent",
-    "usp"
+    "difference",
+    "faq",
+    "finalcta"
   ]
 }

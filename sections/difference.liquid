@@ -1,0 +1,13 @@
+<section class="section diff"><div class="wrap">
+  <div class="sechead"><div class="kick">See the difference</div><h2 class="t">Why GemsAura, <span class="i">not the rest</span></h2></div>
+  <div class="difftable">
+    <div class="diffhead"><span></span><span class="diff-us">GemsAura</span><span class="diff-them">Ordinary crystal brands</span></div>
+    {%- assign rows = "Real Cambodian oud, hand-infused|Yes|None;;Independently lab-certified stones|Every piece|Often uncertified;;Energised by hand before dispatch|Always|Mass-packed;;Keepsake gift packaging|Included|Plastic pouch;;Matched to your intention|Guided|Generic shelf;;UAE delivery, tracked|1–3 days|Weeks / imported" | split:";;" -%}
+    {%- for row in rows -%}{%- assign c = row | split:"|" -%}
+      <div class="diffrow"><span class="diff-l">{{ c[0] }}</span><span class="diff-us"><i class="yes">&#10003;</i> {{ c[1] }}</span><span class="diff-them"><i class="no">&#10005;</i> {{ c[2] }}</span></div>
+    {%- endfor -%}
+  </div>
+</div></section>
+{% schema %}
+{"name":"Difference","settings":[],"presets":[{"name":"Difference"}]}
+{% endschema %}
