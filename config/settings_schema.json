@@ -1,7 +1,1 @@
-[
-  {"name":"theme_info","theme_name":"GemsAura","theme_version":"1.0.0","theme_author":"GemsAura","theme_documentation_url":"","theme_support_url":""},
-  {"name":"Brand","settings":[
-    {"type":"color","id":"gold","label":"Gold","default":"#B08A3C"},
-    {"type":"color","id":"ink","label":"Ink","default":"#1C1813"}
-  ]}
-]
+[]
