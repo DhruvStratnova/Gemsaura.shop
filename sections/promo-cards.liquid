@@ -3,11 +3,12 @@
   {%- for row in rows -%}{%- assign c = row | split:"|" -%}{%- assign col = collections[c[2]] -%}
     <a class="promo" href="{{ col.url }}">
       <div class="promo-b"><h3>{{ c[0] }}</h3><p>{{ c[1] }}</p><span class="promo-shop">Shop now &rarr;</span></div>
-      <span class="promo-im" style="background-image:url('{{ col.products.first.featured_image | image_url: width: 500 }}')"></span>
+      <span class="promo-med" style="background-image:url('{{ col.products.first.featured_image | image_url: width: 360 }}')"></span>
     </a>
   {%- endfor -%}
-  <a class="promo promo--dark" href="{{ section.settings.oud_url }}">
+  <a class="promo promo--dark" href="{{ section.settings.oud_url | default: '#' }}">
     <div class="promo-b"><span class="promo-eyebrow">The signature · coming soon</span><h3>Crystal + <span class="i">Oud</span></h3><p>Energy you wear — and breathe.</p><span class="promo-shop">Notify me &rarr;</span></div>
+    <span class="promo-med promo-orb"></span>
   </a>
 </div></div></section>
 {% schema %}
