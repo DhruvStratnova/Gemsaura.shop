@@ -27,28 +27,39 @@
         "s2"
       ]
     },
-    "shopby": {
-      "type": "shop-by",
-      "settings": {
-        "heading": "Shop by intent, stone, or ritual"
-      }
-    },
     "rail": {
       "type": "product-rail",
       "settings": {
-        "heading": "Worn this season",
+        "heading": "Bestsellers",
         "collection": "crystal-bracelets",
         "view_all_url": "/collections/crystal-bracelets"
       }
     },
-    "remedy": {
-      "type": "remedy-finder"
+    "catnav": {
+      "type": "category-nav",
+      "settings": {
+        "heading": "Find your form"
+      }
+    },
+    "story": {
+      "type": "story"
+    },
+    "intent": {
+      "type": "intent",
+      "settings": {
+        "heading": "What do you want to invite in?"
+      }
+    },
+    "usp": {
+      "type": "usp"
     }
   },
   "order": [
     "hero",
-    "remedy",
-    "shopby",
-    "rail"
+    "catnav",
+    "rail",
+    "story",
+    "intent",
+    "usp"
   ]
 }

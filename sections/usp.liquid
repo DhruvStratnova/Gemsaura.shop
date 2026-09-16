@@ -1,0 +1,9 @@
+<section class="usp"><div class="wrap usp-row">
+  {%- assign rows = "&#9878;|Lab-certified|Every stone independently verified;;&#10022;|Real Cambodian oud|Hand-infused, lasts weeks;;&#9993;|UAE delivery|Tracked, 1–3 days;;&#9829;|Energised by hand|Sealed in a keepsake box" | split:";;" -%}
+  {%- for row in rows -%}{%- assign c = row | split:"|" -%}
+    <div class="usp-i"><span class="usp-ic">{{ c[0] }}</span><span class="usp-tx"><b>{{ c[1] }}</b><span>{{ c[2] }}</span></span></div>
+  {%- endfor -%}
+</div></section>
+{% schema %}
+{"name":"USP","settings":[],"presets":[{"name":"USP"}]}
+{% endschema %}
