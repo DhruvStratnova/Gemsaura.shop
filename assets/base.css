@@ -180,3 +180,10 @@ h2.t{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.4vw,48px);l
 .drawer .panel a{display:block;font-family:var(--serif);font-size:23px;color:var(--ink);text-decoration:none;padding:15px 0;border-bottom:1px solid var(--line)}
 .drawer .panel a:hover{color:var(--gold)}
 @media(max-width:700px){.harrow{display:none}.mnav .logo{font-size:21px;padding:6px 16px}}
+
+/* ===== v3: long glassmorphic nav strip ===== */
+.mnav{background:rgba(250,246,238,.42);-webkit-backdrop-filter:blur(18px) saturate(1.35);backdrop-filter:blur(18px) saturate(1.35);border-bottom:1px solid rgba(255,255,255,.4);box-shadow:0 8px 30px -18px rgba(60,45,20,.35)}
+.mnav .logo{background:transparent;backdrop-filter:none;padding:0}
+.mnav.solid{background:rgba(255,255,255,.9)}
+.mnav.solid .logo{background:transparent}
+.hbanner{margin-top:-66px}

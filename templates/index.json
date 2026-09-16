@@ -64,21 +64,26 @@
     },
     "shopby": {
       "type": "shop-by",
+      "settings": {
+        "heading": "Shop by intent, stone, or ritual"
+      },
       "blocks": {
         "t1": {
           "type": "tile",
           "settings": {
             "title": "Wealth & Fortune",
             "stones": "Pyrite · Citrine · Green Aventurine",
-            "style": "t1"
+            "image": "aa-banner-purpose-wealth-prosperity.jpg",
+            "url": "/collections/money"
           }
         },
         "t2": {
           "type": "tile",
           "settings": {
-            "title": "Calm",
-            "stones": "Amethyst · Selenite",
-            "style": "t2"
+            "title": "Peace & Calm",
+            "stones": "Amethyst · Selenite · Moonstone",
+            "image": "aa-banner-purpose-peace-calm.jpg",
+            "url": "/collections/purpose-peace-calm"
           }
         },
         "t3": {
@@ -86,7 +91,8 @@
           "settings": {
             "title": "Protection",
             "stones": "Black Tourmaline · Tiger Eye",
-            "style": "t3"
+            "image": "aa-banner-purpose-protection.jpg",
+            "url": "/collections/purpose-health-wellness"
           }
         }
       },
@@ -137,48 +143,11 @@
     },
     "rail": {
       "type": "product-rail",
-      "blocks": {
-        "p1": {
-          "type": "card",
-          "settings": {
-            "title": "Pyrite Prosperity",
-            "sub": "Wealth · steel clasp · oud-infused",
-            "swatch": "radial-gradient(circle at 42% 34%,#efd39a,#B98E3E 46%,#7a5a28 82%)"
-          }
-        },
-        "p2": {
-          "type": "card",
-          "settings": {
-            "title": "Amethyst Stillness",
-            "sub": "Calm · steel clasp · oud-infused",
-            "rating": "4.9",
-            "swatch": "radial-gradient(circle at 42% 34%,#cbb6e2,#6A4E76 50%,#33223d 84%)"
-          }
-        },
-        "p3": {
-          "type": "card",
-          "settings": {
-            "title": "Aventurine Fortune",
-            "sub": "Luck · steel clasp · oud-infused",
-            "swatch": "radial-gradient(circle at 42% 34%,#a6dcb5,#3f6b4e 50%,#1e3327 84%)"
-          }
-        },
-        "p4": {
-          "type": "card",
-          "settings": {
-            "title": "Tourmaline Shield",
-            "sub": "Protection · steel clasp · oud-infused",
-            "rating": "4.9",
-            "swatch": "radial-gradient(circle at 42% 34%,#4a463e,#141210 62%)"
-          }
-        }
-      },
-      "block_order": [
-        "p1",
-        "p2",
-        "p3",
-        "p4"
-      ]
+      "settings": {
+        "heading": "Worn this season",
+        "collection": "crystal-bracelets",
+        "view_all_url": "/collections/crystal-bracelets"
+      }
     },
     "craft": {
       "type": "craft",
