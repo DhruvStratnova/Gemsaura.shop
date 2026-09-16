@@ -615,3 +615,22 @@ h2.t .i,.hero h1 .i,.story-b .t .i{font-style:italic;color:var(--gold)}
 .vstrip-t b{font:600 14px var(--sans);color:var(--ink)}
 .vstrip-t span{font:400 12px var(--sans);color:var(--muted)}
 @media(min-width:720px){.vstrip-row{grid-template-columns:repeat(4,1fr)}}
+
+/* ===== v13: promo cards clean split ===== */
+.promo{display:flex;align-items:stretch;position:relative;border-radius:20px;overflow:hidden;min-height:210px;text-decoration:none;border:1px solid var(--line);background:var(--cream);transition:transform .3s,box-shadow .3s;padding:0}
+.promo:hover{transform:translateY(-4px);box-shadow:0 32px 56px -36px rgba(80,60,30,.45)}
+.promo-b{flex:1;padding:26px;display:flex;flex-direction:column;justify-content:center;z-index:2;min-width:0}
+.promo-im{width:46%;flex:none;background-size:cover;background-position:center;position:relative}
+.promo-im::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--cream) 2%,transparent 36%)}
+.promo-eyebrow{font:600 9.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:9px}
+.promo-b h3{font-family:var(--serif);font-weight:600;font-size:26px;color:var(--ink);line-height:1.05}
+.promo-b h3 .i{color:var(--gold-lt);font-style:italic}
+.promo-b p{font:400 13px var(--sans);color:var(--muted);margin-top:8px;max-width:20ch}
+.promo-shop{display:inline-flex;margin-top:16px;font:600 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.promo--dark{background:linear-gradient(140deg,#2c2116,#14100b);border-color:transparent}
+.promo--dark .promo-b{padding:26px}
+.promo--dark .promo-b h3{color:#fff}
+.promo--dark .promo-b p{color:rgba(255,255,255,.75)}
+.promo--dark .promo-shop{color:var(--gold-lt)}
+@media(min-width:720px){.promogrid{grid-template-columns:repeat(4,1fr)}.promo{min-height:224px}.promo--dark{grid-column:auto}}
+@media(max-width:719px){.promo{min-height:150px}.promo-im{width:42%}.promo-b h3{font-size:23px}}

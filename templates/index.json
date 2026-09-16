@@ -27,14 +27,14 @@
         "s2"
       ]
     },
-    "fstrip": {
-      "type": "feature-strip"
-    },
     "circles": {
       "type": "category-circles"
     },
     "promos": {
-      "type": "promo-cards"
+      "type": "promo-cards",
+      "settings": {
+        "oud_url": "#"
+      }
     },
     "fprod": {
       "type": "featured-products",
@@ -64,7 +64,6 @@
   },
   "order": [
     "hero",
-    "fstrip",
     "circles",
     "promos",
     "fprod",
