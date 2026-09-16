@@ -40,4 +40,15 @@
     window.addEventListener('resize',function(){var o=sbyTabs.querySelector('button.on');if(o)moveU(o)});
   }
 
+
+  var rf=document.getElementById('remedy');
+  if(rf){
+    var rchips=[].slice.call(rf.querySelectorAll('.rf-chip'));
+    var rcards=[].slice.call(rf.querySelectorAll('.rf-card'));
+    rchips.forEach(function(ch){ ch.addEventListener('click',function(){
+      rchips.forEach(function(x){var on=x===ch;x.classList.toggle('on',on);x.setAttribute('aria-selected',on?'true':'false');});
+      rcards.forEach(function(cd){cd.classList.toggle('on',cd.dataset.c===ch.dataset.i);});
+    });});
+  }
+
 })();

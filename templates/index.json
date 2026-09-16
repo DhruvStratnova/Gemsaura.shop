@@ -40,10 +40,14 @@
         "collection": "crystal-bracelets",
         "view_all_url": "/collections/crystal-bracelets"
       }
+    },
+    "remedy": {
+      "type": "remedy-finder"
     }
   },
   "order": [
     "hero",
+    "remedy",
     "shopby",
     "rail"
   ]
