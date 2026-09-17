@@ -1,0 +1,10 @@
+<section class="sec ritual"><div class="wrap">
+  <div class="shead center"><div class="eyebrow">The GemsAura ritual</div><h2 class="h2">More than a stone. A <em>practice.</em></h2><p class="lead center" style="margin-top:14px">Every piece is chosen for you, charged by hand, and delivered like a gift. This is how it works.</p></div>
+  <div class="steps">
+    {%- assign rows = "01|Choose your intention|Tell us what you want to carry. Our reading matches the right stone to your chart and your goal.;;02|Energised by hand|Each piece is cleansed and charged by our team, then sealed in a keepsake box before it leaves us.;;03|Delivered like a gift|Tracked delivery across the Emirates, wrapped to be gifted, ready to wear the moment it arrives." | split:";;" -%}
+    {%- for r in rows -%}{%- assign c = r | split:"|" -%}
+      <div class="step rv"><div class="n">{{ c[0] }}</div><b>{{ c[1] }}</b><p>{{ c[2] }}</p></div>
+    {%- endfor -%}
+  </div>
+</div></section>
+{% schema %}{"name":"Ritual","settings":[],"presets":[{"name":"Ritual"}]}{% endschema %}

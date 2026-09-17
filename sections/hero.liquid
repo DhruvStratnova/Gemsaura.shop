@@ -1,20 +1,21 @@
-{%- assign himg = section.settings.image | default: 'aa-coll-crystal-bracelets.jpg' -%}
+{%- assign himg = section.settings.image | default: 'aa-banner-stone-amethyst.jpg' -%}
 <section class="hero2"><div class="in">
   <div class="txt">
     <div class="eyebrow">{{ section.settings.eyebrow | default: 'The house of intentions' }}</div>
     <h1>{{ section.settings.heading | default: 'Energy you can <em>wear.</em>' }}</h1>
-    <p>{{ section.settings.sub | default: 'Certified crystals and silver, energised by hand and delivered across the UAE like a gift.' }}</p>
+    <p>{{ section.settings.sub | default: 'Certified crystals and silver, chosen for your intention, energised by hand and delivered across the UAE like a gift.' }}</p>
     <div class="cta">
       <a class="btn btn--fill" href="{{ section.settings.link1 | default: '/collections/all' }}">{{ section.settings.btn1 | default: 'Shop the edit' }}</a>
       <a class="btn" href="{{ section.settings.link2 | default: '/collections/crystal-bracelets' }}">{{ section.settings.btn2 | default: 'Shop bracelets' }}</a>
     </div>
     <div class="hero2-trust"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span> Loved by 40,000+ wrists across the Gulf</div>
+    <span class="hero2-scroll">Scroll to explore</span>
   </div>
-  <div class="im"><img src="{{ himg | asset_url }}" alt="GemsAura" fetchpriority="high"></div>
+  <div class="im"><img src="{{ himg | asset_url }}" alt="GemsAura" fetchpriority="high"><span class="hero2-chip">Certified &middot; Energised by hand</span></div>
 </div></section>
 {% schema %}
 {"name":"Hero","settings":[
-  {"type":"text","id":"image","label":"Image (asset filename)"},
+  {"type":"text","id":"image","label":"Image (clean asset, no baked text)"},
   {"type":"text","id":"eyebrow","label":"Eyebrow"},
   {"type":"text","id":"heading","label":"Heading (allows <em>)"},
   {"type":"textarea","id":"sub","label":"Subtext"},

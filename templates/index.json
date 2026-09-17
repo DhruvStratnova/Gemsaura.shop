@@ -34,7 +34,9 @@
         "s1",
         "s2"
       ],
-      "settings": {}
+      "settings": {
+        "image": "aa-banner-stone-amethyst.jpg"
+      }
     },
     "usp": {
       "type": "value-strip",
@@ -75,6 +77,10 @@
     "testimonials": {
       "type": "testimonials",
       "settings": {}
+    },
+    "ritual": {
+      "type": "ritual",
+      "settings": {}
     }
   },
   "order": [
@@ -82,6 +88,7 @@
     "usp",
     "cats",
     "rail",
+    "ritual",
     "promos",
     "concerns",
     "newarrivals",
