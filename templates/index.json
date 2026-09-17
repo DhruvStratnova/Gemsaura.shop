@@ -81,6 +81,10 @@
     "ritual": {
       "type": "ritual",
       "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "settings": {}
     }
   },
   "order": [
@@ -93,6 +97,7 @@
     "concerns",
     "newarrivals",
     "story",
-    "testimonials"
+    "testimonials",
+    "faq"
   ]
 }

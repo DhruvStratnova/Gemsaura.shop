@@ -1,0 +1,10 @@
+<section class="sec faqs"><div class="wrap" style="max-width:840px">
+  <div class="shead center"><div class="eyebrow">Good to know</div><h2 class="h2">Your questions, <em>answered</em></h2></div>
+  <div class="faq-list">
+    {%- assign rows = "Are your stones certified?|Yes. Every stone is lab-certified natural, and a certificate is included with your order.;;What does “energised by hand” mean?|Each piece is cleansed and charged by our team, as per your intention, before it is sealed into a keepsake box and shipped.;;How long is delivery in the UAE?|Typically 2 to 4 days across the Emirates with live tracking. Delivery is free on orders over AED 200.;;How do I choose the right stone?|Tell us your intention, or take the reading, and we match the stone to your chart and your goal.;;Do you accept returns?|Yes, 7-day easy returns on unworn pieces in original condition.;;Which payment methods do you accept?|Card, Tabby, Tamara, Apple Pay and Cash on Delivery." | split:";;" -%}
+    {%- for r in rows -%}{%- assign c = r | split:"|" -%}
+      <details class="faq-item rv"><summary>{{ c[0] }}<span class="faq-x">+</span></summary><div class="faq-a">{{ c[1] }}</div></details>
+    {%- endfor -%}
+  </div>
+</div></section>
+{% schema %}{"name":"FAQ","settings":[],"presets":[{"name":"FAQ"}]}{% endschema %}
