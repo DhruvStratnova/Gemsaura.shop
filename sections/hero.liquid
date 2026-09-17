@@ -1,41 +1,24 @@
-<section class="hero" data-hero>
-  <div class="slides">
-    {% for b in section.blocks %}
-      <div class="slide">
-        <a href="{{ b.settings.url | default: '/collections/all' }}">
-          <picture>
-            {% if b.settings.mobile != blank %}<source media="(max-width:700px)" srcset="{{ b.settings.mobile | asset_url }}">{% endif %}
-            <img src="{{ b.settings.desktop | asset_url }}" alt="{{ b.settings.alt | escape }}" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %}>
-          </picture>
-        </a>
-        {% if b.settings.heading != blank %}
-        <div class="cap">
-          {% if b.settings.eyebrow != blank %}<div class="eyebrow">{{ b.settings.eyebrow }}</div>{% endif %}
-          <h1>{{ b.settings.heading }}</h1>
-          {% if b.settings.sub != blank %}<p>{{ b.settings.sub }}</p>{% endif %}
-          {% if b.settings.btn != blank %}<div><a class="btn btn--light" href="{{ b.settings.url | default: '/collections/all' }}">{{ b.settings.btn }}</a></div>{% endif %}
-        </div>
-        {% endif %}
-      </div>
-    {% endfor %}
+{%- assign himg = section.settings.image | default: 'aa-coll-crystal-bracelets.jpg' -%}
+<section class="hero2"><div class="in">
+  <div class="txt">
+    <div class="eyebrow">{{ section.settings.eyebrow | default: 'The house of intentions' }}</div>
+    <h1>{{ section.settings.heading | default: 'Energy you can <em>wear.</em>' }}</h1>
+    <p>{{ section.settings.sub | default: 'Certified crystals and silver, energised by hand and delivered across the UAE like a gift.' }}</p>
+    <div class="cta">
+      <a class="btn btn--fill" href="{{ section.settings.link1 | default: '/collections/all' }}">{{ section.settings.btn1 | default: 'Shop the edit' }}</a>
+      <a class="btn" href="{{ section.settings.link2 | default: '/collections/crystal-bracelets' }}">{{ section.settings.btn2 | default: 'Shop bracelets' }}</a>
+    </div>
+    <div class="hero2-trust"><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span> Loved by 40,000+ wrists across the Gulf</div>
   </div>
-  {% if section.blocks.size > 1 %}
-    <button class="arw prev" aria-label="Previous">&lsaquo;</button>
-    <button class="arw next" aria-label="Next">&rsaquo;</button>
-    <div class="dots">{% for b in section.blocks %}<button class="{% if forloop.first %}on{% endif %}" aria-label="Slide {{ forloop.index }}"></button>{% endfor %}</div>
-  {% endif %}
-</section>
+  <div class="im"><img src="{{ himg | asset_url }}" alt="GemsAura" fetchpriority="high"></div>
+</div></section>
 {% schema %}
-{"name":"Hero","max_blocks":6,"blocks":[{"type":"slide","name":"Slide","settings":[
-  {"type":"text","id":"desktop","label":"Desktop image (asset)","default":"aa-hero-zodiac.jpg"},
-  {"type":"text","id":"mobile","label":"Mobile image (asset)"},
-  {"type":"text","id":"alt","label":"Alt text"},
+{"name":"Hero","settings":[
+  {"type":"text","id":"image","label":"Image (asset filename)"},
   {"type":"text","id":"eyebrow","label":"Eyebrow"},
-  {"type":"text","id":"heading","label":"Heading"},
-  {"type":"text","id":"sub","label":"Subtext"},
-  {"type":"text","id":"btn","label":"Button label"},
-  {"type":"url","id":"url","label":"Link"}]}],
- "presets":[{"name":"Hero","blocks":[
-  {"type":"slide","settings":{"desktop":"aa-hero-zodiac.jpg","mobile":"aa-hero-zodiac-mobile.webp","alt":"Zodiac bracelets","eyebrow":"The house of intentions","heading":"Energy you can wear.","sub":"Certified crystals and silver, energised by hand and delivered across the UAE.","btn":"Shop the edit","url":"/collections/all"}},
-  {"type":"slide","settings":{"desktop":"aa-hero-bracelets.jpg","mobile":"aa-hero-bracelets-mobile.webp","alt":"Crystal bracelets","eyebrow":"New in","heading":"Crystal bracelets, for every intention.","sub":"Hand-knotted, lab-certified, worn with meaning.","btn":"Shop bracelets","url":"/collections/crystal-bracelets"}}]}]}
+  {"type":"text","id":"heading","label":"Heading (allows <em>)"},
+  {"type":"textarea","id":"sub","label":"Subtext"},
+  {"type":"text","id":"btn1","label":"Button 1 label"},{"type":"url","id":"link1","label":"Button 1 link"},
+  {"type":"text","id":"btn2","label":"Button 2 label"},{"type":"url","id":"link2","label":"Button 2 link"}],
+ "presets":[{"name":"Hero"}]}
 {% endschema %}
