@@ -9,6 +9,10 @@
             "desktop": "aa-hero-zodiac.jpg",
             "mobile": "aa-hero-zodiac-mobile.webp",
             "alt": "Zodiac bracelets",
+            "eyebrow": "The house of intentions",
+            "heading": "Energy you can wear.",
+            "sub": "Certified crystals and silver, energised by hand and delivered across the UAE.",
+            "btn": "Shop the edit",
             "url": "/collections/all"
           }
         },
@@ -18,6 +22,10 @@
             "desktop": "aa-hero-bracelets.jpg",
             "mobile": "aa-hero-bracelets-mobile.webp",
             "alt": "Crystal bracelets",
+            "eyebrow": "New in",
+            "heading": "Crystal bracelets, for every intention.",
+            "sub": "Hand-knotted, lab-certified, worn with meaning.",
+            "btn": "Shop bracelets",
             "url": "/collections/crystal-bracelets"
           }
         }
@@ -25,51 +33,59 @@
       "block_order": [
         "s1",
         "s2"
-      ]
+      ],
+      "settings": {}
     },
-    "circles": {
-      "type": "category-circles"
+    "usp": {
+      "type": "value-strip",
+      "settings": {}
+    },
+    "cats": {
+      "type": "category-circles",
+      "settings": {}
+    },
+    "rail": {
+      "type": "featured-products",
+      "settings": {
+        "collection": "crystal-bracelets",
+        "eyebrow": "Loved by 40,000+ wrists",
+        "heading": "Bestsellers"
+      }
     },
     "promos": {
       "type": "promo-cards",
-      "settings": {
-        "oud_url": "#"
-      }
+      "settings": {}
     },
-    "fprod": {
-      "type": "featured-products",
-      "settings": {
-        "collection": "crystal-bracelets"
-      }
-    },
-    "fcoll": {
+    "concerns": {
       "type": "featured-collections",
-      "settings": {
-        "big": "crystal-bracelets"
-      }
+      "settings": {}
     },
-    "bsell": {
+    "newarrivals": {
       "type": "best-sellers",
       "settings": {
         "collection": "our-products",
-        "view_url": "/collections/all"
+        "eyebrow": "Fresh in",
+        "heading": "New arrivals"
       }
     },
-    "aboutb": {
-      "type": "about-banner"
+    "story": {
+      "type": "about-banner",
+      "settings": {}
     },
-    "vstrip": {
-      "type": "value-strip"
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {}
     }
   },
   "order": [
     "hero",
-    "circles",
+    "usp",
+    "cats",
+    "rail",
     "promos",
-    "fprod",
-    "fcoll",
-    "bsell",
-    "aboutb",
-    "vstrip"
+    "concerns",
+    "newarrivals",
+    "story",
+    "testimonials"
   ]
 }

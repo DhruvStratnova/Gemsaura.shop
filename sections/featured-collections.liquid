@@ -1,18 +1,10 @@
-<section class="section fcoll"><div class="wrap">
-  <div class="prow"><div><div class="kick">Featured collections</div><h2 class="t">Made with <span class="i">intention</span></h2></div><a class="viewall" href="/collections">View all &rarr;</a></div>
-  <div class="fcoll-grid">
-    {%- assign big = collections[section.settings.big] -%}
-    <a class="fcoll-big" href="{{ big.url }}" style="background-image:linear-gradient(90deg,rgba(250,246,238,.96) 34%,rgba(250,246,238,.15)),url('{{ big.image | default: big.products.first.featured_image | image_url: width: 900 }}');background-size:cover;background-position:right center">
-      <div class="fcoll-b"><div class="kick">The house favourite</div><h3>Crystal <span class="i">Bracelets</span></h3><p>Certified natural stones, hand-knotted and energised — chosen for your intention.</p><span class="promo-shop">Shop now &rarr;</span></div>
-    </a>
-    <div class="fcoll-side">
-      {%- assign rows = "silver-bracelets|Silver Series|Silver-capped, for every day;;rudraksha|Rudraksha|Nepal-origin, lab-certified" | split:";;" -%}
-      {%- for row in rows -%}{%- assign c = row | split:"|" -%}{%- assign col = collections[c[0]] -%}
-        <a class="fcoll-s" href="{{ col.url }}"><span class="fcoll-sim" style="background-image:url('{{ col.image | default: col.products.first.featured_image | image_url: width: 400 }}')"></span><span class="fcoll-sb"><b>{{ c[1] }}</b><span>{{ c[2] }}</span><em>Shop now &rarr;</em></span></a>
-      {%- endfor -%}
-    </div>
+<section class="sec"><div class="wrap">
+  <div class="shead center"><div class="eyebrow">Shop by intention</div><h2 class="h2">What do you want to <em>carry?</em></h2></div>
+  <div class="concerns">
+    {%- assign rows = "aa-banner-purpose-wealth-prosperity.jpg|Wealth|Pyrite &amp; Citrine|/collections/all;;aa-banner-purpose-love-relationships.jpg|Love|Rose Quartz|/collections/all;;aa-banner-purpose-focus-clarity.jpg|Focus|Tiger Eye|/collections/all;;aa-banner-purpose-protection.jpg|Protection|Black Tourmaline|/collections/all;;aa-banner-purpose-health-wellness.jpg|Health|Amethyst|/collections/all;;aa-banner-purpose-peace-calm.jpg|Peace|Selenite|/collections/all" | split:";;" -%}
+    {%- for r in rows -%}{%- assign c = r | split:"|" -%}
+      <a class="concern rv" href="{{ c[3] }}"><img src="{{ c[0] | asset_url }}" alt="{{ c[1] }}" loading="lazy"><span class="cb"><b>{{ c[1] }}</b><span>{{ c[2] }}</span></span></a>
+    {%- endfor -%}
   </div>
 </div></section>
-{% schema %}
-{"name":"Featured collections","settings":[{"type":"collection","id":"big","label":"Feature collection"}],"presets":[{"name":"Featured collections"}]}
-{% endschema %}
+{% schema %}{"name":"Concern grid","settings":[],"presets":[{"name":"Concern grid"}]}{% endschema %}

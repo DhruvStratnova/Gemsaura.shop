@@ -1,24 +1,30 @@
-<section class="section fprod"><div class="wrap">
-  <div class="sechead"><div class="kick">Our collection</div><h2 class="t">Featured <span class="i">Products</span></h2><p class="sub">Explore our most-loved pieces.</p></div>
-  <div class="fprod-track" id="fprodTrack">
-    {%- assign col = collections[section.settings.collection] -%}
-    {%- assign tags = "New,Trending,Bestseller,Popular,New,Trending,Bestseller,Popular" | split:"," -%}
-    {%- for product in col.products limit: 8 -%}
-      <div class="fcard">
-        <span class="fcard-tag">{{ tags[forloop.index0] }}</span>
-        <a href="{{ product.url }}" class="fcard-im" style="background-image:url('{{ product.featured_image | image_url: width: 500 }}')"></a>
-        <div class="fcard-b">
-          <h4>{{ product.title | truncatewords: 5 }}</h4>
-          <div class="fcard-rt">&#9733; 4.8 <span>({{ 40 | plus: forloop.index | times: 3 }})</span></div>
-          <div class="fcard-foot">
-            <span class="fcard-p">{{ product.price | money }}</span>
-            {% form 'product', product %}<input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}"><button class="fcard-add" type="submit" aria-label="Add to cart">&#128722;</button>{% endform %}
-          </div>
-        </div>
-      </div>
+{%- assign col = collections[section.settings.collection] | default: collections['crystal-bracelets'] -%}
+<section class="sec"><div class="wrap" data-rail>
+  <div class="shead" style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;position:relative">
+    <div><div class="eyebrow">{{ section.settings.eyebrow | default: 'Loved by 40,000+ wrists' }}</div><h2 class="h2">{{ section.settings.heading | default: 'Bestsellers' }}</h2></div>
+    <a class="link-u" href="{{ col.url | default: '/collections/all' }}">View all</a>
+    <div class="rail-arw"><button data-prev aria-label="Previous">&lsaquo;</button><button data-next aria-label="Next">&rsaquo;</button></div>
+  </div>
+  <div class="track">
+    {%- for p in col.products limit: 12 -%}{%- assign v = p.selected_or_first_available_variant -%}
+      <a class="pcard" href="{{ p.url }}">
+        <span class="im">
+          {% if p.compare_at_price > p.price %}<span class="tag">Sale</span>{% elsif forloop.index <= 2 %}<span class="tag">Bestseller</span>{% endif %}
+          <span class="heart">&#9825;</span>
+          <img src="{{ p.featured_image | image_url: width: 520 }}" alt="{{ p.title | escape }}" loading="lazy">
+          <span class="add" data-add="{{ v.id }}">Add to cart</span>
+        </span>
+        <span class="nm">{{ p.title }}</span>
+        <span class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="pr">{{ p.price | money }}{% if p.compare_at_price > p.price %}<s>{{ p.compare_at_price | money }}</s>{% endif %}</span>
+      </a>
     {%- endfor -%}
   </div>
 </div></section>
 {% schema %}
-{"name":"Featured products","settings":[{"type":"collection","id":"collection","label":"Collection"}],"presets":[{"name":"Featured products"}]}
+{"name":"Product rail","settings":[
+  {"type":"collection","id":"collection","label":"Collection"},
+  {"type":"text","id":"eyebrow","label":"Eyebrow"},
+  {"type":"text","id":"heading","label":"Heading"}],
+ "presets":[{"name":"Product rail"}]}
 {% endschema %}

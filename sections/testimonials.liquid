@@ -1,0 +1,10 @@
+<section class="sec"><div class="wrap">
+  <div class="shead center"><div class="eyebrow">Loved across the Gulf</div><h2 class="h2">Worn with <em>intention</em></h2></div>
+  <div class="tst">
+    {%- assign rows = "Beautiful energy and the packaging felt like a gift. My favourite bracelet now.|Aisha, Dubai;;Delivered in 3 days and genuinely certified. You can feel the quality.|Ravi, Abu Dhabi;;Ordered for my mother, she wears it every day. Will buy again.|Sara, Sharjah" | split:";;" -%}
+    {%- for r in rows -%}{%- assign c = r | split:"|" -%}
+      <div class="c rv"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="q">&ldquo;{{ c[0] }}&rdquo;</p><div class="who">{{ c[1] }}</div></div>
+    {%- endfor -%}
+  </div>
+</div></section>
+{% schema %}{"name":"Testimonials","settings":[],"presets":[{"name":"Testimonials"}]}{% endschema %}

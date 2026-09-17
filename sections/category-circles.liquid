@@ -1,12 +1,13 @@
-<section class="section circles"><div class="wrap">
-  <div class="circlerow">
-    {%- assign rows = "crystal-bracelets|Bracelets;;rashi-bracelets|Zodiac;;silver-bracelets|Silver;;anklets|Anklets;;pendants|Pendants;;crystals|Crystals;;rudraksha|Rudraksha;;pyramids|Home" | split:";;" -%}
-    {%- for row in rows -%}{%- assign c = row | split:"|" -%}{%- assign col = collections[c[0]] -%}
-      <a class="circle" href="{{ col.url }}"><span class="circle-im" style="background-image:url('{{ col.image | default: col.products.first.featured_image | image_url: width: 300 }}')"></span><span class="circle-t">{{ c[1] }}</span></a>
+<section class="sec"><div class="wrap">
+  <div class="shead center"><div class="eyebrow">Shop by category</div><h2 class="h2">Find your <em>ritual</em></h2></div>
+  <div class="cats">
+    {%- assign rows = "crystal-bracelets|Bracelets;;rashi-bracelets|Zodiac;;silver-bracelets|Silver;;rudraksha|Rudraksha;;crystals|Crystals;;pendants|Pendants" | split:";;" -%}
+    {%- for r in rows -%}{%- assign c = r | split:"|" -%}{%- assign col = collections[c[0]] -%}
+      <a class="cat rv" href="{{ col.url | default: '/collections/all' }}">
+        <span class="im">{% if col.image or col.products.first %}<img src="{{ col.image | default: col.products.first.featured_image | image_url: width: 400 }}" alt="{{ c[1] }}" loading="lazy">{% endif %}</span>
+        <b>{{ c[1] }}</b>
+      </a>
     {%- endfor -%}
-    <a class="circle" href="/collections"><span class="circle-im circle-all">&rarr;</span><span class="circle-t">View all</span></a>
   </div>
 </div></section>
-{% schema %}
-{"name":"Category circles","settings":[],"presets":[{"name":"Category circles"}]}
-{% endschema %}
+{% schema %}{"name":"Category tiles","settings":[],"presets":[{"name":"Category tiles"}]}{% endschema %}

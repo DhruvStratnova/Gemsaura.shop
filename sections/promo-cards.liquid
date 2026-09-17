@@ -1,16 +1,16 @@
-<section class="section promos"><div class="wrap"><div class="promogrid">
-  {%- assign rows = "New Arrivals|Discover the latest, just for you.|new-arrival|New;;Trending Now|Our most-loved this season.|crystal-bracelets|Trending;;Bestsellers|Customer favourites worth wearing.|our-products|Loved" | split:";;" -%}
-  {%- for row in rows -%}{%- assign c = row | split:"|" -%}{%- assign col = collections[c[2]] -%}
-    <a class="promo" href="{{ col.url }}">
-      <div class="promo-b"><span class="promo-chip">{{ c[3] }}</span><h3>{{ c[0] }}</h3><p>{{ c[1] }}</p><span class="promo-shop">Shop now &rarr;</span></div>
-      <span class="promo-im" style="background-image:url('{{ col.products.first.featured_image | image_url: width: 420 }}')"></span>
-    </a>
-  {%- endfor -%}
-  <a class="promo promo--dark" href="{{ section.settings.oud_url | default: '#' }}">
-    <div class="promo-b"><span class="promo-eyebrow">The signature &middot; coming soon</span><h3>Crystal + <span class="i">Oud</span></h3><p>Energy you wear &mdash; and breathe.</p><span class="promo-shop">Notify me &rarr;</span></div>
-    <span class="promo-im promo-orb"></span>
+<section class="sec"><div class="wrap"><div class="promos">
+  <a class="promo rv" href="{{ section.settings.link1 | default: '/collections/new-arrival' }}">
+    <img src="{{ section.settings.image1 | default: 'aa-banner-stone-rose-quartz.jpg' | asset_url }}" alt="">
+    <div class="pb"><div class="eyebrow">{{ section.settings.eyebrow1 | default: 'Just landed' }}</div><h3>{{ section.settings.title1 | default: 'New Arrivals' }}</h3><span class="btn btn--light">Shop now</span></div>
+  </a>
+  <a class="promo rv" href="{{ section.settings.link2 | default: '/collections/crystal-bracelets' }}">
+    <img src="{{ section.settings.image2 | default: 'aa-banner-purpose-wealth-prosperity.jpg' | asset_url }}" alt="">
+    <div class="pb"><div class="eyebrow">{{ section.settings.eyebrow2 | default: 'For prosperity' }}</div><h3>{{ section.settings.title2 | default: 'Shop by intention' }}</h3><span class="btn btn--light">Explore</span></div>
   </a>
 </div></div></section>
 {% schema %}
-{"name":"Promo cards","settings":[{"type":"url","id":"oud_url","label":"Crystal+Oud link"}],"presets":[{"name":"Promo cards"}]}
+{"name":"Promo banners","settings":[
+  {"type":"text","id":"image1","label":"Image 1 (asset)"},{"type":"text","id":"eyebrow1","label":"Eyebrow 1"},{"type":"text","id":"title1","label":"Title 1"},{"type":"url","id":"link1","label":"Link 1"},
+  {"type":"text","id":"image2","label":"Image 2 (asset)"},{"type":"text","id":"eyebrow2","label":"Eyebrow 2"},{"type":"text","id":"title2","label":"Title 2"},{"type":"url","id":"link2","label":"Link 2"}],
+ "presets":[{"name":"Promo banners"}]}
 {% endschema %}

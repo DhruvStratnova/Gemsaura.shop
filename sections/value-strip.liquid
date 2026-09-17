@@ -1,9 +1,7 @@
-<section class="section vstrip"><div class="wrap"><div class="vstrip-row">
-  {%- assign rows = "&#9878;|Lab-certified|Verified natural stones;;&#10022;|Real oud|Hand-infused, lasts weeks;;&#9733;|Trending in the Gulf|Loved across the Emirates;;&#9825;|40,000+ wrists|Happy customers" | split:";;" -%}
-  {%- for row in rows -%}{%- assign c = row | split:"|" -%}
-    <div class="vstrip-i"><span class="vstrip-ic">{{ c[0] }}</span><span class="vstrip-t"><b>{{ c[1] }}</b><span>{{ c[2] }}</span></span></div>
+<section class="usp"><div class="wrap"><div class="row">
+  {%- assign rows = "&#9670;|Free UAE delivery|On orders over AED 200;;&#10022;|Energised by hand|Cleansed before dispatch;;&#10003;|Lab-certified|Real, natural stones;;&#8635;|Easy returns|7-day policy" | split:";;" -%}
+  {%- for r in rows -%}{%- assign c = r | split:"|" -%}
+    <div class="u"><span class="i">{{ c[0] }}</span><span><b>{{ c[1] }}</b><span>{{ c[2] }}</span></span></div>
   {%- endfor -%}
 </div></div></section>
-{% schema %}
-{"name":"Value strip","settings":[],"presets":[{"name":"Value strip"}]}
-{% endschema %}
+{% schema %}{"name":"USP strip","settings":[],"presets":[{"name":"USP strip"}]}{% endschema %}
