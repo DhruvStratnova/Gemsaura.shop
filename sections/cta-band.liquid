@@ -1,0 +1,12 @@
+<section class="ctaband"><div class="wrap"><div class="ctaband-card">
+  <img src="{{ section.settings.image | default: 'aa-banner-purpose-peace-calm.jpg' | asset_url }}" alt="" loading="lazy">
+  <div class="ctaband-in">
+    <div class="eyebrow" style="color:var(--accent-tint)">Wear your intention</div>
+    <h2>Carry the energy you <em>need</em> today.</h2>
+    <p>Certified, energised by hand, delivered across the UAE like a gift.</p>
+    <a class="btn btn--light" href="{{ section.settings.link | default: '/collections/all' }}">Shop the edit</a>
+  </div>
+</div></div></section>
+{% schema %}
+{"name":"CTA band","settings":[{"type":"text","id":"image","label":"Image (asset)"},{"type":"url","id":"link","label":"Link"}],"presets":[{"name":"CTA band"}]}
+{% endschema %}

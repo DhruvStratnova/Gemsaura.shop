@@ -85,6 +85,14 @@
     "faq": {
       "type": "faq",
       "settings": {}
+    },
+    "comparison": {
+      "type": "comparison",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta-band",
+      "settings": {}
     }
   },
   "order": [
@@ -93,11 +101,13 @@
     "cats",
     "rail",
     "ritual",
+    "comparison",
     "promos",
     "concerns",
     "newarrivals",
     "story",
     "testimonials",
-    "faq"
+    "faq",
+    "cta"
   ]
 }

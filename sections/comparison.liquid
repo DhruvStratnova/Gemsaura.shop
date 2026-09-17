@@ -1,0 +1,11 @@
+<section class="sec compare"><div class="wrap">
+  <div class="shead center"><div class="eyebrow">Why GemsAura</div><h2 class="h2">Premium, thoughtfully <em>made</em></h2></div>
+  <div class="compare-tbl">
+    <div class="compare-row compare-head"><span>&nbsp;</span><span class="g">GemsAura</span><span class="o">Typical store</span></div>
+    {%- assign rows = "Lab-certified natural stones|yes|some;;Energised by hand before dispatch|yes|no;;Chosen for your chart &amp; intention|yes|no;;Keepsake gift packaging|yes|no;;Free UAE delivery &amp; tracking|yes|sometimes;;7-day easy returns|yes|rarely" | split:";;" -%}
+    {%- for r in rows -%}{%- assign c = r | split:"|" -%}
+      <div class="compare-row"><span class="f">{{ c[0] }}</span><span class="g">{% if c[1]=='yes' %}&#10003;{% else %}&ndash;{% endif %}</span><span class="o">{% if c[2]=='yes' %}&#10003;{% elsif c[2]=='no' %}&#10007;{% else %}{{ c[2] }}{% endif %}</span></div>
+    {%- endfor -%}
+  </div>
+</div></section>
+{% schema %}{"name":"Comparison","settings":[],"presets":[{"name":"Comparison"}]}{% endschema %}
