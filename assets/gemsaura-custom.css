@@ -184,8 +184,8 @@ product-card.ga-gcard:hover .card-gallery img{ transform:scale(1.03); }
 .ga-gcard .ga-cardfoot .group-block, .ga-gcard .ga-cardfoot .price{ margin:0 !important; padding:0 !important; }
 .ga-gcard .price-item--sale, .ga-gcard .price-item:not(.price-item--regular){ font-weight:700 !important; font-size:17px !important; color:#1a1a1a !important; }
 .ga-gcard .price-item--regular, .ga-gcard s, .ga-gcard del, .ga-gcard .price__compare{ font-size:12.5px !important; color:#a49a8c !important; text-decoration:line-through !important; }
-.ga-gcard .ga-price{ display:flex !important; align-items:baseline !important; gap:8px !important; flex-wrap:wrap; }
-.ga-gcard .ga-add{ flex:none; display:inline-flex; align-items:center; gap:5px; background:var(--gac,#1c2a22); color:#fff; text-decoration:none; padding:10px 18px; border-radius:999px; font:700 12px var(--font-body--family,sans-serif); box-shadow:0 8px 20px -10px var(--gac); transition:transform .2s ease, filter .2s ease; }
+.ga-gcard .ga-price{ display:flex !important; align-items:baseline !important; gap:6px !important; flex-wrap:wrap; min-width:0 !important; flex:1 1 auto !important; }
+.ga-gcard .ga-add{ flex:0 0 auto; white-space:nowrap; display:inline-flex; align-items:center; gap:5px; background:var(--gac,#1c2a22); color:#fff; text-decoration:none; padding:10px 16px; border-radius:999px; font:700 12px var(--font-body--family,sans-serif); box-shadow:0 8px 20px -10px var(--gac); transition:transform .2s ease, filter .2s ease; }
 .ga-gcard .ga-add:hover{ transform:translateY(-1px); filter:brightness(1.06); }
 @media(max-width:749px){ .ga-gcard .ga-glass{ padding:12px 13px 13px; } .ga-gcard .ga-glass h3{ font-size:13.5px !important; } .ga-gcard .ga-add{ padding:9px 14px; font-size:11px; } }
 
@@ -1815,8 +1815,8 @@ html{ -webkit-text-size-adjust:100%; }
 }
 
 /* Card polish: bigger image, contained add button */
-.ga-gcard .ga-glass .ga-title{ margin-bottom:9px; min-height:0 !important; }
-.ga-gcard .ga-cardfoot{ flex-wrap:wrap; row-gap:8px; }
+.ga-gcard .ga-glass .ga-title{ margin-bottom:9px; min-height:2.55em !important; }
+.ga-gcard .ga-cardfoot{ flex-wrap:nowrap; row-gap:0; gap:10px; }
 @media(max-width:749px){
   .ga-gcard .ga-glass{ padding:11px 12px 12px !important; }
   .ga-gcard .ga-glass .ga-title{ font-size:13px !important; -webkit-line-clamp:2; margin-bottom:8px; }
