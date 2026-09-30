@@ -1,0 +1,2257 @@
+{
+  "Howlite": {
+    "props": "Chalk-white borate stone laced with grey veins.",
+    "bens": [
+      [
+        "Calms",
+        "Quiets an overactive, racing mind."
+      ],
+      [
+        "Patience",
+        "Softens anger and impatience."
+      ],
+      [
+        "Restful Sleep",
+        "Eases insomnia and mental chatter."
+      ]
+    ],
+    "c1": "#FFFFFF",
+    "c2": "#DCE3EC",
+    "c3": "#98A4B4"
+  },
+  "Black Onyx": {
+    "props": "Banded black chalcedony, a grounding Saturn stone.",
+    "bens": [
+      [
+        "Grounds",
+        "Steadies body, mind and emotion."
+      ],
+      [
+        "Balance",
+        "Harmonises yin and yang energy."
+      ],
+      [
+        "Protection",
+        "Builds a calm, secure aura."
+      ]
+    ],
+    "c1": "#CFCFD6",
+    "c2": "#6E6E78",
+    "c3": "#22222A"
+  },
+  "Black Obsidian": {
+    "props": "Glossy black volcanic glass, a natural psychic shield.",
+    "bens": [
+      [
+        "Strong Shield",
+        "Blocks negativity and bad energy."
+      ],
+      [
+        "Truth Mirror",
+        "Reveals hidden fears to release them."
+      ],
+      [
+        "Grounding",
+        "Roots scattered energy to the earth."
+      ]
+    ],
+    "c1": "#CFCFD6",
+    "c2": "#6E6E78",
+    "c3": "#22222A"
+  },
+  "Clear Quartz": {
+    "props": "Pure silica crystal, the 'master healer' and amplifier.",
+    "bens": [
+      [
+        "Amplifies",
+        "Boosts intention and other stones' energy."
+      ],
+      [
+        "Clarity",
+        "Clears the mind, aids focus."
+      ],
+      [
+        "Cleanses",
+        "Balances and renews the whole aura."
+      ]
+    ],
+    "c1": "#FFFFFF",
+    "c2": "#E2E8EE",
+    "c3": "#A9B4C0"
+  },
+  "Red Jasper": {
+    "props": "Earthy iron-red jasper, stone of strength and grounding.",
+    "bens": [
+      [
+        "Endurance",
+        "Builds stamina and steady courage."
+      ],
+      [
+        "Grounds",
+        "Roots and stabilises restless energy."
+      ],
+      [
+        "Vitality",
+        "Stirs passion, drive and confidence."
+      ]
+    ],
+    "c1": "#EBD9C6",
+    "c2": "#BE9270",
+    "c3": "#6E432A"
+  },
+  "Green Aventurine": {
+    "props": "Soft green quartz, the 'stone of opportunity', luckiest of crystals.",
+    "bens": [
+      [
+        "Opens Luck",
+        "Invites new chances and prosperity."
+      ],
+      [
+        "Heart Healer",
+        "Soothes the heart chakra, eases stress."
+      ],
+      [
+        "Calm Confidence",
+        "Steadies the mind for clear decisions."
+      ]
+    ],
+    "c1": "#CFE8CC",
+    "c2": "#8FBF8C",
+    "c3": "#3F7A45"
+  },
+  "Yellow Jasper": {
+    "props": "",
+    "bens": [],
+    "c1": "#EBD9C6",
+    "c2": "#BE9270",
+    "c3": "#6E432A"
+  },
+  "Turquoise": {
+    "props": "Sky blue-green copper stone, prized across ancient cultures.",
+    "bens": [
+      [
+        "Protection",
+        "A time-honoured traveller's amulet."
+      ],
+      [
+        "Clear Voice",
+        "Encourages honest, confident speech."
+      ],
+      [
+        "Healing Calm",
+        "Soothes the body and settles nerves."
+      ]
+    ],
+    "c1": "#CDEDEA",
+    "c2": "#6FC4BE",
+    "c3": "#2A7E78"
+  },
+  "Citrine": {
+    "props": "Golden quartz, the classic merchant's stone (a Jupiter gem).",
+    "bens": [
+      [
+        "Wealth",
+        "Kept in cash boxes to draw income and career growth."
+      ],
+      [
+        "Confidence",
+        "Lifts self-belief, drive and creativity."
+      ],
+      [
+        "Self-Sustaining",
+        "One of few crystals that never needs cleansing."
+      ]
+    ],
+    "c1": "#FDEFC4",
+    "c2": "#F0C55E",
+    "c3": "#B07E14"
+  },
+  "Agate": {
+    "props": "Banded chalcedony quartz, a classic stone of stability.",
+    "bens": [
+      [
+        "Grounds",
+        "Steadies body, mind and emotion."
+      ],
+      [
+        "Balance",
+        "Harmonises yin and yang energy."
+      ],
+      [
+        "Protection",
+        "Builds a calm, secure aura."
+      ]
+    ],
+    "c1": "#EBD9C6",
+    "c2": "#BE9270",
+    "c3": "#6E432A"
+  },
+  "Lapis Lazuli": {
+    "props": "Deep blue rock with gold pyrite flecks, prized since antiquity.",
+    "bens": [
+      [
+        "Inner Truth",
+        "Awakens honesty and self-expression."
+      ],
+      [
+        "Wisdom",
+        "Sharpens intellect and intuition."
+      ],
+      [
+        "Calm Focus",
+        "Quiets the mind for insight."
+      ]
+    ],
+    "c1": "#C6D6F2",
+    "c2": "#5B7FC7",
+    "c3": "#1E3A78"
+  },
+  "Blue Lace Agate": {
+    "props": "Pale blue banded chalcedony, gentle stone of the throat.",
+    "bens": [
+      [
+        "Soft Speech",
+        "Encourages calm, kind expression."
+      ],
+      [
+        "Soothes",
+        "Eases anxiety and racing thoughts."
+      ],
+      [
+        "Peace",
+        "Brings tranquil, cooling stillness."
+      ]
+    ],
+    "c1": "#EBD9C6",
+    "c2": "#BE9270",
+    "c3": "#6E432A"
+  },
+  "Amethyst": {
+    "props": "Purple quartz, a calming Saturn stone.",
+    "bens": [
+      [
+        "Calm & Clarity",
+        "Quiets an overactive mind and eases stress."
+      ],
+      [
+        "Sobriety",
+        "Traditionally worn to steady habits and focus."
+      ],
+      [
+        "Intuition",
+        "Opens the crown chakra for insight and rest."
+      ]
+    ],
+    "c1": "#E4D6F5",
+    "c2": "#B392D9",
+    "c3": "#5E3A8C"
+  },
+  "Carnelian": {
+    "props": "Fiery orange-red chalcedony, stone of vitality and drive.",
+    "bens": [
+      [
+        "Courage",
+        "Fires up boldness and motivation."
+      ],
+      [
+        "Vitality",
+        "Restores energy, passion and warmth."
+      ],
+      [
+        "Creativity",
+        "Sparks confidence and fresh ideas."
+      ]
+    ],
+    "c1": "#FBD5B4",
+    "c2": "#E08A4A",
+    "c3": "#A34A12"
+  },
+  "Hematite": {
+    "props": "Dense metallic iron oxide, steel-grey and mirror-shiny.",
+    "bens": [
+      [
+        "Grounds You",
+        "Anchors scattered energy to earth."
+      ],
+      [
+        "Protection",
+        "Absorbs and repels negativity."
+      ],
+      [
+        "Focus",
+        "Sharpens concentration and clear thought."
+      ]
+    ],
+    "c1": "#D6D8DD",
+    "c2": "#8A8F98",
+    "c3": "#33383F"
+  },
+  "Tiger Eye": {
+    "props": "Banded golden-brown quartz of focus and courage.",
+    "bens": [
+      [
+        "Sharp Focus",
+        "Steadies decisions under pressure."
+      ],
+      [
+        "Protection",
+        "Guards against fear and self-doubt."
+      ],
+      [
+        "Willpower",
+        "Boosts drive, discipline and confidence."
+      ]
+    ],
+    "c1": "#F0DCB4",
+    "c2": "#C79447",
+    "c3": "#7A4F14"
+  },
+  "Amazonite": {
+    "props": "Soothing blue-green feldspar, named the 'Amazon stone'.",
+    "bens": [
+      [
+        "Truthful Voice",
+        "Speaks the heart with honesty."
+      ],
+      [
+        "Soothing Calm",
+        "Eases worry and dispels stress."
+      ],
+      [
+        "Filter Stone",
+        "Blocks stress and electromagnetic smog."
+      ]
+    ],
+    "c1": "#CDEDEA",
+    "c2": "#6FC4BE",
+    "c3": "#2A7E78"
+  },
+  "Labradorite": {
+    "props": "Grey feldspar flashing blue-gold fire (labradorescence), the mystic's stone.",
+    "bens": [
+      [
+        "Magic Shield",
+        "Guards the aura from energy drains."
+      ],
+      [
+        "Intuition",
+        "Awakens psychic insight and vision."
+      ],
+      [
+        "Transformation",
+        "Steadies you through change."
+      ]
+    ],
+    "c1": "#D3DEE2",
+    "c2": "#7E96A4",
+    "c3": "#3A4B57"
+  },
+  "Moonstone": {
+    "props": "Milky feldspar with a floating blue-white sheen (adularescence).",
+    "bens": [
+      [
+        "New Beginnings",
+        "Supports fresh starts and change."
+      ],
+      [
+        "Intuition",
+        "Awakens inner knowing and feeling."
+      ],
+      [
+        "Emotional Balance",
+        "Softens mood swings, calms the heart."
+      ]
+    ],
+    "c1": "#FFFFFF",
+    "c2": "#DCE3EC",
+    "c3": "#98A4B4"
+  },
+  "Malachite": {
+    "props": "Banded green copper carbonate, the stone of transformation.",
+    "bens": [
+      [
+        "Change",
+        "Powers through blocks and old patterns."
+      ],
+      [
+        "Shield",
+        "A strong absorber of negativity."
+      ],
+      [
+        "Heart Heal",
+        "Releases stored emotion and pain."
+      ]
+    ],
+    "c1": "#BCE6D2",
+    "c2": "#4FA383",
+    "c3": "#15583F"
+  },
+  "Garnet": {
+    "props": "Deep blood-red silicate mineral, the classic stone of passion.",
+    "bens": [
+      [
+        "Vital Energy",
+        "Fires up drive, stamina and courage."
+      ],
+      [
+        "Passion",
+        "Rekindles love, warmth and desire."
+      ],
+      [
+        "Grounded Strength",
+        "Anchors you through hard times."
+      ]
+    ],
+    "c1": "#F6C7CE",
+    "c2": "#C9566B",
+    "c3": "#7E1B2E"
+  },
+  "Unakite": {
+    "props": "Green epidote and pink feldspar granite, from the Unaka mountains.",
+    "bens": [
+      [
+        "Emotional Heal",
+        "Releases buried grief and blocks."
+      ],
+      [
+        "Balance",
+        "Grounds heart and mind together."
+      ],
+      [
+        "Patience",
+        "Supports steady growth and recovery."
+      ]
+    ],
+    "c1": "#E2E8C8",
+    "c2": "#A8B673",
+    "c3": "#5E6B33"
+  },
+  "Rose Quartz": {
+    "props": "Soft pink quartz, the stone of unconditional love.",
+    "bens": [
+      [
+        "Opens Heart",
+        "Deepens love, self-worth and tenderness."
+      ],
+      [
+        "Emotional Heal",
+        "Soothes grief and old heartache."
+      ],
+      [
+        "Calm",
+        "Melts tension into gentle peace."
+      ]
+    ],
+    "c1": "#FBDDE2",
+    "c2": "#EFA9B6",
+    "c3": "#B95E73"
+  },
+  "Sodalite": {
+    "props": "Deep royal-blue silicate veined with white, the 'stone of logic'.",
+    "bens": [
+      [
+        "Clear Thinking",
+        "Sharpens reason, memory and mental focus."
+      ],
+      [
+        "Truthful Voice",
+        "Aids honest, calm self-expression."
+      ],
+      [
+        "Inner Calm",
+        "Cools panic, settles an overactive mind."
+      ]
+    ],
+    "c1": "#CFE0F0",
+    "c2": "#6E9BC4",
+    "c3": "#2C5478"
+  },
+  "Fluorite": {
+    "props": "Glassy calcium fluoride in purple-green bands, the 'genius stone'.",
+    "bens": [
+      [
+        "Mental Clarity",
+        "Orders thoughts and sharpens focus."
+      ],
+      [
+        "Cleansing",
+        "Absorbs chaos and negative energy."
+      ],
+      [
+        "Steady Learning",
+        "Aids study and concentration."
+      ]
+    ],
+    "c1": "#DAE9E0",
+    "c2": "#8FB6BC",
+    "c3": "#42646E"
+  },
+  "Aquamarine": {
+    "props": "Serene blue-green beryl, its name meaning 'sea water'.",
+    "bens": [
+      [
+        "Calm",
+        "Flows tension into oceanic peace."
+      ],
+      [
+        "Clear Speech",
+        "Frees honest, fluent expression."
+      ],
+      [
+        "Courage",
+        "Steadies nerves and soothes fear."
+      ]
+    ],
+    "c1": "#CFE0F0",
+    "c2": "#6E9BC4",
+    "c3": "#2C5478"
+  },
+  "Black Tourmaline": {
+    "props": "Glossy black schorl, the premier protection stone.",
+    "bens": [
+      [
+        "Shields",
+        "Blocks negativity and psychic attack."
+      ],
+      [
+        "EMF Guard",
+        "Buffers electromagnetic and environmental stress."
+      ],
+      [
+        "Grounds",
+        "Steadies nerves and roots energy."
+      ]
+    ],
+    "c1": "#CFCFD6",
+    "c2": "#6E6E78",
+    "c3": "#22222A"
+  },
+  "Rhodonite": {
+    "props": "Rosy-pink manganese silicate veined black, the 'rescue stone'.",
+    "bens": [
+      [
+        "Emotional Healing",
+        "Mends heartache and old wounds."
+      ],
+      [
+        "Compassion",
+        "Nurtures love and forgiveness."
+      ],
+      [
+        "Balance",
+        "Calms panic, restores inner peace."
+      ]
+    ],
+    "c1": "#F7D3DC",
+    "c2": "#D8879C",
+    "c3": "#8A3A52"
+  },
+  "Bloodstone": {
+    "props": "Deep green chalcedony flecked red, also called heliotrope.",
+    "bens": [
+      [
+        "Vitality",
+        "Boosts stamina, strength and courage."
+      ],
+      [
+        "Purifier",
+        "Cleanses the blood and grounds energy."
+      ],
+      [
+        "Courage",
+        "Steadies nerves in tough moments."
+      ]
+    ],
+    "c1": "#C6D8C0",
+    "c2": "#5E8A5E",
+    "c3": "#26482C"
+  },
+  "Smoky Quartz": {
+    "props": "Brown-grey quartz, a powerful grounding and detox stone.",
+    "bens": [
+      [
+        "Grounds",
+        "Roots you firmly in the present."
+      ],
+      [
+        "Clears Fear",
+        "Lifts stress, anxiety and dark moods."
+      ],
+      [
+        "Protection",
+        "Neutralises negative and harmful energy."
+      ]
+    ],
+    "c1": "#DFD3C8",
+    "c2": "#A08C7C",
+    "c3": "#4E3C30"
+  },
+  "Pyrite": {
+    "props": "Metallic gold iron sulfide, famously called 'fool's gold'.",
+    "bens": [
+      [
+        "Draws Wealth",
+        "Magnet for abundance and prosperity."
+      ],
+      [
+        "Shield",
+        "Deflects negative energy and drain."
+      ],
+      [
+        "Confidence",
+        "Fuels ambition, willpower and action."
+      ]
+    ],
+    "c1": "#F5E3B0",
+    "c2": "#D4AF52",
+    "c3": "#8A6A1E"
+  },
+  "Selenite": {
+    "props": "Translucent white gypsum crystal, named for moon goddess Selene.",
+    "bens": [
+      [
+        "Cleanses",
+        "Clears negative energy from space and self."
+      ],
+      [
+        "Charges",
+        "Recharges other crystals without draining."
+      ],
+      [
+        "Clarity",
+        "Lifts mental fog, invites peace."
+      ]
+    ],
+    "c1": "#FFFFFF",
+    "c2": "#DCE3EC",
+    "c3": "#98A4B4"
+  },
+  "Kyanite": {
+    "props": "Blade-like blue silicate that never holds negativity.",
+    "bens": [
+      [
+        "Auto-Cleansing",
+        "Never needs clearing; stays pure."
+      ],
+      [
+        "Alignment",
+        "Balances and tunes all chakras."
+      ],
+      [
+        "Clear Speech",
+        "Opens honest communication."
+      ]
+    ],
+    "c1": "#CBDCEF",
+    "c2": "#6C93C4",
+    "c3": "#28486E"
+  },
+  "Amber": {
+    "props": "Warm fossilized tree resin with translucent golden or orange hues.",
+    "bens": [
+      [
+        "Vitality",
+        "It promotes warm positive energy and renewed zest for life."
+      ],
+      [
+        "Purification",
+        "Traditional lore holds that it clears negative energetic blockages."
+      ],
+      [
+        "Patience",
+        "It encourages emotional balance and steady wisdom over time."
+      ],
+      [
+        "Protection",
+        "It acts as a protective shield against unwanted psychic energies."
+      ]
+    ],
+    "c1": "#FFBF00",
+    "c2": "#E58E26",
+    "c3": "#B76E79"
+  },
+  "Ametrine": {
+    "props": "A striking natural blend of purple amethyst and golden citrine quartz.",
+    "bens": [
+      [
+        "Mental Clarity",
+        "It unites intuition with practical thinking for decisive action."
+      ],
+      [
+        "Inner Peace",
+        "It helps release stress and brings harmony to the mind."
+      ],
+      [
+        "Abundance",
+        "It attracts success and fosters a positive prosperous mindset."
+      ],
+      [
+        "Spiritual Alignment",
+        "It balances spiritual awareness with grounded physical reality."
+      ]
+    ],
+    "c1": "#8E44AD",
+    "c2": "#F1C40F",
+    "c3": "#9B59B6"
+  },
+  "Angelite": {
+    "props": "Soft powdery blue stone with a smooth subtle sheen.",
+    "bens": [
+      [
+        "Serenity",
+        "It promotes deep inner peace and gentle soothing energy."
+      ],
+      [
+        "Divine Connection",
+        "It enhances communication with higher spiritual realms and guides."
+      ],
+      [
+        "Tranquility",
+        "It quietens mental chatter and restores emotional harmony."
+      ],
+      [
+        "Truthful Expression",
+        "It supports honest and compassionate communication with others."
+      ]
+    ],
+    "c1": "#89CFF0",
+    "c2": "#B0E0E6",
+    "c3": "#4682B4"
+  },
+  "Apatite": {
+    "props": "Vibrant mineral featuring vivid blues, greens, or yellow hues.",
+    "bens": [
+      [
+        "Inspiration",
+        "It stimulates intellect, creativity, and personal growth."
+      ],
+      [
+        "Focus",
+        "It helps clear mental confusion and sharpens concentration."
+      ],
+      [
+        "Motivation",
+        "It encourages ambition, self confidence, and social ease."
+      ],
+      [
+        "Balance",
+        "It aligns the subtle bodies and restores inner harmony."
+      ]
+    ],
+    "c1": "#008080",
+    "c2": "#00A86B",
+    "c3": "#4682B4"
+  },
+  "Aventurine": {
+    "props": "Translucent green quartz filled with shimmering metallic mineral inclusions.",
+    "bens": [
+      [
+        "Good Fortune",
+        "It is famously known as a stone of opportunity and luck."
+      ],
+      [
+        "Emotional Healing",
+        "It releases old patterns and encourages optimism for the future."
+      ],
+      [
+        "Heart Harmony",
+        "It opens the heart center to love and emotional freedom."
+      ],
+      [
+        "Prosperity",
+        "It attracts abundance, wealth, and favorable outcomes."
+      ]
+    ],
+    "c1": "#2E8B57",
+    "c2": "#3CB371",
+    "c3": "#006400"
+  },
+  "Azurite": {
+    "props": "Deep vibrant azure blue stone often associated with green malachite.",
+    "bens": [
+      [
+        "Intuition",
+        "It enhances third eye vision and spiritual perception."
+      ],
+      [
+        "Wisdom",
+        "It guides the mind toward deeper understanding and truth."
+      ],
+      [
+        "Insight",
+        "It breaks through old belief systems to reveal fresh perspectives."
+      ],
+      [
+        "Transformation",
+        "It facilitates spiritual ascension and personal awakening."
+      ]
+    ],
+    "c1": "#0000FF",
+    "c2": "#1034A6",
+    "c3": "#002366"
+  },
+  "Black": {
+    "props": "Opaque deep ebony stone with a smooth reflective surface.",
+    "bens": [
+      [
+        "Grounding",
+        "It anchors physical energy and connects firmly to the earth."
+      ],
+      [
+        "Protection",
+        "It wards off negative thoughts and harmful environmental energies."
+      ],
+      [
+        "Strength",
+        "It provides stamina and resilience during difficult challenges."
+      ],
+      [
+        "Stability",
+        "It calms overwhelming emotions and restores inner equilibrium."
+      ]
+    ],
+    "c1": "#000000",
+    "c2": "#111111",
+    "c3": "#1A1A1A"
+  },
+  "Black Agate": {
+    "props": "Smooth pitch black chalcedony stone sometimes displaying faint banding.",
+    "bens": [
+      [
+        "Emotional Balance",
+        "It calms internal tension and fosters steady perseverance."
+      ],
+      [
+        "Protection",
+        "It absorbs negative influences and creates a safe energetic space."
+      ],
+      [
+        "Focus",
+        "It grounds scattered thoughts and improves concentration."
+      ],
+      [
+        "Courage",
+        "It instills quiet inner strength to overcome personal obstacles."
+      ]
+    ],
+    "c1": "#0A0A0A",
+    "c2": "#1C1C1C",
+    "c3": "#2B2B2B"
+  },
+  "Black Cat's Eye": {
+    "props": "Dark glossy stone displaying a sharp chatoyant band of light across its surface.",
+    "bens": [
+      [
+        "Intuition",
+        "It heightens instinctual awareness and sharpens sensory perception."
+      ],
+      [
+        "Ward Off Evil",
+        "Traditional lore attributes it with strong protective luck against negativity."
+      ],
+      [
+        "Grounding",
+        "It balances spiritual energy while keeping the mind rooted."
+      ],
+      [
+        "Confidence",
+        "It brings poise and self assurance in unpredictable situations."
+      ]
+    ],
+    "c1": "#121212",
+    "c2": "#2A2A2A",
+    "c3": "#4A4A4A"
+  },
+  "Blue Agate": {
+    "props": "Pale to vibrant blue banded chalcedony with delicate layered stripes.",
+    "bens": [
+      [
+        "Calm Expression",
+        "It allows smooth and peaceful communication of thoughts."
+      ],
+      [
+        "Tranquility",
+        "It soothes an overactive mind and reduces emotional stress."
+      ],
+      [
+        "Harmony",
+        "It balances subtle energies and creates a peaceful aura."
+      ],
+      [
+        "Patience",
+        "It encourages gentle understanding and calm endurance."
+      ]
+    ],
+    "c1": "#5B92E5",
+    "c2": "#A0C4FF",
+    "c3": "#4682B4"
+  },
+  "Blue Aventurine": {
+    "props": "Deep blue quartz filled with shimmering inclusions of dumortierite or mica.",
+    "bens": [
+      [
+        "Self Discipline",
+        "It strengthens willpower and personal accountability."
+      ],
+      [
+        "Clear Thinking",
+        "It aids rational thought and clears mental clutter."
+      ],
+      [
+        "Inner Leadership",
+        "It encourages taking control of one's personal life direction."
+      ],
+      [
+        "Calm Focus",
+        "It stabilizes emotions to maintain quiet concentration."
+      ]
+    ],
+    "c1": "#1F456E",
+    "c2": "#2B547E",
+    "c3": "#4169E1"
+  },
+  "Blue Kyanite": {
+    "props": "Striated blue blade like crystals with a vitreous pearly luster.",
+    "bens": [
+      [
+        "Instant Alignment",
+        "It automatically aligns all chakras without holding negative energy."
+      ],
+      [
+        "Clear Voice",
+        "It encourages speaking truth with clarity and composure."
+      ],
+      [
+        "Meditation",
+        "It facilitates deep calm states during spiritual practices."
+      ],
+      [
+        "Intuitive Growth",
+        "It enhances psychic abilities and dream recall."
+      ]
+    ],
+    "c1": "#1E90FF",
+    "c2": "#00008B",
+    "c3": "#4682B4"
+  },
+  "Blue Sapphire": {
+    "props": "A brilliant deep blue gemstone with a vitreous luster.",
+    "bens": [
+      [
+        "Mental Clarity",
+        "It brings focus and deep mental discipline to the wearer."
+      ],
+      [
+        "Inner Peace",
+        "This stone calms a busy mind and releases mental tension."
+      ],
+      [
+        "Intuition",
+        "It enhances spiritual insight and deepens connection to truth."
+      ],
+      [
+        "Protection",
+        "Traditionally used to shield against negative energies and harm."
+      ]
+    ],
+    "c1": "#0000FF",
+    "c2": "#0F52BA",
+    "c3": "#002366"
+  },
+  "Blue Tiger's Eye": {
+    "props": "A silky stone displaying dark blue and grey chatoyant bands.",
+    "bens": [
+      [
+        "Calmness",
+        "It helps reduce stress and smooths emotional turbulence."
+      ],
+      [
+        "Clear Speech",
+        "This crystal aids in honest expression and peaceful dialogue."
+      ],
+      [
+        "Focus",
+        "It enhances mental acuity and stabilizes fluctuating moods."
+      ],
+      [
+        "Insight",
+        "Traditionally valued for deepening personal perspective and vision."
+      ]
+    ],
+    "c1": "#1B2631",
+    "c2": "#2E4053",
+    "c3": "#5D6D7E"
+  },
+  "Calcite": {
+    "props": "A soft translucent mineral appearing in a wide array of pastel shades.",
+    "bens": [
+      [
+        "Energy Amplification",
+        "It magnifies positive vibes and cleanses stagnant spaces."
+      ],
+      [
+        "Emotional Balance",
+        "This stone soothes anxiety and promotes gentle peace."
+      ],
+      [
+        "Learning",
+        "It aids memory retention and encourages creative thinking."
+      ],
+      [
+        "Renewal",
+        "Traditionally used to clear old patterns and start fresh."
+      ]
+    ],
+    "c1": "#FFFDD0",
+    "c2": "#E0FEFE",
+    "c3": "#FCE1E4"
+  },
+  "Coral": {
+    "props": "An organic gem formed underwater with vibrant red or orange tones.",
+    "bens": [
+      [
+        "Vitality",
+        "It encourages passion, enthusiasm, and dynamic life energy."
+      ],
+      [
+        "Emotional Strength",
+        "This gem helps overcome fear and builds inner resilience."
+      ],
+      [
+        "Harmony",
+        "It promotes peaceful relationships and connection with nature."
+      ],
+      [
+        "Protection",
+        "Traditionally worn to ward off negative intentions and bad luck."
+      ]
+    ],
+    "c1": "#FF7F50",
+    "c2": "#FF4040",
+    "c3": "#E03C31"
+  },
+  "Cream Selenite": {
+    "props": "A pearly fibrous gypsum stone with a soft off white glow.",
+    "bens": [
+      [
+        "Spiritual Connection",
+        "It links the user to higher consciousness and angelic guidance."
+      ],
+      [
+        "Aura Cleansing",
+        "This crystal purifies surrounding energy fields with ease."
+      ],
+      [
+        "Peaceful Mind",
+        "It brings deep calm and quiet to meditation practices."
+      ],
+      [
+        "Clarity",
+        "Traditionally used to disperse confusion and clear mental fog."
+      ]
+    ],
+    "c1": "#FFFDD0",
+    "c2": "#F5F5DC",
+    "c3": "#FAF0E6"
+  },
+  "Dalmatian Jasper": {
+    "props": "A pale stone dotted with black or dark brown spotted inclusions.",
+    "bens": [
+      [
+        "Playfulness",
+        "It encourages joy, humor, and a lighthearted spirit."
+      ],
+      [
+        "Grounding",
+        "This jasper anchors energy while promoting practical wisdom."
+      ],
+      [
+        "Protection",
+        "It shields against negativity and dispels harmful thoughts."
+      ],
+      [
+        "Loyalty",
+        "Traditionally believed to strengthen bonds of friendship."
+      ]
+    ],
+    "c1": "#E5E0D8",
+    "c2": "#2B2B2B",
+    "c3": "#C2B280"
+  },
+  "Dragon's Vein Agate": {
+    "props": "A striking agate featuring intricate web like patterns across its surface.",
+    "bens": [
+      [
+        "Courage",
+        "It fortifies personal bravery and stamina in tough times."
+      ],
+      [
+        "Creativity",
+        "This unique stone sparks imagination and artistic expression."
+      ],
+      [
+        "Emotional Stability",
+        "It balances conflicting energies and stabilizes the spirit."
+      ],
+      [
+        "Self Confidence",
+        "Traditionally used to boost self worth and personal power."
+      ]
+    ],
+    "c1": "#8B0000",
+    "c2": "#4A0E17",
+    "c3": "#D2691E"
+  },
+  "Emerald": {
+    "props": "A rich green gemstone with a distinctive radiant glow.",
+    "bens": [
+      [
+        "Unconditional Love",
+        "It opens the heart and fosters deep compassionate bonds."
+      ],
+      [
+        "Abundance",
+        "This stone attracts prosperity and successful outcomes."
+      ],
+      [
+        "Wisdom",
+        "It enhances intellectual clarity and intuitive knowledge."
+      ],
+      [
+        "Harmony",
+        "Traditionally worn to restore balance in relationships."
+      ]
+    ],
+    "c1": "#50C878",
+    "c2": "#00A86B",
+    "c3": "#046307"
+  },
+  "Evil Eye": {
+    "props": "A protective talisman usually rendered in concentric blue and white circles.",
+    "bens": [
+      [
+        "Protection",
+        "It repels malevolent glares and envy from others."
+      ],
+      [
+        "Good Fortune",
+        "This symbol attracts positive luck and favorable opportunities."
+      ],
+      [
+        "Spiritual Shield",
+        "It creates a safe barrier around your energetic space."
+      ],
+      [
+        "Peace of Mind",
+        "Traditionally worn to maintain tranquility amidst chaos."
+      ]
+    ],
+    "c1": "#0000FF",
+    "c2": "#FFFFFF",
+    "c3": "#00BFFF"
+  },
+  "Firoza": {
+    "props": "A robin egg blue to green turquoise stone with dark matrix lines.",
+    "bens": [
+      [
+        "Protection",
+        "It acts as an ancient shield against misfortune and harm."
+      ],
+      [
+        "Communication",
+        "This stone assists in expressing truth with confidence."
+      ],
+      [
+        "Serenity",
+        "It brings peaceful balance to mind, body, and spirit."
+      ],
+      [
+        "Good Luck",
+        "Traditionally regarded as a powerful bringer of prosperity."
+      ]
+    ],
+    "c1": "#40E0D0",
+    "c2": "#30D5C8",
+    "c3": "#008B8B"
+  },
+  "Goldstone": {
+    "props": "A smooth manmade glass shimmering with tiny copper flecks.",
+    "bens": [
+      [
+        "Ambition",
+        "It helps drive motivation and attainment of goals."
+      ],
+      [
+        "Positivity",
+        "This glittering stone uplifts mood and inspires hope."
+      ],
+      [
+        "Vitality",
+        "It encourages physical drive and creative energy."
+      ],
+      [
+        "Protection",
+        "Traditionally used to deflect unwanted spiritual energies."
+      ]
+    ],
+    "c1": "#B87333",
+    "c2": "#D2691E",
+    "c3": "#8B4513"
+  },
+  "Gray Selenite": {
+    "props": "A silky silvery gray stone with a soft luminous shine.",
+    "bens": [
+      [
+        "Shadow Work",
+        "It aids in exploring hidden emotions and subconscious truths."
+      ],
+      [
+        "Intuition",
+        "This crystal sharpens psychic perception and inner knowing."
+      ],
+      [
+        "Cleansing",
+        "It purifies heavy energies and restores balance."
+      ],
+      [
+        "Transformation",
+        "Traditionally used to guide smooth personal evolution."
+      ]
+    ],
+    "c1": "#808080",
+    "c2": "#A9A9A9",
+    "c3": "#D3D3D3"
+  },
+  "Green": {
+    "props": "This smooth stone displays a vibrant natural emerald tone.",
+    "bens": [
+      [
+        "Growth",
+        "It helps promote personal expansion and renewal."
+      ],
+      [
+        "Harmony",
+        "It balances energy fields to foster emotional peace."
+      ],
+      [
+        "Abundance",
+        "It attracts prosperity and good fortune into daily life."
+      ],
+      [
+        "Vitality",
+        "It refreshes spirit and restores balanced inner strength."
+      ]
+    ],
+    "c1": "#2E8B57",
+    "c2": "#00FF7F",
+    "c3": "#006400"
+  },
+  "Green Hakik": {
+    "props": "This polished green agate exhibits deep earthy bands and rich luster.",
+    "bens": [
+      [
+        "Emotional Balance",
+        "It calms turbulent feelings and stabilizes mind."
+      ],
+      [
+        "Focus",
+        "It sharpens concentration during complex daily tasks."
+      ],
+      [
+        "Protection",
+        "It shields wearer from negative ambient energies."
+      ],
+      [
+        "Prosperity",
+        "It invites continuous financial growth and success."
+      ]
+    ],
+    "c1": "#004D40",
+    "c2": "#2E7D32",
+    "c3": "#66BB6A"
+  },
+  "Green Jade": {
+    "props": "This classic stone shows a serene silky green shade with soft sheen.",
+    "bens": [
+      [
+        "Good Luck",
+        "It traditionally brings fortune and helpful opportunities."
+      ],
+      [
+        "Serenity",
+        "It releases stressful thoughts to restore composure."
+      ],
+      [
+        "Wisdom",
+        "It encourages clear reflection and sound choices."
+      ],
+      [
+        "Harmony",
+        "It aligns personal relationships with gentle understanding."
+      ]
+    ],
+    "c1": "#00A86B",
+    "c2": "#50C878",
+    "c3": "#20B2AA"
+  },
+  "Hessonite": {
+    "props": "This garnet variety features a deep honey yellow or reddish brown tone.",
+    "bens": [
+      [
+        "Clarity",
+        "It clears mental fog to reveal inner truth."
+      ],
+      [
+        "Confidence",
+        "It inspires courageous action during difficult times."
+      ],
+      [
+        "Success",
+        "It supports steady progress in career endeavors."
+      ],
+      [
+        "Grounding",
+        "It anchors spiritual awareness into physical reality."
+      ]
+    ],
+    "c1": "#8B4513",
+    "c2": "#D2691E",
+    "c3": "#CD853F"
+  },
+  "Iolite": {
+    "props": "This violet blue gem presents shifting shades when viewed from different angles.",
+    "bens": [
+      [
+        "Inner Vision",
+        "It enhances intuitive insight and quiet meditation."
+      ],
+      [
+        "Direction",
+        "It guides individuals through major life shifts."
+      ],
+      [
+        "Self Expression",
+        "It helps articulate personal truths with ease."
+      ],
+      [
+        "Peace",
+        "It lightens emotional heavy burdens from past events."
+      ]
+    ],
+    "c1": "#4B0082",
+    "c2": "#2E0854",
+    "c3": "#6A5ACD"
+  },
+  "Jade": {
+    "props": "This smooth lustrous mineral comes in soft translucent green tones.",
+    "bens": [
+      [
+        "Purity",
+        "It cleanses energy spaces of stagnant vibrations."
+      ],
+      [
+        "Abundance",
+        "It draws wealth and useful connections to you."
+      ],
+      [
+        "Peace",
+        "It soothes an overactive nervous system gently."
+      ],
+      [
+        "Longevity",
+        "It supports enduring vitality through changing seasons."
+      ]
+    ],
+    "c1": "#3B7A57",
+    "c2": "#4C9141",
+    "c3": "#7BA05B"
+  },
+  "Jasper": {
+    "props": "This opaque stone features rich earthy patterns and diverse warm hues.",
+    "bens": [
+      [
+        "Nurturing",
+        "It provides steady comfort during stressful moments."
+      ],
+      [
+        "Grounding",
+        "It anchors chaotic thought patterns to earth energy."
+      ],
+      [
+        "Endurance",
+        "It sustains personal stamina through long tasks."
+      ],
+      [
+        "Protection",
+        "It absorbs surrounding negativity and cleanses aura."
+      ]
+    ],
+    "c1": "#A0522D",
+    "c2": "#C04000",
+    "c3": "#800000"
+  },
+  "Kunzite": {
+    "props": "This delicate pink stone displays a translucent glassy sheen.",
+    "bens": [
+      [
+        "Divine Love",
+        "It opens heart energy to unconditional affection."
+      ],
+      [
+        "Emotional Healing",
+        "It releases old sorrows and anxiety gently."
+      ],
+      [
+        "Calm",
+        "It quietens mental noise with peaceful energy."
+      ],
+      [
+        "Joy",
+        "It invites cheerful optimism into daily interactions."
+      ]
+    ],
+    "c1": "#FFC0CB",
+    "c2": "#E6A8D7",
+    "c3": "#D8BFD8"
+  },
+  "Lapis": {
+    "props": "This deep royal blue stone is sprinkled with golden pyrite flecks.",
+    "bens": [
+      [
+        "Truth",
+        "It encourages honest expression and deep authenticity."
+      ],
+      [
+        "Wisdom",
+        "It activates higher intellect and philosophical thought."
+      ],
+      [
+        "Protection",
+        "It wards off psychic intrusions and harmful intent."
+      ],
+      [
+        "Insight",
+        "It deepens self awareness and intuitive understanding."
+      ]
+    ],
+    "c1": "#191970",
+    "c2": "#00008B",
+    "c3": "#4169E1"
+  },
+  "Lava Stone": {
+    "props": "This porous black rock features a rough textured surface.",
+    "bens": [
+      [
+        "Grounding",
+        "It connects your energy deeply to earth strength."
+      ],
+      [
+        "Courage",
+        "It offers stability during intense life transitions."
+      ],
+      [
+        "Calm",
+        "It diffuses intense anger into manageable peacefulness."
+      ],
+      [
+        "Focus",
+        "It centers scattered minds onto immediate tasks."
+      ]
+    ],
+    "c1": "#1A1A1A",
+    "c2": "#333333",
+    "c3": "#4F4F4F"
+  },
+  "Light Blue Hakik": {
+    "props": "This translucent agate stone displays soft sky blue banding.",
+    "bens": [
+      [
+        "Communication",
+        "It aids clear peaceful speaking in discussions."
+      ],
+      [
+        "Tranquility",
+        "It settles emotional unrest with soft waves."
+      ],
+      [
+        "Patience",
+        "It cultivates calm understanding during slow periods."
+      ],
+      [
+        "Protection",
+        "It creates a safe barrier against negativity."
+      ]
+    ],
+    "c1": "#87CEEB",
+    "c2": "#ADD8E6",
+    "c3": "#B0E0E6"
+  },
+  "Moss Agate": {
+    "props": "This clear stone contains delicate green vegetation like inclusions.",
+    "bens": [
+      [
+        "Nature Connection",
+        "It aligns personal vitality with natural cycles."
+      ],
+      [
+        "Abundance",
+        "It fosters growth in personal financial goals."
+      ],
+      [
+        "New Beginnings",
+        "It inspires fresh starts after challenging times."
+      ],
+      [
+        "Balance",
+        "It stabilizes mood swings and promotes peace."
+      ]
+    ],
+    "c1": "#228B22",
+    "c2": "#006400",
+    "c3": "#556B2F"
+  },
+  "Multi Fluorite": {
+    "props": "This stone features vibrant bands of purple, green, teal, and clear crystal.",
+    "bens": [
+      [
+        "Focus",
+        "It enhances concentration and clears mental clutter during study."
+      ],
+      [
+        "Balance",
+        "It harmonizes spiritual energy and stabilizes the aura."
+      ],
+      [
+        "Protection",
+        "It shields against negative energy and psychic noise."
+      ],
+      [
+        "Intuition",
+        "It connects lower chakra energy with higher spiritual awareness."
+      ]
+    ],
+    "c1": "#8A2BE2",
+    "c2": "#2E8B57",
+    "c3": "#48D1CC"
+  },
+  "Opal": {
+    "props": "An iridescent gemstone displaying a kaleidoscopic play of color flashes.",
+    "bens": [
+      [
+        "Creativity",
+        "It inspires original thoughts and enhances artistic expression."
+      ],
+      [
+        "Emotional Balance",
+        "It amplifies feelings and aids in emotional healing."
+      ],
+      [
+        "Passion",
+        "It fosters loyalty and brings warmth to personal relationships."
+      ],
+      [
+        "Transformation",
+        "It helps release old patterns to allow personal growth."
+      ]
+    ],
+    "c1": "#E6E6FA",
+    "c2": "#FFD700",
+    "c3": "#FFB6C1"
+  },
+  "Orange Hakik": {
+    "props": "A translucent to opaque chalcedony with rich warm orange hues.",
+    "bens": [
+      [
+        "Courage",
+        "It instills confidence and bold action in challenging times."
+      ],
+      [
+        "Vitality",
+        "It stimulates creative drive and boosts personal energy."
+      ],
+      [
+        "Grounding",
+        "It anchors chaotic thoughts into practical daily focus."
+      ],
+      [
+        "Protection",
+        "It guards the wearer against envy and negative intent."
+      ]
+    ],
+    "c1": "#FF8C00",
+    "c2": "#D2691E",
+    "c3": "#FF4500"
+  },
+  "Orange Selenite": {
+    "props": "A fibrous gypsiferous crystal showing soft peach and warm orange shades.",
+    "bens": [
+      [
+        "Cleansing",
+        "It purifies surrounding space and clears stagnant energies."
+      ],
+      [
+        "Joy",
+        "It invites warmth, light, and cheerful optimism into life."
+      ],
+      [
+        "Sacral Energy",
+        "It unlocks creative flow and enhances personal passion."
+      ],
+      [
+        "Harmony",
+        "It dissolves tension and fosters peaceful home environments."
+      ]
+    ],
+    "c1": "#FFB380",
+    "c2": "#E67E22",
+    "c3": "#F39C12"
+  },
+  "Pale Yellow Citrine": {
+    "props": "A subtle, clear quartz exhibiting soft butter yellow tones.",
+    "bens": [
+      [
+        "Abundance",
+        "It attracts wealth, prosperity, and personal success."
+      ],
+      [
+        "Clarity",
+        "It sharpens decision making and clears mental lethargy."
+      ],
+      [
+        "Positivity",
+        "It transmutes negative vibes into radiant solar energy."
+      ],
+      [
+        "Self Confidence",
+        "It empowers personal willpower and self belief."
+      ]
+    ],
+    "c1": "#FFFACD",
+    "c2": "#F0E68C",
+    "c3": "#FFD700"
+  },
+  "Pearl": {
+    "props": "An organic gem with a soft lustrous sheen and creamy surface.",
+    "bens": [
+      [
+        "Purity",
+        "It symbolizes integrity, grace, and inner wisdom."
+      ],
+      [
+        "Calm",
+        "It soothes fiery tempers and reduces emotional stress."
+      ],
+      [
+        "Sincerity",
+        "It nurtures trust, loyalty, and honest communication."
+      ],
+      [
+        "Feminine Energy",
+        "It connects deeply with lunar cycles and intuitive grace."
+      ]
+    ],
+    "c1": "#FDFBF7",
+    "c2": "#F5F5DC",
+    "c3": "#EAE6DF"
+  },
+  "Peridot": {
+    "props": "A sparkling gem showcasing bright olive and lime green tones.",
+    "bens": [
+      [
+        "Renewal",
+        "It inspires fresh starts and alleviates old regret."
+      ],
+      [
+        "Prosperity",
+        "It invites good fortune, abundance, and warm friendships."
+      ],
+      [
+        "Heart Opening",
+        "It dissipates jealousy, anger, and bitterness."
+      ],
+      [
+        "Protection",
+        "It guards the aura against unwanted dark energies."
+      ]
+    ],
+    "c1": "#9ACD32",
+    "c2": "#556B2F",
+    "c3": "#7FFF00"
+  },
+  "Petrified Wood": {
+    "props": "A fossilized stone with rich earthy brown and gray bark patterns.",
+    "bens": [
+      [
+        "Grounding",
+        "It anchors awareness to the stabilizing strength of nature."
+      ],
+      [
+        "Patience",
+        "It encourages steady, slow growth over time."
+      ],
+      [
+        "Ancestral Connection",
+        "It links personal energy to ancient earth wisdom."
+      ],
+      [
+        "Stability",
+        "It calms survival fears and promotes security."
+      ]
+    ],
+    "c1": "#8B4513",
+    "c2": "#A0522D",
+    "c3": "#2F4F4F"
+  },
+  "Pink Selenite": {
+    "props": "A delicate satin spar crystal with pastel rose and blush highlights.",
+    "bens": [
+      [
+        "Self Love",
+        "It fosters deep compassion and gentle self acceptance."
+      ],
+      [
+        "Angelic Connection",
+        "It elevates consciousness to higher subtle realms."
+      ],
+      [
+        "Emotional Healing",
+        "It releases grief and eases heart centered wounds."
+      ],
+      [
+        "Peace",
+        "It creates a serene atmosphere suitable for meditation."
+      ]
+    ],
+    "c1": "#FFC0CB",
+    "c2": "#FFB6C1",
+    "c3": "#E6C280"
+  },
+  "Rainbow Moonstone": {
+    "props": "A milky white feldspar gemstone glowing with blue adularescence.",
+    "bens": [
+      [
+        "Intuition",
+        "It heightens psychic awareness and inner knowing."
+      ],
+      [
+        "New Beginnings",
+        "It offers guidance during major life transitions."
+      ],
+      [
+        "Emotional Balance",
+        "It stabilizes mood swings and eases stress."
+      ],
+      [
+        "Protection",
+        "It guards travelers and sensitive empathetic souls."
+      ]
+    ],
+    "c1": "#F0F8FF",
+    "c2": "#E6E6FA",
+    "c3": "#87CEEB"
+  },
+  "Red Agate": {
+    "props": "A microcrystalline quartz featuring deep crimson and fiery banded patterns.",
+    "bens": [
+      [
+        "Inner Strength",
+        "It builds stamina, fortitude, and emotional resolve."
+      ],
+      [
+        "Protection",
+        "It wards off physical harm and negative intentions."
+      ],
+      [
+        "Grounding",
+        "It stabilizes the root energy center for security."
+      ],
+      [
+        "Vitality",
+        "It stirs passion and rekindles lost enthusiasm."
+      ]
+    ],
+    "c1": "#B22222",
+    "c2": "#8B0000",
+    "c3": "#CD5C5C"
+  },
+  "Red Carnelian": {
+    "props": "A translucent stone radiating vivid orange red and scarlet tones.",
+    "bens": [
+      [
+        "Motivation",
+        "It overcomes procrastination and fuels decisive action."
+      ],
+      [
+        "Creativity",
+        "It stimulates original thought and artistic drive."
+      ],
+      [
+        "Confidence",
+        "It enhances self trust and public speaking skills."
+      ],
+      [
+        "Vitality",
+        "It infuses the body with invigorating life force."
+      ]
+    ],
+    "c1": "#C0392B",
+    "c2": "#D35400",
+    "c3": "#E74C3C"
+  },
+  "Red Tiger Eye": {
+    "props": "It displays rich reddish brown hues with silky chatoyant bands.",
+    "bens": [
+      [
+        "Motivation",
+        "It enhances personal drive and helps overcome lethargy."
+      ],
+      [
+        "Grounding",
+        "It anchors energy to the earth for stability."
+      ],
+      [
+        "Confidence",
+        "It encourages self trust and passion."
+      ],
+      [
+        "Protection",
+        "It wards off negative energies and evil eyes."
+      ]
+    ],
+    "c1": "#8B0000",
+    "c2": "#A0522D",
+    "c3": "#D2691E"
+  },
+  "Red Tiger's Eye": {
+    "props": "It presents deep red and mahogany shades with lustrous silky shimmer.",
+    "bens": [
+      [
+        "Vitality",
+        "It revitalizes physical energy and endurance."
+      ],
+      [
+        "Focus",
+        "It sharpens mental concentration and resolve."
+      ],
+      [
+        "Courage",
+        "It inspires brave action in difficult times."
+      ],
+      [
+        "Balance",
+        "It stabilizes emotional swings and mood."
+      ]
+    ],
+    "c1": "#800000",
+    "c2": "#B22222",
+    "c3": "#CD853F"
+  },
+  "Rhodochrosite": {
+    "props": "It showcases pink to raspberry red bands with white swirls.",
+    "bens": [
+      [
+        "Self Love",
+        "It fosters compassion for oneself and healing."
+      ],
+      [
+        "Joy",
+        "It uplifts the spirit and encourages playfulness."
+      ],
+      [
+        "Emotional Healing",
+        "It soothes past trauma and heartaches."
+      ],
+      [
+        "Harmony",
+        "It balances relationships and social connections."
+      ]
+    ],
+    "c1": "#FF69B4",
+    "c2": "#FF1493",
+    "c3": "#E6E6FA"
+  },
+  "Ruby": {
+    "props": "It shines with vibrant deep crimson to bright red tones.",
+    "bens": [
+      [
+        "Passion",
+        "It ignites deep enthusiasm and life force."
+      ],
+      [
+        "Abundance",
+        "It attracts prosperity and status to the bearer."
+      ],
+      [
+        "Courage",
+        "It inspires fearless leadership and strength."
+      ],
+      [
+        "Protection",
+        "It guards against psychic attacks and misfortune."
+      ]
+    ],
+    "c1": "#E0115F",
+    "c2": "#9B111E",
+    "c3": "#7A0016"
+  },
+  "Rudraksha": {
+    "props": "It consists of dried organic seeds with textured grooves.",
+    "bens": [
+      [
+        "Spiritual Focus",
+        "It aids in deep meditation and prayer."
+      ],
+      [
+        "Tranquility",
+        "It calms the active mind and spirit."
+      ],
+      [
+        "Protection",
+        "It creates a protective shield of positive energy."
+      ],
+      [
+        "Clarity",
+        "It encourages mindfulness and inner peace."
+      ]
+    ],
+    "c1": "#8B4513",
+    "c2": "#A0522D",
+    "c3": "#CD853F"
+  },
+  "Seven Chakra": {
+    "props": "It features a spectrum of seven distinct multicolored gemstones.",
+    "bens": [
+      [
+        "Energy Alignment",
+        "It balances all major energy centers."
+      ],
+      [
+        "Harmonious Life",
+        "It unifies mind body and spirit."
+      ],
+      [
+        "Spiritual Growth",
+        "It enhances overall spiritual awareness."
+      ],
+      [
+        "Positivity",
+        "It clears blocked subtle energy pathways."
+      ]
+    ],
+    "c1": "#FF0000",
+    "c2": "#008000",
+    "c3": "#0000FF"
+  },
+  "Silver": {
+    "props": "It is a precious metal with a smooth lustrous white metallic shine.",
+    "bens": [
+      [
+        "Intuition",
+        "It heightens psychic perception and inner wisdom."
+      ],
+      [
+        "Lunar Energy",
+        "It connects with gentle lunar power and flow."
+      ],
+      [
+        "Purity",
+        "It cleanses negative subtle energies from the body."
+      ],
+      [
+        "Amplification",
+        "It enhances the energy of paired stones."
+      ]
+    ],
+    "c1": "#C0C0C0",
+    "c2": "#E6E6FA",
+    "c3": "#D3D3D3"
+  },
+  "South Sea Pearl": {
+    "props": "It exhibits a smooth lustrous surface with warm golden or white iridescence.",
+    "bens": [
+      [
+        "Purity",
+        "It symbolizes integrity and refined grace."
+      ],
+      [
+        "Calm",
+        "It soothes emotional distress and anger."
+      ],
+      [
+        "Prosperity",
+        "It invites wealth and success into life."
+      ],
+      [
+        "Wisdom",
+        "It nurtures mature understanding and insight."
+      ]
+    ],
+    "c1": "#FFFDD0",
+    "c2": "#FFD700",
+    "c3": "#F5F5DC"
+  },
+  "Strawberry Quartz": {
+    "props": "It features clear quartz filled with pink and red specular inclusions.",
+    "bens": [
+      [
+        "Universal Love",
+        "It radiates gentle loving vibrations around."
+      ],
+      [
+        "Gratitude",
+        "It instills appreciation for life experiences."
+      ],
+      [
+        "Calm",
+        "It quietens chaotic thoughts and brings peace."
+      ],
+      [
+        "Optimism",
+        "It inspires a joyful outlook on life."
+      ]
+    ],
+    "c1": "#FFB6C1",
+    "c2": "#E68FAC",
+    "c3": "#C71585"
+  },
+  "Sulemani Hakik": {
+    "props": "It displays dark black agate layers mixed with white bands.",
+    "bens": [
+      [
+        "Protection",
+        "It wards off evil eye and negative influences."
+      ],
+      [
+        "Grounding",
+        "It roots energy for steady decision making."
+      ],
+      [
+        "Stress Relief",
+        "It absorbs anxiety and mental tension."
+      ],
+      [
+        "Focus",
+        "It improves concentration on complex tasks."
+      ]
+    ],
+    "c1": "#000000",
+    "c2": "#2F4F4F",
+    "c3": "#FFFFFF"
+  },
+  "Sunsitara": {
+    "props": "It is a dark synthetic glass filled with sparkling metallic glitters.",
+    "bens": [
+      [
+        "Ambition",
+        "It drives motivation toward personal goals."
+      ],
+      [
+        "Confidence",
+        "It boosts self esteem and optimism."
+      ],
+      [
+        "Light",
+        "It brings warmth into dark times."
+      ],
+      [
+        "Creativity",
+        "It sparks imaginative ideas and expression."
+      ]
+    ],
+    "c1": "#191970",
+    "c2": "#8B4513",
+    "c3": "#FFD700"
+  },
+  "Sunstone": {
+    "props": "It sparkles with golden copper inclusions inside peach orange stone.",
+    "bens": [
+      [
+        "Leadership",
+        "It encourages strength and independence."
+      ],
+      [
+        "Joy",
+        "It radiates light and positive enthusiasm."
+      ],
+      [
+        "Abundance",
+        "It draws good fortune and opportunity."
+      ],
+      [
+        "Vitality",
+        "It restores energy and life enthusiasm."
+      ]
+    ],
+    "c1": "#FF7F50",
+    "c2": "#E9967A",
+    "c3": "#FF8C00"
+  },
+  "Tiger's Eye": {
+    "props": "This stone displays golden brown chatoyant bands with a silky luster.",
+    "bens": [
+      [
+        "Grounding Energy",
+        "It helps anchor your spirit and promote inner strength."
+      ],
+      [
+        "Mental Focus",
+        "It enhances clarity and sharpness during challenging decisions."
+      ],
+      [
+        "Protection",
+        "Traditionally used to ward off negative energies and bad luck."
+      ],
+      [
+        "Personal Power",
+        "It encourages confidence and courage in daily actions."
+      ]
+    ],
+    "c1": "#B8860B",
+    "c2": "#8B4513",
+    "c3": "#D2691E"
+  },
+  "Tulsi": {
+    "props": "These sacred wooden beads show smooth natural brown textures and subtle grain.",
+    "bens": [
+      [
+        "Spiritual Purification",
+        "It cleanses the aura and fosters devotion during prayer."
+      ],
+      [
+        "Inner Calm",
+        "It brings peace to the heart and stills a restless mind."
+      ],
+      [
+        "Divine Protection",
+        "Traditionally worn to shield the wearer from negative influences."
+      ],
+      [
+        "Harmonious Balance",
+        "It aligns mind, body, and spirit in daily meditation."
+      ]
+    ],
+    "c1": "#8B5A2B",
+    "c2": "#CD853F",
+    "c3": "#5C4033"
+  },
+  "White Howlite": {
+    "props": "This opaque white stone features intricate grey or black veining throughout.",
+    "bens": [
+      [
+        "Tranquility",
+        "It settles emotional turbulence and promotes deep relaxation."
+      ],
+      [
+        "Patience",
+        "It encourages a calm demeanor and reduces feelings of anger."
+      ],
+      [
+        "Mindful Awareness",
+        "It expands awareness and prepares the mind for wisdom."
+      ],
+      [
+        "Sleep Support",
+        "Traditionally placed nearby to foster peaceful nocturnal rest."
+      ]
+    ],
+    "c1": "#F5F5F5",
+    "c2": "#E0E0E0",
+    "c3": "#708090"
+  },
+  "Yellow Aventurine": {
+    "props": "This quartz variety shows a warm yellow hue with subtle shimmer.",
+    "bens": [
+      [
+        "Self Reflection",
+        "It assists in understanding one own strengths and abilities."
+      ],
+      [
+        "Optimism",
+        "It lifts the spirit and encourages a positive outlook."
+      ],
+      [
+        "Abundance",
+        "Traditionally associated with attracting prosperity and good fortune."
+      ],
+      [
+        "Decisiveness",
+        "It enhances personal clarity when facing difficult choices."
+      ]
+    ],
+    "c1": "#F0E68C",
+    "c2": "#EEDC82",
+    "c3": "#DAA520"
+  },
+  "Yellow Cat's Eye": {
+    "props": "This vibrant yellow gemstone displays a sharp luminous band across its surface.",
+    "bens": [
+      [
+        "Intuition",
+        "It sharpens instinct and enhances subtle perception."
+      ],
+      [
+        "Wealth Attraction",
+        "Traditionally believed to bring unexpected financial luck."
+      ],
+      [
+        "Protection",
+        "It guards against unseen harms and malicious intent."
+      ],
+      [
+        "Clarity",
+        "It clears mental fog to promote decisive action."
+      ]
+    ],
+    "c1": "#FFD700",
+    "c2": "#FFFF00",
+    "c3": "#E6C200"
+  },
+  "Yellow Citrine": {
+    "props": "This transparent crystal shines with bright yellow to golden tones.",
+    "bens": [
+      [
+        "Manifestation",
+        "It aligns personal intent with powerful creative energy."
+      ],
+      [
+        "Prosperity",
+        "Known traditionally as the merchant stone of abundance."
+      ],
+      [
+        "Joyful Energy",
+        "It radiates warmth and dispels heavy feelings."
+      ],
+      [
+        "Confidence",
+        "It empowers self expression and personal drive."
+      ]
+    ],
+    "c1": "#FFDB58",
+    "c2": "#E4D00A",
+    "c3": "#F4C430"
+  },
+  "Yellow Tiger Eye": {
+    "props": "This striking stone features bright yellow bands with golden chatoyancy.",
+    "bens": [
+      [
+        "Courage",
+        "It fills the spirit with brave determination."
+      ],
+      [
+        "Focus",
+        "It streamlines thoughts to achieve specific goals."
+      ],
+      [
+        "Vitality",
+        "Traditionally used to boost motivation and energy levels."
+      ],
+      [
+        "Grounding",
+        "It balances optimism with practical real world actions."
+      ]
+    ],
+    "c1": "#E5C158",
+    "c2": "#D4AF37",
+    "c3": "#966F33"
+  }
+}
