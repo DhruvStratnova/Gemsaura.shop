@@ -163,24 +163,24 @@ h1, h2, h3{ letter-spacing:-0.01em; }
 
 /* ===== Glass product cards ===== */
 product-card.ga-gcard .product-badges{ display:none !important; }
-product-card.ga-gcard{ position:relative; display:block; border:none !important; border-radius:22px; overflow:hidden; aspect-ratio:0.74; background:#ece6dc; box-shadow:0 18px 42px -24px rgba(40,30,20,.5); transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; height:auto; }
+product-card.ga-gcard{ position:relative; display:flex !important; flex-direction:column !important; border:none !important; border-radius:22px; overflow:hidden; background:#ece6dc; box-shadow:0 18px 42px -24px rgba(40,30,20,.5); transition:transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; height:100%; }
 product-card.ga-gcard:hover{ transform:translateY(-5px); box-shadow:0 28px 56px -26px rgba(40,30,20,.55); }
-product-card.ga-gcard .product-card__content{ position:absolute !important; inset:0 !important; padding:0 !important; display:block !important; }
+product-card.ga-gcard .product-card__content{ position:relative !important; inset:auto !important; width:100% !important; height:auto !important; min-height:0 !important; padding:0 !important; display:block !important; flex:0 0 auto !important; overflow:hidden !important; }
 /* Hide the theme's native quick-add + price inside the glass card — the ga-glass supplies its own price + "+ Add", so the theme copy must not bleed through behind the glass. */
 product-card.ga-gcard quick-add-component, product-card.ga-gcard .quick-add, product-card.ga-gcard .product-card__content > product-price, product-card.ga-gcard .product-card__content .price:not(.ga-price){ display:none !important; }
-product-card.ga-gcard .card-gallery{ position:absolute !important; inset:0 !important; margin:0 !important; border-radius:0 !important; }
+product-card.ga-gcard .card-gallery{ position:relative !important; inset:auto !important; display:block !important; width:100% !important; aspect-ratio:1/1 !important; height:auto !important; margin:0 !important; border-radius:0 !important; }
 product-card.ga-gcard .card-gallery a, product-card.ga-gcard .product-media-container{ width:100% !important; height:100% !important; }
 product-card.ga-gcard .card-gallery img{ width:100% !important; height:100% !important; object-fit:cover !important; transition:transform .6s ease; }
 product-card.ga-gcard:hover .card-gallery img{ transform:scale(1.03); }
 .ga-gcard .ga-pill-rate{ position:absolute; top:14px; right:14px; z-index:7; display:inline-flex; align-items:center; gap:5px; background:rgba(255,255,255,.9); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); border-radius:999px; padding:6px 12px; font:700 12.5px var(--font-body--family,sans-serif); color:#1a1a1a; box-shadow:0 4px 14px -6px rgba(0,0,0,.35); }
 .ga-gcard .ga-pill-rate .s{ color:#f0a500; font-size:12px; }
 .ga-gcard .ga-pill-sale{ position:absolute; top:14px; left:14px; z-index:7; background:rgba(255,255,255,.9); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); color:#1a1a1a; border-radius:999px; padding:6px 13px; font:600 10px var(--font-body--family,sans-serif); letter-spacing:.12em; text-transform:uppercase; box-shadow:0 4px 14px -6px rgba(0,0,0,.35); }
-.ga-gcard .ga-glass{ position:absolute; left:0; right:0; bottom:0; z-index:6; padding:15px 17px 17px; background:linear-gradient(to top, rgba(250,249,246,0.995), rgba(250,249,246,0.95)); -webkit-backdrop-filter:blur(22px) saturate(1.3); backdrop-filter:blur(22px) saturate(1.3); border-top:1px solid rgba(255,255,255,.55); }
+.ga-gcard .ga-glass{ position:relative; left:auto; right:auto; bottom:auto; z-index:2; flex:1 1 auto; display:flex; flex-direction:column; padding:15px 17px 17px; background:#fbfaf7; -webkit-backdrop-filter:none; backdrop-filter:none; border-top:none; }
 .ga-gcard .ga-cardmeta{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; padding:0 0 7px; }
 .ga-gcard .ga-cardcat{ font:600 10px var(--font-body--family,sans-serif); letter-spacing:.16em; text-transform:uppercase; color:#1c2a22; }
 .ga-gcard .ga-cardrev{ font-size:11.5px; color:#8a7f72; text-decoration:underline; text-underline-offset:2px; white-space:nowrap; }
 .ga-gcard .ga-glass .ga-title{ margin:0 0 11px; padding:0; font-family:var(--font-heading--family,serif); font-weight:600; font-size:15px; line-height:1.3; color:#1a1a1a; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:2.6em; }
-.ga-gcard .ga-cardfoot{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.ga-gcard .ga-cardfoot{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; }
 .ga-gcard .ga-cardfoot .group-block, .ga-gcard .ga-cardfoot .price{ margin:0 !important; padding:0 !important; }
 .ga-gcard .price-item--sale, .ga-gcard .price-item:not(.price-item--regular){ font-weight:700 !important; font-size:17px !important; color:#1a1a1a !important; }
 .ga-gcard .price-item--regular, .ga-gcard s, .ga-gcard del, .ga-gcard .price__compare{ font-size:12.5px !important; color:#a49a8c !important; text-decoration:line-through !important; }
@@ -651,7 +651,7 @@ overflow-list.overflow-menu, .facets__form overflow-list, .facets__filters-wrapp
 product-card.ga-gcard .product-media-container:not(:first-of-type){ display:none !important; }
 product-card.ga-gcard .card-gallery img + img{ display:none !important; opacity:0 !important; }
 /* ===== taller mobile product cards ===== */
-@media(max-width:700px){ product-card.ga-gcard{ aspect-ratio:0.64 !important; } }
+
 
 /* ===== hide leftover gallery arrows ===== */
 product-card.ga-gcard .slideshow-control{ display:none !important; }
@@ -1575,37 +1575,29 @@ product-card button, .ga-gcard button, .ga-add, .product-card button, .card-gall
 /* Homepage category strip: accent-coloured shader per category (distinct from the plain nav tiles) */
 /* ===== Homepage category ACCORDION (full-bleed expanding panels) ===== */
 .ga-catsec{ width:100%; box-sizing:border-box; padding:4px clamp(14px,2.4vw,40px) 32px; }
-.ga-catsec .ga-accord-head{ padding:0 2px 16px; text-align:left; }
+.ga-catsec .ga-accord-head{ padding:0 2px 16px; text-align:center; }
 .ga-accord{ display:flex; gap:9px; width:100%; height:clamp(360px,42vw,480px); }
-.ga-ap{ position:relative; flex:1 1 0%; min-width:0; border-radius:22px; overflow:hidden; text-decoration:none; cursor:pointer; box-shadow:0 22px 46px -28px rgba(40,30,20,.55); transition:flex-grow .6s cubic-bezier(.22,.72,.2,1), box-shadow .45s ease; will-change:flex-grow; }
-.ga-ap-im{ position:absolute; inset:0; background-size:cover; background-position:center; transition:transform 1s cubic-bezier(.2,.7,.2,1); }
-.ga-ap-shade{ position:absolute; inset:0; background:linear-gradient(to top, color-mix(in srgb, var(--gac,#14100a) 95%, #0a0604) 0%, color-mix(in srgb, var(--gac,#14100a) 60%, transparent) 30%, color-mix(in srgb, var(--gac,#14100a) 12%, transparent) 58%, transparent 82%); }
-.ga-ap-lb{ position:absolute; left:0; bottom:0; width:100%; box-sizing:border-box; padding:20px 22px 22px; color:#fff; z-index:3; pointer-events:none; opacity:0; transition:opacity .4s ease; }
-.ga-ap-t{ display:block; font-family:'Anton',Impact,'Arial Narrow',sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(22px,2vw,34px); line-height:1.02; letter-spacing:.02em; white-space:nowrap; text-shadow:0 2px 14px rgba(0,0,0,.5); }
-.ga-ap-s{ display:block; margin-top:8px; font-size:14px; font-weight:500; color:rgba(255,255,255,.9); white-space:nowrap; }
-.ga-ap-go{ position:absolute; top:18px; left:22px; z-index:3; font-size:10.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:#fff; opacity:0; transform:translateY(-6px); transition:opacity .4s ease, transform .45s ease; pointer-events:none; text-shadow:0 1px 8px rgba(0,0,0,.4); }
-.ga-ap-vt{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) rotate(-90deg); transform-origin:center; z-index:2; pointer-events:none; white-space:nowrap; font-family:'Anton','Impact','Haettenschweiler','Arial Narrow',sans-serif; font-weight:400; letter-spacing:.03em; text-transform:uppercase; font-size:clamp(34px,3.6vw,58px); color:rgba(255,255,255,.1); -webkit-text-stroke:1.4px rgba(255,255,255,.95); text-stroke:1.4px rgba(255,255,255,.95); text-shadow:0 2px 10px rgba(0,0,0,.4), 0 0 2px rgba(0,0,0,.4); transition:opacity .45s ease, letter-spacing .55s ease; }
+.ga-ap{ position:relative; flex:1 1 0%; min-width:0; border-radius:22px; overflow:hidden; text-decoration:none; cursor:pointer; background:linear-gradient(158deg,#ffffff 0%,#f7f5f1 54%,#eeeae3 100%) !important; box-shadow:0 22px 46px -28px rgba(40,30,20,.3); transition:flex-grow .6s cubic-bezier(.22,.72,.2,1), box-shadow .45s ease; will-change:flex-grow; }
+.ga-ap-im{ position:absolute; inset:9% 11% 36% 11% !important; background-size:contain !important; background-position:center bottom !important; background-repeat:no-repeat !important; transition:transform .5s cubic-bezier(.2,.7,.2,1); }
+.ga-ap-shade{ display:none !important; }
+.ga-ap-lb{ position:absolute; left:0 !important; right:0 !important; bottom:0; width:100% !important; box-sizing:border-box; padding:0 14px 20px; color:#1a1a1a; z-index:3; text-align:center !important; pointer-events:none; }
+.ga-ap-t{ display:block; text-align:center !important; font-family:'Anton',Impact,'Arial Narrow',sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(17px,1.6vw,25px); line-height:1.02; letter-spacing:.02em; color:#1a1a1a; text-shadow:none; }
+.ga-ap-s{ display:none !important; }
+.ga-ap-go{ display:none !important; }
+.ga-ap-vt{ display:none !important; }
 /* expanded state = default first panel while idle, OR any panel on hover */
-.ga-ap:hover, .ga-accord:not(:hover) .ga-ap:first-child{ flex-grow:5.4; box-shadow:0 34px 72px -30px color-mix(in srgb, var(--gac,#7a5c9e) 55%, rgba(20,14,8,.6)); }
+.ga-ap:hover, .ga-accord:not(:hover) .ga-ap:first-child{ flex-grow:5.4; box-shadow:0 34px 72px -30px rgba(40,30,20,.35); }
 .ga-ap:hover .ga-ap-im, .ga-accord:not(:hover) .ga-ap:first-child .ga-ap-im{ transform:scale(1.05); }
-.ga-ap:hover .ga-ap-lb, .ga-accord:not(:hover) .ga-ap:first-child .ga-ap-lb{ opacity:1; }
-.ga-ap:hover .ga-ap-s, .ga-accord:not(:hover) .ga-ap:first-child .ga-ap-s{ opacity:1; }
-.ga-ap:hover .ga-ap-go, .ga-accord:not(:hover) .ga-ap:first-child .ga-ap-go{ opacity:.92; transform:none; }
-.ga-ap:hover .ga-ap-vt, .ga-accord:not(:hover) .ga-ap:first-child .ga-ap-vt{ opacity:0; letter-spacing:.2em; }
 /* mobile: swipeable rail, every panel open horizontally */
 @media(max-width:820px){
   /* mobile: stacked full-width banner rows, big left title over the product image */
   .ga-catsec{ padding:2px 14px 26px; }
-  .ga-accord{ display:flex; flex-direction:column; height:auto; overflow:visible; gap:10px; }
-  .ga-ap{ flex:none; width:100%; height:clamp(96px,25vw,124px); border-radius:16px; box-shadow:0 14px 28px -22px rgba(40,30,20,.5); }
-  .ga-ap:first-child{ height:clamp(132px,36vw,168px); }
-  .ga-ap-im{ transform:none !important; background-position:72% center !important; }
-  .ga-ap-shade{ background:linear-gradient(to right, color-mix(in srgb, var(--gac,#14100a) 93%, #0a0604) 3%, color-mix(in srgb, var(--gac,#14100a) 58%, transparent) 40%, color-mix(in srgb, var(--gac,#14100a) 8%, transparent) 66%, transparent 84%) !important; }
-  .ga-ap-vt{ opacity:0 !important; }
-  .ga-ap-lb{ opacity:1 !important; top:50%; bottom:auto; transform:translateY(-50%); padding:0 20px; width:72%; }
-  .ga-ap-t{ font-family:'Anton','Impact','Haettenschweiler','Arial Narrow',sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(25px,6.6vw,36px); letter-spacing:.02em; line-height:1.02; color:rgba(255,255,255,.22); -webkit-text-stroke:1.2px rgba(255,255,255,.95); text-stroke:1.2px rgba(255,255,255,.95); text-shadow:0 2px 9px rgba(0,0,0,.5); }
-  .ga-ap-s{ opacity:1 !important; margin-top:4px; font-size:12px; color:rgba(255,255,255,.9); }
-  .ga-ap-go{ opacity:0 !important; }
+  .ga-accord{ display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; height:auto !important; }
+  .ga-ap{ flex:none; width:auto; height:auto; aspect-ratio:1/.62; border-radius:15px; box-shadow:0 14px 28px -22px rgba(40,30,20,.3); }
+  .ga-ap:first-child{ height:auto; }
+  .ga-ap-im{ inset:7% 10% 38% 10% !important; background-position:center bottom !important; transform:none !important; }
+  .ga-ap-t{ font-size:clamp(14px,4vw,18px); }
+  
 }
 
 /* Crystal Oud: video visual + branded CTA */
@@ -1793,7 +1785,6 @@ product-card button, .ga-gcard button, .ga-add, .product-card button, .card-gall
 a, button, .ga-slide, .ga-ap, product-card, [role="button"]{ -webkit-tap-highlight-color:transparent; }
 html{ -webkit-text-size-adjust:100%; }
 @media(max-width:749px){
-  product-card.ga-gcard{ aspect-ratio:0.66 !important; }
   #header-component #ga-brand{ line-height:1 !important; }
   #ga-brand::before{ width:150% !important; height:150% !important; }
   #header-component .header__row--top{ padding:0 16px !important; }
