@@ -641,7 +641,8 @@
         sun:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8"/></svg>'
       };
       var thumbs=imgs.slice(0,6).map(function(u,i){ return '<button class="gpx-thumb'+(i===0?' on':'')+'" data-i="'+i+'" style="background-image:url('+iu(u,'220x')+')"></button>'; }).join('');
-      var badges='<span class="gpx-badge">'+I.truck+'Free shipping</span><span class="gpx-badge">'+I.bolt+'Fast delivery</span><span class="gpx-badge">'+I.cert+'Certificate</span>';
+      var _hasCustomSpec=!!(window.__gaMeta&&window.__gaMeta.specifications);
+      var badges='<span class="gpx-badge">'+I.truck+'Free shipping</span><span class="gpx-badge">'+I.bolt+'Fast delivery</span>'+(_hasCustomSpec?'':'<span class="gpx-badge">'+I.cert+'Certificate</span>');
       var detailsHtml='<ul class="gpx-blist"><li><b>100% natural.</b> Genuine, untreated gemstone beads.</li><li><b>Lab certified.</b> Independently tested for authenticity.</li><li><b>Hand finished.</b> Strung on a durable, comfortable stretch cord.</li><li><b>Energised.</b> Charged with intention before it is dispatched.</li></ul>';
       var benefitsHtml=benefits.length?'<ul class="gpx-blist">'+benefits.map(function(b){ return '<li><b>'+b.n+'</b>'+(b.d?'. '+b.d:'')+'</li>'; }).join('')+'</ul>':'<p>A hand-finished natural stone bracelet, energised and lab-certified.</p>';
       var howHtml='<ul class="gpx-blist"><li>Wear it on your receiving hand (usually the left) to draw in its energy.</li><li>Keep the bracelet dry and avoid perfume or harsh chemicals.</li><li>Store it away from direct sunlight when you are not wearing it.</li><li>Cleanse under moonlight once a month to recharge the stones.</li></ul>';
