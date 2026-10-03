@@ -683,7 +683,7 @@
           +'<div class="gpx-thumbs">'+thumbs+'</div>'
         +'</div>'
         +'<div class="gpx-right">'
-          +'<h1 class="gpx-title">'+p.title+'</h1>'
+          +(_m.key_feature?'<span class="gpx-eyebrow">'+_nd(_m.key_feature)+'</span>':'')+'<h1 class="gpx-title">'+p.title+'</h1>'
           +'<div class="gpx-badges">'+badges+'</div>'
           +'<hr class="gpx-hr">'
           +'<div class="gpx-price"><span class="gpx-now">'+money(v0.price)+'</span>'+(p.compare_at_price>p.price?'<s>'+money(p.compare_at_price)+'</s><span class="gpx-save">Save '+save+'%</span>':'')+'</div>'

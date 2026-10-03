@@ -1089,6 +1089,7 @@ body.page-width-wide{ background:linear-gradient(180deg, #f7f3ec 0%, #f2ede4 100
 .gpx-tile-l{ font:600 12px var(--font-body--family,sans-serif); color:#3d4a41; line-height:1.2; }
 /* RIGHT */
 .gpx-title{ font-family:var(--font-heading--family,serif) !important; font-weight:700 !important; font-size:clamp(24px,3.3vw,40px) !important; line-height:1.12 !important; color:#1c2a22 !important; margin:0 0 16px !important; letter-spacing:-.01em; overflow-wrap:anywhere; }
+.gpx-eyebrow{ display:block; font:700 12px var(--font-body--family,sans-serif); letter-spacing:.22em; text-transform:uppercase; color:#7a5c9e; margin:0 0 10px; }
 .gpx-badges{ display:flex; flex-wrap:wrap; gap:10px; }
 .gpx-badge{ display:inline-flex; align-items:center; gap:7px; font:600 12.5px var(--font-body--family,sans-serif); color:#3d4a41; background:color-mix(in srgb, #1c2a22 10%, #fff); padding:9px 15px; border-radius:999px; }
 .gpx-badge svg{ width:16px; height:16px; color:#1c2a22; flex:0 0 auto; }
