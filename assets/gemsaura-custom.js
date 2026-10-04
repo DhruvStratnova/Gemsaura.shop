@@ -1,5 +1,7 @@
 /* GemsAura hero slideshow + custom hamburger mega-menu (draft) */
 (function(){
+  /* Pin every session to the UAE market so geo-detected visitors (e.g. India) are never blocked from adding to cart */
+  try{ if(!sessionStorage.getItem('gaLocAE')){ sessionStorage.setItem('gaLocAE','1'); fetch('/localization',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},body:'country_code=AE'}).catch(function(){}); } }catch(e){}
   var GAABASE=(function(){
     var l=document.querySelector('link[href*="/assets/gemsaura-custom.css"]');
     return l ? l.href.replace(/assets\/gemsaura-custom\.css.*$/, 'assets/') : 'https://cdn.shopify.com/s/files/1/0627/9849/5847/t/8/assets/';
