@@ -422,7 +422,7 @@
       root.innerHTML='<div class="gcart-scrim"></div><aside class="gcart-panel" role="dialog" aria-label="Shopping cart" aria-modal="true">'
         +'<header class="gcart-top"><span class="gcart-h">Cart <span class="gcart-count">0</span></span><button class="gcart-x" aria-label="Close cart">'+X+'</button></header>'
         +'<div class="gcart-scroll"><div class="gcart-items"></div><div class="gcart-empty"><p>Your cart is empty.</p><button class="gcart-shop">Continue shopping</button></div></div>'
-        +'<footer class="gcart-foot"><div class="gcart-ship">✦ Free shipping on all orders</div><div class="gcart-row"><span>Subtotal</span><span class="gcart-total">Dhs. 0.00</span></div><a class="gcart-co" href="/checkout">Checkout</a></footer>'
+        +'<footer class="gcart-foot"><div class="gcart-ship">✦ Free shipping on all orders</div><div class="gcart-row gcart-row-disc" style="display:none"><span class="gcart-disc-lb">Discount</span><span class="gcart-disc-v"></span></div><div class="gcart-row"><span>Subtotal</span><span class="gcart-total">Dhs. 0.00</span></div><a class="gcart-co" href="/checkout">Checkout</a></footer>'
         +'</aside>';
       document.body.appendChild(root);
       itemsEl=root.querySelector('.gcart-items'); emptyEl=root.querySelector('.gcart-empty'); totalEl=root.querySelector('.gcart-total'); countEl=root.querySelector('.gcart-count');
@@ -436,6 +436,7 @@
     function render(cart){
       build();
       countEl.textContent=cart.item_count; totalEl.textContent=money(cart.total_price); updateBadge(cart.item_count);
+      try{ var _dr=root.querySelector('.gcart-row-disc'); if(_dr){ var _sv=cart.total_discount||0; if(_sv>0){ var _dn=(cart.cart_level_discount_applications&&cart.cart_level_discount_applications[0]&&cart.cart_level_discount_applications[0].title)||'Discount applied'; _dr.style.display=''; _dr.querySelector('.gcart-disc-lb').textContent=_dn; _dr.querySelector('.gcart-disc-v').textContent='− '+money(_sv); } else { _dr.style.display='none'; } } }catch(e){}
       if(!cart.items.length){ itemsEl.innerHTML=''; root.classList.add('empty'); return; }
       root.classList.remove('empty');
       itemsEl.innerHTML=cart.items.map(function(it){ var im=imgUrl(it.image||(it.featured_image&&it.featured_image.url)||'');
@@ -443,7 +444,7 @@
           +'<div class="gci-img"'+(im?' style="background-image:url('+im+')"':'')+'></div>'
           +'<div class="gci-mid"><div class="gci-t">'+it.product_title+'</div>'
           +(it.variant_title&&!/default/i.test(it.variant_title)?'<div class="gci-v">'+it.variant_title+'</div>':'')
-          +'<div class="gci-p">'+money(it.final_price)+'</div>'
+          +'<div class="gci-p">'+money(it.final_price)+(it.original_price>it.final_price?' <s>'+money(it.original_price)+'</s>':'')+'</div>'
           +'<div class="gci-qty"><button data-act="dec" aria-label="Decrease quantity">'+MINUS+'</button><span class="gci-q">'+it.quantity+'</span><button data-act="inc" aria-label="Increase quantity">'+PLUS+'</button></div></div>'
           +'<div class="gci-right"><button class="gci-rm" data-act="rm" aria-label="Remove item">'+TRASH+'</button><div class="gci-line">'+money(it.final_line_price)+'</div></div>'
           +'</div>';
