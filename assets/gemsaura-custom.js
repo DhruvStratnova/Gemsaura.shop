@@ -503,8 +503,7 @@
       getProduct(h).then(function(p){
         if(p.available===false){ toast('Sold out'); btn.classList.add('ga-add-out'); btn.innerHTML='Sold out'; setTimeout(function(){ btn.classList.remove('ga-add-out'); btn.innerHTML='+ Add'; }, 2500); return; }
         var avail=p.variants.filter(function(v){return v.available;}); var pick=avail.length?avail:p.variants;
-        if(pick.length===1){ addVariant(pick[0].id, btn); return; }
-        openPicker(card, btn, p);
+        addVariant(pick[0].id, btn);
       }).catch(function(){ if(btn.dataset.href) location.href=btn.dataset.href; });
     });
     // intercept header cart icon -> open custom cart
