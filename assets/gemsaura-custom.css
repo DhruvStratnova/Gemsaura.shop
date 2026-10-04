@@ -1873,10 +1873,12 @@ html.ga-hp-ready #MainContent[data-template="index"]{ opacity:1; }
 .goud-quote-h{ font-family:var(--font-heading--family,serif) !important; font-weight:800 !important; font-size:clamp(30px,4vw,48px) !important; line-height:1.1 !important; color:#fff !important; margin:14px 0 18px !important; text-transform:none !important; max-width:9ch; }
 .goud-quote-p{ font:400 15.5px/1.65 var(--font-body--family,sans-serif); color:rgba(255,255,255,.72); max-width:34ch; margin:0; }
 @media(max-width:749px){
-  .goud-quote{ min-height:340px; background-position:70% center; }
-  .goud-quote::before{ background:linear-gradient(0deg, rgba(8,5,3,.94) 10%, rgba(8,5,3,.55) 55%, rgba(8,5,3,.15) 100%); }
-  .goud-quote-in{ padding:36px 18px; }
-  .goud-quote-h{ font-size:26px !important; max-width:11ch; }
+  .goud-quote{ min-height:0; display:block; background-image:none; background-color:#140c06; overflow:hidden; max-width:100%; }
+  .goud-quote::before{ display:none; }
+  .goud-quote::after{ content:""; display:block; width:100%; aspect-ratio:16/9; background-image:var(--qbg); background-size:cover; background-position:right center; }
+  .goud-quote-in{ padding:34px 18px 22px; }
+  .goud-quote-h{ font-size:26px !important; max-width:14ch; }
+  .goud-quote-p{ max-width:none; }
 }
 
 /* Crystal Oud 3D showcase: unmasked floating model in the gss card */
