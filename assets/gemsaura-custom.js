@@ -642,6 +642,7 @@
       };
       var thumbs=imgs.slice(0,6).map(function(u,i){ return '<button class="gpx-thumb'+(i===0?' on':'')+'" data-i="'+i+'" style="background-image:url('+iu(u,'220x')+')"></button>'; }).join('');
       var _hasCustomSpec=!!(window.__gaMeta&&window.__gaMeta.specifications);
+      var _isOud=(handle==='crystal-oud');
       var badges='<span class="gpx-badge">'+I.truck+'Free shipping</span><span class="gpx-badge">'+I.bolt+'Fast delivery</span>'+(_hasCustomSpec?('<span class="gpx-badge">'+I.spark+'Long-Lasting</span>'):('<span class="gpx-badge">'+I.cert+'Certificate</span>'));
       var detailsHtml=_hasCustomSpec?'<ul class="gpx-blist"><li><b>Pure oud oil.</b> Rich, warm White Oud, long-lasting on skin.</li><li><b>Hand-blended.</b> Small-batch crafted for depth and richness.</li><li><b>Crystal-infused.</b> Real pyrite chips settled in every bottle.</li><li><b>Thoughtfully bottled.</b> Hand-cut crystal glass with a gold cap.</li></ul>':'<ul class="gpx-blist"><li><b>100% natural.</b> Genuine, untreated gemstone beads.</li><li><b>Lab certified.</b> Independently tested for authenticity.</li><li><b>Hand finished.</b> Strung on a durable, comfortable stretch cord.</li><li><b>Energised.</b> Charged with intention before it is dispatched.</li></ul>';
       var benefitsHtml=benefits.length?'<ul class="gpx-blist">'+benefits.map(function(b){ return '<li><b>'+b.n+'</b>'+(b.d?'. '+b.d:'')+'</li>'; }).join('')+'</ul>':'<p>A hand-finished natural stone bracelet, energised and lab-certified.</p>';
@@ -689,7 +690,7 @@
           +'<div class="gpx-price"><span class="gpx-now">'+money(v0.price)+'</span>'+(p.compare_at_price>p.price?'<s>'+money(p.compare_at_price)+'</s><span class="gpx-save">Save '+save+'%</span>':'')+'</div>'
           +descHtml
           +(vals.length>1?'<div class="gpx-optsec"><div class="gpx-optlb">Select '+(opts.name||'Option')+'</div><div class="gpx-opts">'+sizeCards+'</div></div>':'')
-          +addonHtml+'<div class="gpx-stockrow">'+'<div class="gpx-stock"><div class="gpx-stock-bars"><span class="gpx-bar"><i style="width:'+pct+'%"></i></span><span class="gpx-bar gpx-bar2"><i style="width:'+(pct-14)+'%"></i></span></div><div class="gpx-stock-tx"><b>Limited Stock</b><span>'+pct+'% full</span></div></div>'+'</div>'+'<button class="gpx-cta" data-id="'+v0.id+'">Add to Cart \u2013 <b class="gpx-cta-p">'+money(v0.price)+'</b></button>'+'<div class="gpx-info">'+'<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.truck+'</span>Seamless Delivery</div><div class="gpx-ibox-b">Fast, fully tracked shipping. Delivered in 7 to 10 business days, free across the UAE.</div></div>'+'<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.box+'</span>Mindful Returns</div><div class="gpx-ibox-b">7 day returns or exchange, including damaged items.</div></div>'+(_hasCustomSpec?('<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.spark+'</span>Long-Lasting Scent</div><div class="gpx-ibox-b">8+ hours of rich, authentic wear on skin.</div></div>'+'<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.sun+'</span>Hand-Blended</div><div class="gpx-ibox-b">Carefully blended in small batches, alcohol-free.</div></div>'):('<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.cert+'</span>Certified Authentic</div><div class="gpx-ibox-b">Every piece ships with a lab authenticity certificate.</div></div>'+'<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.sun+'</span>Energised &amp; Blessed</div><div class="gpx-ibox-b">Cleansed and charged with intention before it is dispatched.</div></div>'))+'</div>'+accHtml
+          +addonHtml+'<div class="gpx-stockrow">'+'<div class="gpx-stock"><div class="gpx-stock-bars"><span class="gpx-bar"><i style="width:'+pct+'%"></i></span><span class="gpx-bar gpx-bar2"><i style="width:'+(pct-14)+'%"></i></span></div><div class="gpx-stock-tx"><b>Limited Stock</b><span>'+pct+'% full</span></div></div>'+'</div>'+'<button class="gpx-cta" data-id="'+v0.id+'">Add to Cart \u2013 <b class="gpx-cta-p">'+money(v0.price)+'</b></button>'+'<div class="gpx-info">'+'<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.truck+'</span>Seamless Delivery</div><div class="gpx-ibox-b">Fast, fully tracked shipping. Delivered in 7 to 10 business days, free across the UAE.</div></div>'+'<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.box+'</span>Mindful Returns</div><div class="gpx-ibox-b">7 day returns or exchange, including damaged items.</div></div>'+(_hasCustomSpec?('<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.spark+'</span>Long-Lasting Scent</div><div class="gpx-ibox-b">8+ hours of rich, authentic wear on skin.</div></div>'+'<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.sun+'</span>Hand-Blended</div><div class="gpx-ibox-b">Carefully blended in small batches for depth and richness.</div></div>'):('<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.cert+'</span>Certified Authentic</div><div class="gpx-ibox-b">Every piece ships with a lab authenticity certificate.</div></div>'+'<div class="gpx-ibox"><div class="gpx-ibox-h"><span class="gpx-ibox-ic">'+I.sun+'</span>Energised &amp; Blessed</div><div class="gpx-ibox-b">Cleansed and charged with intention before it is dispatched.</div></div>'))+'</div>'+accHtml
         +'</div>'
       +'</div>';
       main.style.display='none'; main.parentNode.insertBefore(hero, main); try{ var _sk=document.querySelector('.ga-skel'); if(_sk&&_sk.remove) _sk.remove(); }catch(e){} try{ document.documentElement.classList.remove('ga-boot'); }catch(e){}
@@ -742,7 +743,7 @@
             }, 240);
           }); }
       }catch(e){}
-      try{
+      if(!_hasCustomSpec) try{
         var _pd=[
           {img:'https://astroaura.market/cdn/shop/t/8/assets/aa-proc-1.jpg', k:'Step 01', t:'Real, raw crystals', d:'Natural stones, lab-tested, never glass or dyed.'},
           {img:'https://astroaura.market/cdn/shop/t/8/assets/aa-proc-2.jpg', k:'Step 02', t:'Hand-strung', d:'Strung by hand on a sacred count, checked for fit and finish.'},
@@ -756,6 +757,32 @@
           +'</div></div>';
         var _pa=(typeof _ss!=='undefined'&&_ss)?_ss:hero; _pa.insertAdjacentElement('afterend', _tl);
         try{ var _psc=document.querySelector('.page-wrapper'); var _pio=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ _tl.classList.add('in'); _pio.disconnect(); } }); }, {root:_psc||null, threshold:0.18}); _pio.observe(_tl); setTimeout(function(){ _tl.classList.add('in'); }, 3500); }catch(e){ _tl.classList.add('in'); }
+      }catch(e){}
+      if(_isOud) try{
+        var _oq=document.createElement('section'); _oq.className='goud-quote'; _oq.style.setProperty('--qbg','url('+GAA('ga-oud-ritual.webp')+')');
+        _oq.innerHTML='<div class="goud-quote-in"><span class="goud-eyebrow" style="color:#f0c987">The Ritual</span><h2 class="goud-quote-h">Worn on skin.<br>Not sprayed in air.</h2><p class="goud-quote-p">A roll of the crystal cap, a trace of warmth on the wrist - White Oud the way it was meant to be worn.</p></div>';
+        hero.insertAdjacentElement('afterend', _oq);
+        var _o3=document.createElement('section'); _o3.className='gss gss-oud';
+        var _ofc=['White Oud','Raw Pyrite','Roll-On','8+ Hours'];
+        _o3.innerHTML='<div class="gss-inner">'
+          +'<div class="gss-left">'
+            +'<span class="gss-eyebrow">The Hero Piece</span>'
+            +'<h2 class="gss-title">One bottle. A world first.</h2>'
+            +'<p class="gss-sub">Pure White Oud resting over real pyrite crystal - blended, bottled and finished by hand. Nothing random, nothing filler.</p>'
+            +'<div class="gss-divider"></div>'
+            +'<p class="gss-disc">Pyrite associations come from traditions across many cultures and are shared for heritage, not as medical claims.</p>'
+          +'</div>'
+          +'<div class="gss-right"><div class="gss-card">'
+            +'<div class="gss-stage">'
+              +'<span class="gss-glow"></span>'
+              +'<span class="gss-ring1"></span><span class="gss-ring2"></span>'
+              +'<div class="gss-orbit">'+_ofc.map(function(nm,i){ return '<span class="gss-fac" style="animation-delay:-'+(i/_ofc.length*50).toFixed(2)+'s"><i></i>'+nm+'</span>'; }).join('')+'</div>'
+              +'<div class="gss-hero-bead"><img class="gss-bead" src="'+GAA('ga-oud3d.webp')+'" alt="Crystal Oud"></div>'
+            +'</div>'
+            +'<div class="gss-foot"><h3 class="gss-feat-n">Crystal Oud</h3></div>'
+          +'</div></div>'
+        +'</div>';
+        _oq.insertAdjacentElement('afterend', _o3);
       }catch(e){}
       try{
         var _cmpRows=[
@@ -778,12 +805,12 @@
       }catch(e){}
       try{
         var _gk='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>';
-        var _gftList=['Premium matte gift box, made for gifting','Energising guide included with every piece','Express delivery across the UAE','Certificate of authenticity included'];
+        var _gftList=_hasCustomSpec?['Ready to gift, no wrapping needed','Hand-blended in small batches','Express delivery across the UAE','7 day returns or exchange']:['Premium matte gift box, made for gifting','Energising guide included with every piece','Express delivery across the UAE','Certificate of authenticity included'];
         var _gft=document.createElement('section'); _gft.className='gft';
         _gft.innerHTML='<div class="gft-head"><span class="gft-eyebrow">Gifting</span><h2 class="gft-h">A gift that means something.</h2></div>'
-          +'<div class="gft-card"><div class="gft-media" style="background-image:url(https://astroaura.market/cdn/shop/t/8/assets/aa-proc-4.jpg)"></div>'
+          +'<div class="gft-card"><div class="gft-media" style="background-image:url('+GAA('ga-gift-generic.png')+')"></div>'
           +'<div class="gft-body"><h3 class="gft-bh">Premium. Packaged. Ready.</h3>'
-          +'<p class="gft-sub">Arrives in a premium matte gift box that needs no wrapping, made for gifting. Every piece includes an energising guide, ready for a birthday, an anniversary, or just because.</p>'
+          +'<p class="gft-sub">'+(_hasCustomSpec?'Arrives ready to gift, carefully wrapped with a silk ribbon, no extra wrapping needed. Ready for a birthday, an anniversary, or just because.':'Arrives in a premium matte gift box that needs no wrapping, made for gifting. Every piece includes an energising guide, ready for a birthday, an anniversary, or just because.')+'</p>'
           +'<ul class="gft-list">'+_gftList.map(function(t){ return '<li><i class="gft-ck">'+_gk+'</i>'+t+'</li>'; }).join('')+'</ul>'
           +'</div></div>';
         if(typeof _cmp!=='undefined'&&_cmp){ _cmp.insertAdjacentElement('beforebegin', _gft); }

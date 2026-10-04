@@ -1832,3 +1832,57 @@ body{ overflow-x:hidden !important; min-width:0 !important; max-width:100vw !imp
 /* Boot cloak: hide homepage until custom build is ready (no native-section flash) */
 #MainContent[data-template="index"]{ opacity:0; transition:opacity .5s ease; }
 html.ga-hp-ready #MainContent[data-template="index"]{ opacity:1; }
+
+/* ============= Crystal Oud: What's Inside + Feature strip (editorial dark) ============= */
+.goud-in{ width:100%; box-sizing:border-box; max-width:1300px; margin:14px auto 0; padding:60px 28px 10px; }
+.goud-in-head{ text-align:center; margin:0 0 34px; }
+.goud-eyebrow{ display:inline-flex; align-items:center; gap:10px; font:800 11px ui-monospace,"SF Mono","Roboto Mono",Menlo,monospace; letter-spacing:.26em; text-transform:uppercase; color:var(--cat,#7a5c9e); margin:0 0 14px; }
+.goud-h{ font-family:var(--font-heading--family,serif) !important; font-weight:800 !important; font-size:clamp(26px,2.8vw,38px) !important; color:#1c1310 !important; margin:0 !important; letter-spacing:-.01em; text-transform:none !important; }
+.goud-in-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+.goud-in-card{ position:relative; border-radius:20px; overflow:hidden; background:#0b0806; aspect-ratio:4/5; display:flex; flex-direction:column; justify-content:flex-end; box-shadow:0 30px 70px -36px rgba(20,12,8,.42); }
+.goud-in-im{ position:absolute; inset:0; background-size:cover; background-position:center; transition:transform .6s ease; }
+.goud-in-card:hover .goud-in-im{ transform:scale(1.04); }
+.goud-in-card::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, rgba(5,3,2,.88) 0%, rgba(5,3,2,.25) 48%, transparent 72%); }
+.goud-in-card h3{ position:relative; z-index:1; font-family:var(--font-heading--family,serif) !important; font-weight:800 !important; font-size:clamp(20px,2vw,26px) !important; color:#fff !important; margin:0 22px 4px !important; text-transform:none !important; }
+.goud-in-card p{ position:relative; z-index:1; margin:0 22px 22px; font:500 13.5px ui-monospace,"SF Mono","Roboto Mono",Menlo,monospace; letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,.72); }
+
+.goud-feat{ position:relative; width:100%; margin:44px 0 0; padding:56px 20px; background-image:var(--bg); background-size:cover; background-position:center; overflow:hidden; }
+.goud-feat-scrim{ position:absolute; inset:0; background:linear-gradient(90deg, rgba(10,6,3,.72) 0%, rgba(10,6,3,.52) 55%, rgba(10,6,3,.72) 100%); }
+.goud-feat-row{ position:relative; z-index:1; max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+.goud-feat-it{ flex:1 1 150px; display:flex; align-items:center; gap:12px; color:#fff; justify-content:center; }
+.goud-feat-ic{ width:30px; height:30px; flex:0 0 auto; color:#f0c987; }
+.goud-feat-ic svg{ width:100%; height:100%; }
+.goud-feat-it span:last-child{ font:700 13px/1.25 ui-monospace,"SF Mono","Roboto Mono",Menlo,monospace; letter-spacing:.1em; text-transform:uppercase; }
+
+@media(max-width:749px){
+  .goud-in{ padding:40px 16px 4px; }
+  .goud-in-grid{ grid-template-columns:1fr 1fr; gap:12px; }
+  .goud-in-card{ aspect-ratio:3/4; border-radius:14px; }
+  .goud-in-card h3{ font-size:16px !important; margin:0 14px 2px !important; }
+  .goud-in-card p{ font-size:10.5px; margin:0 14px 14px; }
+  .goud-feat{ padding:34px 16px; margin-top:28px; }
+  .goud-feat-row{ gap:20px 14px; }
+  .goud-feat-it{ flex:1 1 42%; gap:9px; }
+  .goud-feat-ic{ width:24px; height:24px; }
+  .goud-feat-it span:last-child{ font-size:10.5px; }
+}
+
+.goud-quote{ position:relative; width:100%; margin:44px 0 0; min-height:420px; display:flex; align-items:center; background-image:var(--qbg); background-size:cover; background-position:right center; background-color:#1a0f06; }
+.goud-quote::before{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(8,5,3,.92) 0%, rgba(8,5,3,.62) 42%, rgba(8,5,3,.1) 75%); }
+.goud-quote-in{ position:relative; z-index:1; max-width:1300px; width:100%; margin:0 auto; padding:60px 28px; box-sizing:border-box; }
+.goud-quote-h{ font-family:var(--font-heading--family,serif) !important; font-weight:800 !important; font-size:clamp(30px,4vw,48px) !important; line-height:1.1 !important; color:#fff !important; margin:14px 0 18px !important; text-transform:none !important; max-width:9ch; }
+.goud-quote-p{ font:400 15.5px/1.65 var(--font-body--family,sans-serif); color:rgba(255,255,255,.72); max-width:34ch; margin:0; }
+@media(max-width:749px){
+  .goud-quote{ min-height:340px; background-position:70% center; }
+  .goud-quote::before{ background:linear-gradient(0deg, rgba(8,5,3,.94) 10%, rgba(8,5,3,.55) 55%, rgba(8,5,3,.15) 100%); }
+  .goud-quote-in{ padding:36px 18px; }
+  .goud-quote-h{ font-size:26px !important; max-width:11ch; }
+}
+
+/* Crystal Oud 3D showcase: unmasked floating model in the gss card */
+.gss-oud .gss-hero-bead{ width:250px; height:250px; }
+.gss-oud .gss-hero-bead img{ -webkit-mask-image:none; mask-image:none; object-fit:contain; }
+.goud-quote{ background-position:right center; }
+@media(max-width:749px){
+  .gss-oud .gss-hero-bead{ width:200px; height:200px; }
+}
