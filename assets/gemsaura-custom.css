@@ -1080,6 +1080,7 @@ body.page-width-wide{ background:linear-gradient(180deg, #f7f3ec 0%, #f2ede4 100
 .gpx-track{ position:absolute; inset:0; display:flex; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; overscroll-behavior-x:contain; }
 .gpx-track::-webkit-scrollbar{ display:none; }
 .gpx-slide{ flex:0 0 100%; width:100%; height:100%; object-fit:cover; scroll-snap-align:start; scroll-snap-stop:always; }
+.gpx-prog{ display:none; }
 .gpx-thumbs{ display:flex; gap:12px; margin-top:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:4px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
 .gpx-thumbs::-webkit-scrollbar{ display:none; }
 .gpx-thumb{ flex:0 0 88px; aspect-ratio:1; scroll-snap-align:start; border-radius:16px; border:0; background:color-mix(in srgb, #1c2a22 8%, #fff); background-size:cover; background-position:center; cursor:pointer; box-shadow:inset 0 0 0 1px rgba(0,0,0,.05); transition:box-shadow .2s, transform .2s; }
@@ -1132,7 +1133,7 @@ body.page-width-wide{ background:linear-gradient(180deg, #f7f3ec 0%, #f2ede4 100
 .gpx-guarantee{ display:flex; align-items:flex-start; gap:11px; margin-top:18px; font:400 13px var(--font-body--family,sans-serif); color:#6a7a70; line-height:1.5; }
 .gpx-guarantee b{ color:#1c2a22; }
 .gpx-guarantee-ic{ color:#1c2a22; flex:0 0 auto; } .gpx-guarantee-ic svg{ width:22px; height:22px; }
-@media(max-width:768px){ .gpx{ grid-template-columns:1fr; gap:20px; padding:10px 14px; overflow-x:hidden; } .gpx-badges{ gap:8px; } .gpx-badge{ padding:8px 12px; font-size:12px; } .gpx-thumb{ flex-basis:74px; } }
+@media(max-width:768px){ .gpx{ grid-template-columns:1fr; gap:20px; padding:10px 14px; overflow-x:hidden; } .gpx-badges{ gap:8px; } .gpx-badge{ padding:8px 12px; font-size:12px; } .gpx-thumb{ flex-basis:74px; } .gpx-nav{ display:none !important; } .gpx-imgwrap{ border-radius:0; margin:0 -14px; } .gpx-prog{ display:block; position:relative; height:2px; background:rgba(28,42,34,.14); margin:12px 2px 0; overflow:hidden; } .gpx-prog i{ position:absolute; top:0; left:0; height:100%; width:100%; background:#1c2a22; transition:transform .35s cubic-bezier(.4,0,.2,1); } .gpx-thumbs{ margin-top:12px; } }
 
 /* ---- GPX CTA section (stock bars + qty + wish + info boxes) ---- */
 .gpx-stockrow{ display:block; margin-bottom:16px; }
