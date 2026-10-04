@@ -1122,11 +1122,11 @@ body.page-width-wide{ background:linear-gradient(180deg, #f7f3ec 0%, #f2ede4 100
 .gpx-tp.on{ display:block; }
 .gpx-tp p{ margin:0; }
 .gpx-lead{ margin:0 0 14px; }
-.gpx-blist{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px; }
+.gpx-blist{ list-style:none; margin:0 !important; padding:0 !important; display:flex; flex-direction:column; gap:3px; }
 .gpx-blist li{ padding-left:18px; position:relative; }
 .gpx-blist li::before{ content:''; position:absolute; left:0; top:8px; width:7px; height:7px; border-radius:50%; background:#1c2a22; }
 .gpx-blist b{ color:#111; font-weight:700; }
-.gpx-blist li{ line-height:1.5; }
+.gpx-blist li{ line-height:1.45; margin:0 !important; padding-top:0 !important; padding-bottom:0 !important; }
 .gpx-tp .gpx-blist li, .gpx-panel .gpx-blist li{ margin:0; }
 .gpx-optsec{ margin-bottom:22px; }
 .gpx-optlb{ font:700 15px var(--font-body--family,sans-serif); color:#1c2a22; margin-bottom:12px; }
