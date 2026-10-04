@@ -1869,18 +1869,17 @@ html.ga-hp-ready #MainContent[data-template="index"]{ opacity:1; }
   .goud-feat-it span:last-child{ font-size:10.5px; }
 }
 
-.goud-quote{ position:relative; width:100%; margin:44px 0 0; min-height:420px; display:flex; align-items:center; background-image:var(--qbg); background-size:cover; background-position:right center; background-color:#1a0f06; }
-.goud-quote::before{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(8,5,3,.92) 0%, rgba(8,5,3,.62) 42%, rgba(8,5,3,.1) 75%); }
-.goud-quote-in{ position:relative; z-index:1; max-width:1300px; width:100%; margin:0 auto; padding:60px 28px; box-sizing:border-box; }
+.goud-quote{ position:relative; width:100%; margin:44px 0 0; min-height:540px; display:flex; align-items:center; justify-content:flex-end; background-image:var(--qbg); background-size:cover; background-position:left center; background-color:#17100a; }
+.goud-quote::before{ content:""; position:absolute; inset:0; background:linear-gradient(90deg, transparent 34%, rgba(10,6,3,.3) 58%, rgba(10,6,3,.62) 88%); }
+.goud-quote-in{ position:relative; z-index:1; width:46%; margin-right:7%; padding:56px 0; box-sizing:border-box; }
 .goud-quote-h{ font-family:var(--font-heading--family,serif) !important; font-weight:800 !important; font-size:clamp(30px,4vw,48px) !important; line-height:1.1 !important; color:#fff !important; margin:14px 0 18px !important; text-transform:none !important; max-width:9ch; }
 .goud-quote-p{ font:400 15.5px/1.65 var(--font-body--family,sans-serif); color:rgba(255,255,255,.72); max-width:34ch; margin:0; }
 @media(max-width:749px){
-  .goud-quote{ min-height:0; display:block; background-image:none; background-color:#140c06; overflow:hidden; max-width:100%; }
-  .goud-quote::before{ display:none; }
-  .goud-quote::after{ content:""; display:block; width:100%; aspect-ratio:16/9; background-image:var(--qbg); background-size:cover; background-position:right center; }
-  .goud-quote-in{ padding:34px 18px 22px; }
-  .goud-quote-h{ font-size:26px !important; max-width:14ch; }
-  .goud-quote-p{ max-width:none; }
+  .goud-quote{ aspect-ratio:1/1; min-height:0; background-position:left center; }
+  .goud-quote::before{ background:linear-gradient(90deg, transparent 26%, rgba(10,6,3,.34) 52%, rgba(10,6,3,.66) 86%); }
+  .goud-quote-in{ width:56%; margin-right:5%; padding:0; }
+  .goud-quote-h{ font-size:22px !important; max-width:none; margin:10px 0 12px !important; }
+  .goud-quote-p{ max-width:none; font-size:13px; line-height:1.55; }
 }
 
 /* Crystal Oud 3D showcase: unmasked floating model in the gss card */
