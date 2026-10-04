@@ -761,7 +761,7 @@
       }catch(e){}
       if(_isOud) try{
         var _oq=document.createElement('section'); _oq.className='goud-quote'; _oq.style.setProperty('--qbg','url('+GAA('ga-oud-ritual2.webp')+')'); _oq.style.setProperty('--qbgw','url('+GAA('ga-oud-ritual-w.webp')+')');
-        _oq.innerHTML='<div class="goud-quote-in"><span class="goud-eyebrow" style="color:#f0c987">The Ritual</span><h2 class="goud-quote-h">Worn on skin.<br>Not sprayed in air.</h2><p class="goud-quote-p">A roll of the crystal cap, a trace of warmth on the wrist - White Oud the way it was meant to be worn.</p></div>';
+        _oq.innerHTML='<div class="goud-quote-in"><span class="goud-eyebrow" style="color:#f0c987">World\'s First Crystal Oud</span><h2 class="goud-quote-h">Never been done.<br>Until now.</h2><p class="goud-quote-p">Real pyrite, sealed inside pure White Oud. The first fragrance of its kind, anywhere. Worn on skin, not sprayed in air - and once you wear it, nothing else comes close.</p></div>';
         hero.insertAdjacentElement('afterend', _oq);
         var _o3=document.createElement('section'); _o3.className='gss gss-oud';
         var _ofc=['White Oud','Raw Pyrite','Roll-On','8+ Hours'];
