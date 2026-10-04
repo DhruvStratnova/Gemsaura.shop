@@ -645,27 +645,28 @@
         sun:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8"/></svg>'
       };
       var thumbs=imgs.slice(0,12).map(function(u,i){ return '<button class="gpx-thumb'+(i===0?' on':'')+'" data-i="'+i+'" style="background-image:url('+iu(u,'220x')+')"></button>'; }).join('');
-      var _hasCustomSpec=!!(window.__gaMeta&&window.__gaMeta.specifications);
       var _isOud=(handle==='crystal-oud');
+      var _hasCustomSpec=_isOud;
       var badges='<span class="gpx-badge">'+I.truck+'Free shipping</span><span class="gpx-badge">'+I.bolt+'Fast delivery</span>'+(_hasCustomSpec?('<span class="gpx-badge">'+I.spark+'Long-Lasting</span>'):('<span class="gpx-badge">'+I.cert+'Certificate</span>'));
       var detailsHtml=_hasCustomSpec?'<ul class="gpx-blist"><li><b>Pure oud oil.</b> Rich, warm White Oud, long-lasting on skin.</li><li><b>Hand-blended.</b> Small-batch crafted for depth and richness.</li><li><b>Crystal-infused.</b> Real pyrite chips settled in every bottle.</li><li><b>Thoughtfully bottled.</b> Hand-cut crystal glass with a gold cap.</li></ul>':'<ul class="gpx-blist"><li><b>100% natural.</b> Genuine, untreated gemstone beads.</li><li><b>Lab certified.</b> Independently tested for authenticity.</li><li><b>Hand finished.</b> Strung on a durable, comfortable stretch cord.</li><li><b>Energised.</b> Charged with intention before it is dispatched.</li></ul>';
       var benefitsHtml=benefits.length?'<ul class="gpx-blist">'+benefits.map(function(b){ return '<li><b>'+b.n+'</b>'+(b.d?'. '+b.d:'')+'</li>'; }).join('')+'</ul>':'<p>A hand-finished natural stone bracelet, energised and lab-certified.</p>';
       var howHtml='<ul class="gpx-blist"><li>Wear it on your receiving hand (usually the left) to draw in its energy.</li><li>Keep the bracelet dry and avoid perfume or harsh chemicals.</li><li>Store it away from direct sunlight when you are not wearing it.</li><li>Cleanse under moonlight once a month to recharge the stones.</li></ul>';
       var opts=p.options[0]; var vals=(opts&&opts.values)||[]; var pct=Math.min(92, 66+(handle.length*7)%26);
       var _m=window.__gaMeta||{}; var accItems=[];
-      function _nd(s){ return (s||'').replace(/\s*[\u2013\u2014]\s*/g, ', '); }
+      function _s(v){ return (typeof v==='string'&&v)?v:''; }
+      function _nd(s){ return (typeof s==='string'?s:'').replace(/\s*[\u2013\u2014]\s*/g, ', '); }
       function _wrap(s){ return '<div class="gpx-acc-txt">'+_nd(s)+'</div>'; }
       function _accsWrap(items){ return '<div class="gpx-accs">'+items.map(function(it,i){ return '<details class="gpx-acc"'+(i===0?' open':'')+'><summary>'+it[0]+'<span class="gpx-acc-x" aria-hidden="true"></span></summary><div class="gpx-acc-body">'+it[1]+'</div></details>'; }).join('')+'</div>'; }
       // TOP: Benefits + How to Use (product description)
       var descItems=[];
       descItems.push(['Details', detailsHtml]);
-      descItems.push(['Benefits', _m.benefits?_wrap(_m.benefits):(benefits.length?benefitsHtml:'<p>A hand-finished natural stone bracelet, energised and lab certified.</p>')]);
-      descItems.push(['How to Use', _m.how_to_use?_wrap(_m.how_to_use):howHtml]);
+      descItems.push(['Benefits', _s(_m.benefits)?_wrap(_m.benefits):(benefits.length?benefitsHtml:'<p>A hand-finished natural stone bracelet, energised and lab certified.</p>')]);
+      descItems.push(['How to Use', _s(_m.how_to_use)?_wrap(_m.how_to_use):howHtml]);
       var _defTab=1;
       var descHtml='<div class="gpx-tabs">'+descItems.map(function(it,i){return '<button class="gpx-tab'+(i===_defTab?' on':'')+'" data-t="'+i+'">'+it[0]+'</button>';}).join('')+'</div>'+'<div class="gpx-panel">'+descItems.map(function(it,i){return '<div class="gpx-tp'+(i===_defTab?' on':'')+'">'+it[1]+'</div>';}).join('')+'</div>';
       // BOTTOM: Specifications (technical only) + Astrology & Energy + rest
       var _spec=[];
-      if(_m.specifications){ _m.specifications.split('\n').forEach(function(ln){ ln=_nd(ln); var i=ln.indexOf(':'); if(i>0){ _spec.push([ln.slice(0,i).trim(), ln.slice(i+1).trim()]); } }); }
+      if(_s(_m.specifications)){ _m.specifications.split('\n').forEach(function(ln){ ln=_nd(ln); var i=ln.indexOf(':'); if(i>0){ _spec.push([ln.slice(0,i).trim(), ln.slice(i+1).trim()]); } }); }
       if(!_spec.length){
         if(_m.stones&&_m.stones.length)_spec.push(['Stone',_m.stones.join(', ')]);
         if(vals.length) _spec.push(['Bead sizes', vals.join(' & ')]);
@@ -675,11 +676,11 @@
         _spec.push(['Sourcing', 'Natural stones, ethically sourced']);
       }
       accItems.push(['Specifications','<dl class="gpx-spec">'+_spec.map(function(s){return '<div><dt>'+s[0]+'</dt><dd>'+s[1]+'</dd></div>';}).join('')+'</dl>']);
-      accItems.push(['Authenticity & Quality', (_m.authenticity||_m.quality)?((_m.authenticity?_wrap(_m.authenticity):'')+(_m.quality?_wrap(_m.quality):'')):'<div class="gpx-acc-txt"><p>Every piece is genuine and natural, independently lab-tested for authenticity, then cleansed and energised before it is dispatched.</p></div>']);
-      accItems.push(['Packaging', _m.packaging?_wrap(_m.packaging):'<div class="gpx-acc-txt"><p>Arrives in premium, gift-ready packaging along with your authenticity certificate.</p></div>']);
-      if(_m.style_tip) accItems.push(['Style Tip', _wrap(_m.style_tip)]);
-      accItems.push(['Shipping & Returns', _m.returns?_wrap(_m.returns):'<div class="gpx-acc-txt"><p>Free, fully tracked shipping across the UAE in 7 to 10 business days. 7 day returns or exchange, including items that arrive damaged.</p></div>']);
-      if(_m.faq&&_m.faq.length) accItems.push(['FAQ', _m.faq.map(function(f){return '<div class="gpx-faq"><p class="gpx-faq-q">'+_nd(f.q||'')+'</p><p class="gpx-faq-a">'+_nd(f.a||'')+'</p></div>';}).join('')]);
+      accItems.push(['Authenticity & Quality', (_s(_m.authenticity)||_s(_m.quality))?((_s(_m.authenticity)?_wrap(_m.authenticity):'')+(_s(_m.quality)?_wrap(_m.quality):'')):'<div class="gpx-acc-txt"><p>Every piece is genuine and natural, independently lab-tested for authenticity, then cleansed and energised before it is dispatched.</p></div>']);
+      accItems.push(['Packaging', _s(_m.packaging)?_wrap(_m.packaging):'<div class="gpx-acc-txt"><p>Arrives in premium, gift-ready packaging along with your authenticity certificate.</p></div>']);
+      if(_s(_m.style_tip)) accItems.push(['Style Tip', _wrap(_m.style_tip)]);
+      accItems.push(['Shipping & Returns', _s(_m.returns)?_wrap(_m.returns):'<div class="gpx-acc-txt"><p>Free, fully tracked shipping across the UAE in 7 to 10 business days. 7 day returns or exchange, including items that arrive damaged.</p></div>']);
+      if(Array.isArray(_m.faq)&&_m.faq.length) accItems.push(['FAQ', _m.faq.map(function(f){return '<div class="gpx-faq"><p class="gpx-faq-q">'+_nd(f.q||'')+'</p><p class="gpx-faq-a">'+_nd(f.a||'')+'</p></div>';}).join('')]);
       var accHtml=_accsWrap(accItems);
       var sizeCards=vals.map(function(v,i){ var vv=p.variants.filter(function(x){return x.title===v||x.option1===v;})[0]; return '<button class="gpx-opt'+(i===0?' on':'')+'" data-id="'+(vv?vv.id:'')+'" data-price="'+(vv?vv.price:p.price)+'"'+(vv&&!vv.available?' data-out="1"':'')+'><span class="gpx-opt-im" style="background-image:url('+iu(imgs[0]||'','160x')+')"></span><span class="gpx-opt-tx"><span class="gpx-opt-l">'+v+'</span><span class="gpx-opt-p">'+money(vv?vv.price:p.price)+'</span></span></button>'; }).join('');
       var hero=document.createElement('div'); hero.className='ghero-wrap'; hero.style.setProperty('--cat', catcol); try{ document.documentElement.style.setProperty('--cat', catcol); document.body.style.setProperty('--cat', catcol); document.body.classList.add('ga-pdp'); }catch(e){}
@@ -689,7 +690,7 @@
           +'<div class="gpx-prog"><i></i></div>'+'<div class="gpx-thumbs">'+thumbs+'</div>'
         +'</div>'
         +'<div class="gpx-right">'
-          +(_m.key_feature?'<span class="gpx-eyebrow">'+_nd(_m.key_feature)+'</span>':'')+'<h1 class="gpx-title">'+p.title+'</h1>'
+          +(_s(_m.key_feature)?'<span class="gpx-eyebrow">'+_nd(_m.key_feature)+'</span>':'')+'<h1 class="gpx-title">'+p.title+'</h1>'
           +'<div class="gpx-badges">'+badges+'</div>'
           +'<hr class="gpx-hr">'
           +'<div class="gpx-price"><span class="gpx-now">'+money(v0.price)+'</span>'+(p.compare_at_price>p.price?'<s>'+money(p.compare_at_price)+'</s><span class="gpx-save">Save '+save+'%</span>':'')+'</div>'
