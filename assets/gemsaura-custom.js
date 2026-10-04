@@ -640,7 +640,7 @@
         box:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3l8 4v10l-8 4-8-4V7z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg>',
         sun:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M19.4 4.6l-1.8 1.8M6.4 17.6l-1.8 1.8"/></svg>'
       };
-      var thumbs=imgs.slice(0,6).map(function(u,i){ return '<button class="gpx-thumb'+(i===0?' on':'')+'" data-i="'+i+'" style="background-image:url('+iu(u,'220x')+')"></button>'; }).join('');
+      var thumbs=imgs.slice(0,12).map(function(u,i){ return '<button class="gpx-thumb'+(i===0?' on':'')+'" data-i="'+i+'" style="background-image:url('+iu(u,'220x')+')"></button>'; }).join('');
       var _hasCustomSpec=!!(window.__gaMeta&&window.__gaMeta.specifications);
       var _isOud=(handle==='crystal-oud');
       var badges='<span class="gpx-badge">'+I.truck+'Free shipping</span><span class="gpx-badge">'+I.bolt+'Fast delivery</span>'+(_hasCustomSpec?('<span class="gpx-badge">'+I.spark+'Long-Lasting</span>'):('<span class="gpx-badge">'+I.cert+'Certificate</span>'));
@@ -681,7 +681,7 @@
       var hero=document.createElement('div'); hero.className='ghero-wrap'; hero.style.setProperty('--cat', catcol); try{ document.documentElement.style.setProperty('--cat', catcol); document.body.style.setProperty('--cat', catcol); document.body.classList.add('ga-pdp'); }catch(e){}
       hero.innerHTML='<div class="gpx">'
         +'<div class="gpx-left">'
-          +'<div class="gpx-imgwrap"><img class="gpx-mainimg" src="'+(imgs[0]?iu(imgs[0],'900x'):'')+'" alt="'+p.title+'">'+(imgs.length>1?'<button class="gpx-nav gpx-prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><button class="gpx-nav gpx-next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>':'')+'</div>'
+          +'<div class="gpx-imgwrap"><div class="gpx-track">'+imgs.slice(0,12).map(function(u,i){ return '<img class="gpx-slide" src="'+iu(u,'900x')+'" alt="'+p.title+'"'+(i>0?' loading="lazy"':'')+'>'; }).join('')+'</div>'+(imgs.length>1?'<button class="gpx-nav gpx-prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><button class="gpx-nav gpx-next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>':'')+'</div>'
           +'<div class="gpx-thumbs">'+thumbs+'</div>'
         +'</div>'
         +'<div class="gpx-right">'
@@ -809,7 +809,7 @@
         var _gftList=_hasCustomSpec?['Ready to gift, no wrapping needed','Hand-blended in small batches','Express delivery across the UAE','7 day returns or exchange']:['Premium matte gift box, made for gifting','Energising guide included with every piece','Express delivery across the UAE','Certificate of authenticity included'];
         var _gft=document.createElement('section'); _gft.className='gft';
         _gft.innerHTML='<div class="gft-head"><span class="gft-eyebrow">Gifting</span><h2 class="gft-h">A gift that means something.</h2></div>'
-          +'<div class="gft-card"><div class="gft-media" style="background-image:url('+GAA('ga-gift-generic.png')+')"></div>'
+          +'<div class="gft-card"><div class="gft-media" style="background-image:url('+GAA('ga-gift-std.webp')+')"></div>'
           +'<div class="gft-body"><h3 class="gft-bh">Premium. Packaged. Ready.</h3>'
           +'<p class="gft-sub">'+(_hasCustomSpec?'Arrives ready to gift, carefully wrapped with a silk ribbon, no extra wrapping needed. Ready for a birthday, an anniversary, or just because.':'Arrives in a premium matte gift box that needs no wrapping, made for gifting. Every piece includes an energising guide, ready for a birthday, an anniversary, or just because.')+'</p>'
           +'<ul class="gft-list">'+_gftList.map(function(t){ return '<li><i class="gft-ck">'+_gk+'</i>'+t+'</li>'; }).join('')+'</ul>'
@@ -858,8 +858,10 @@
         if(_rec) _rec.insertAdjacentElement('afterend', _fq); else if(typeof _rev!=='undefined'&&_rev) _rev.insertAdjacentElement('afterend', _fq); else document.querySelector('#MainContent').appendChild(_fq);
         try{ var _fio=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ _fq.classList.add('in'); _fio.disconnect(); } }); }, {root:document.querySelector('.page-wrapper')||null, threshold:0.14}); _fio.observe(_fq); setTimeout(function(){ _fq.classList.add('in'); }, 3500); }catch(e){ _fq.classList.add('in'); }
       }catch(e){}
-      var mainImg=hero.querySelector('.gpx-mainimg'); var cur=0;
-      function setImg(i){ cur=(i+imgs.length)%imgs.length; mainImg.src=iu(imgs[cur],'900x'); hero.querySelectorAll('.gpx-thumb').forEach(function(x,xi){x.classList.toggle('on',xi===cur);}); var at=hero.querySelector('.gpx-thumb[data-i="'+cur+'"]'); if(at&&at.scrollIntoView){ try{ at.scrollIntoView({inline:'nearest',block:'nearest'}); }catch(e){} } }
+      var track=hero.querySelector('.gpx-track'); var _nImgs=Math.min(imgs.length,12); var cur=0;
+      function _syncThumbs(){ hero.querySelectorAll('.gpx-thumb').forEach(function(x,xi){x.classList.toggle('on',xi===cur);}); var at=hero.querySelector('.gpx-thumb[data-i="'+cur+'"]'); if(at&&at.scrollIntoView){ try{ at.scrollIntoView({inline:'nearest',block:'nearest'}); }catch(e){} } }
+      function setImg(i){ cur=(i+_nImgs)%_nImgs; if(track) track.scrollTo({left:cur*track.clientWidth, behavior:'smooth'}); _syncThumbs(); }
+      if(track){ var _srf=0; track.addEventListener('scroll', function(){ if(_srf) return; _srf=requestAnimationFrame(function(){ _srf=0; var i=Math.round(track.scrollLeft/Math.max(1,track.clientWidth)); if(i!==cur&&i>=0&&i<_nImgs){ cur=i; _syncThumbs(); } }); }, {passive:true}); }
       hero.querySelector('.gpx-thumbs').addEventListener('click', function(e){ var t=e.target.closest('.gpx-thumb'); if(t) setImg(+t.dataset.i); });
       var pv=hero.querySelector('.gpx-prev'), nx=hero.querySelector('.gpx-next');
       if(pv) pv.addEventListener('click', function(){ setImg(cur-1); });
