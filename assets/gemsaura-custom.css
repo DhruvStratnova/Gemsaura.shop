@@ -20,7 +20,9 @@ header.shopify-section{ position:sticky !important; top:0 !important; transform:
 #ga-brand{ line-height:1 !important; }
 /* compact row: flex-center all three columns vertically; hamburger pinned left */
 #header-component .header__row--top{ display:flex !important; align-items:center !important; height:58px !important; min-height:0 !important; padding:0 22px !important; }
-#header-component .header__columns{ display:flex !important; flex:1 1 auto !important; align-items:center !important; justify-content:space-between !important; height:58px !important; min-height:0 !important; padding:0 !important; }
+#header-component .header__columns{ display:grid !important; grid-template-columns:1fr auto 1fr !important; flex:1 1 auto !important; align-items:center !important; height:58px !important; min-height:0 !important; padding:0 !important; width:100% !important; }
+#header-component .header__column:first-child{ justify-content:flex-start !important; }
+#header-component .header__column:last-child{ justify-content:flex-end !important; }
 #header-component .header__column{ display:flex !important; align-items:center !important; gap:0 !important; height:58px !important; margin:0 !important; }
 #header-component .header__column > *{ margin:0 !important; }
 #header-component .header__column *{ align-self:center !important; }

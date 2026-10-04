@@ -1,7 +1,7 @@
 /* GemsAura hero slideshow + custom hamburger mega-menu (draft) */
 (function(){
-  /* Pin every session to the UAE market: non-AE geo contexts (e.g. India) mark all variants unavailable and block carts. Switch once, reload once. */
-  try{ if(window.__gaCountry&&window.__gaCountry!=='AE'&&!sessionStorage.getItem('gaLocAE2')){ sessionStorage.setItem('gaLocAE2','1'); fetch('/localization',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'},body:'country_code=AE'}).then(function(){ location.reload(); }).catch(function(){}); } }catch(e){}
+  /* Pin every session to the UAE market: non-AE geo contexts (e.g. India) mark all variants unavailable and block carts. Native ?country param switches server-side, once. */
+  try{ if(window.__gaCountry&&window.__gaCountry!=='AE'&&!sessionStorage.getItem('gaLocAE3')){ sessionStorage.setItem('gaLocAE3','1'); var _gu=new URL(location.href); _gu.searchParams.set('country','AE'); location.replace(_gu.toString()); } }catch(e){}
   var GAABASE=(function(){
     var l=document.querySelector('link[href*="/assets/gemsaura-custom.css"]');
     return l ? l.href.replace(/assets\/gemsaura-custom\.css.*$/, 'assets/') : 'https://cdn.shopify.com/s/files/1/0627/9849/5847/t/8/assets/';
