@@ -134,13 +134,13 @@
       var d=R[handle];
       content.querySelectorAll('h3, .group-block').forEach(function(e){ e.style.display='none'; });
       if(d){ var rp=document.createElement('span'); rp.className='ga-pill-rate'; rp.innerHTML='<span class="s">&#9733;</span> '+d[0].toFixed(1); card.appendChild(rp); }
-      if(onSale){ var sp=document.createElement('span'); sp.className='ga-pill-sale'; sp.textContent='Sale'; card.appendChild(sp); }
+      if(onSale){ var sp=document.createElement('span'); sp.className='ga-pill-sale'; sp.textContent='Price Drop'; card.appendChild(sp); }
       var glass=document.createElement('div'); glass.className='ga-glass';
       var meta=document.createElement('div'); meta.className='ga-cardmeta';
       meta.innerHTML='<span class="ga-cardcat">'+catLabel(titleText)+'</span>'+(d?'<a class="ga-cardrev" href="'+href+'">'+d[1]+' reviews</a>':'');
       var title=document.createElement('div'); title.className='ga-title'; title.textContent=titleText;
       var foot=document.createElement('div'); foot.className='ga-cardfoot';
-      if(priceEl){ var pc=priceEl.cloneNode(true); pc.classList.add('ga-price'); foot.appendChild(pc); }
+      if(priceEl){ var pc=priceEl.cloneNode(true); pc.classList.add('ga-price'); try{ var tw=document.createTreeWalker(pc, NodeFilter.SHOW_TEXT); var tn; while((tn=tw.nextNode())){ tn.nodeValue=tn.nodeValue.replace(/\.00(?!\d)/g,''); } }catch(e){} foot.appendChild(pc); }
       var add=document.createElement('button'); add.type='button'; add.className='ga-add'; add.dataset.handle=handle; add.dataset.href=href; add.innerHTML='+ Add';
       foot.appendChild(add);
       glass.appendChild(meta); glass.appendChild(title); glass.appendChild(foot);
