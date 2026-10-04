@@ -809,7 +809,7 @@
         var _gftList=_hasCustomSpec?['Ready to gift, no wrapping needed','Hand-blended in small batches','Express delivery across the UAE','7 day returns or exchange']:['Premium matte gift box, made for gifting','Energising guide included with every piece','Express delivery across the UAE','Certificate of authenticity included'];
         var _gft=document.createElement('section'); _gft.className='gft';
         _gft.innerHTML='<div class="gft-head"><span class="gft-eyebrow">Gifting</span><h2 class="gft-h">A gift that means something.</h2></div>'
-          +'<div class="gft-card"><div class="gft-media" style="background-image:url('+GAA('ga-gift-std.webp')+')"></div>'
+          +'<div class="gft-card"><div class="gft-media" style="background-image:url('+GAA('ga-gift-lux.webp')+')"></div>'
           +'<div class="gft-body"><h3 class="gft-bh">Premium. Packaged. Ready.</h3>'
           +'<p class="gft-sub">'+(_hasCustomSpec?'Arrives ready to gift, carefully wrapped with a silk ribbon, no extra wrapping needed. Ready for a birthday, an anniversary, or just because.':'Arrives in a premium matte gift box that needs no wrapping, made for gifting. Every piece includes an energising guide, ready for a birthday, an anniversary, or just because.')+'</p>'
           +'<ul class="gft-list">'+_gftList.map(function(t){ return '<li><i class="gft-ck">'+_gk+'</i>'+t+'</li>'; }).join('')+'</ul>'
