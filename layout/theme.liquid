@@ -24,7 +24,7 @@
     {%- render 'theme-styles-variables' -%}
     {%- render 'color-palette' -%}
     {{ 'gemsaura-custom.css' | asset_url | stylesheet_tag }}
-    <script>window.__gaStonesUrl="{{ 'ga-stones.json' | asset_url }}";</script>
+    <script>window.__gaStonesUrl="{{ 'ga-stones.json' | asset_url }}";window.__gaCountry="{{ localization.country.iso_code }}";</script>
     {%- if request.page_type == 'product' -%}
       <style>
         html.ga-boot #MainContent .shopify-section{ display:none !important; }
