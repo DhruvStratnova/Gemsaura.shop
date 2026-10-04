@@ -1105,7 +1105,8 @@ body.page-width-wide{ background:linear-gradient(180deg, #f7f3ec 0%, #f2ede4 100
 .gpx-badge{ display:inline-flex; align-items:center; gap:7px; font:600 12.5px var(--font-body--family,sans-serif); color:#3d4a41; background:color-mix(in srgb, #1c2a22 10%, #fff); padding:9px 15px; border-radius:999px; }
 .gpx-badge svg{ width:16px; height:16px; color:#1c2a22; flex:0 0 auto; }
 .gpx-hr{ border:0; border-top:1px solid rgba(28,42,34,.1); margin:20px 0; }
-.gpx-price{ display:flex; align-items:baseline; gap:12px; margin-bottom:20px; }
+.gpx-price{ display:flex; align-items:baseline; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
+@media(max-width:600px){ .gpx-price{ gap:9px; margin-bottom:14px; } .gpx-now{ font-size:22px !important; white-space:nowrap; } .gpx-price s{ font-size:13px !important; white-space:nowrap; } .gpx-save{ font-size:10.5px !important; padding:5px 9px !important; white-space:nowrap; } }
 .gpx-now{ font:800 30px var(--font-body--family,sans-serif); color:#1c2a22; }
 .gpx-price s{ font:500 18px var(--font-body--family,sans-serif); color:#9aa79e; }
 .gpx-save{ position:relative; overflow:hidden; font:700 12.5px var(--font-body--family,sans-serif); color:#fff; background:linear-gradient(135deg, var(--cat,#7a5c9e), color-mix(in srgb, var(--cat,#7a5c9e) 62%, #3d2a5c)); padding:6px 12px; border-radius:9px; box-shadow:0 8px 20px -10px color-mix(in srgb, var(--cat,#7a5c9e) 70%, transparent); }
@@ -1352,6 +1353,16 @@ body.ga-pdp .gpx{ position:relative; z-index:1; }
   .gss-hero-bead{ width:132px; height:132px; }
   .gss-sw{ width:42px; height:42px; }
 }
+@media(max-width:600px){
+  .gss-card{ min-height:400px; overflow:hidden; }
+  .gss-stage{ min-height:300px; }
+  .gss-fac{ offset-path:circle(86px at 50% 50%); font-size:8px; letter-spacing:.08em; gap:5px; }
+  .gss-ring1{ width:176px; height:176px; } .gss-ring2{ width:236px; height:236px; } .gss-ring3{ width:130px; height:130px; } .gss-glow{ width:190px; height:190px; }
+  .gss-hero-bead{ width:104px; height:104px; }
+  .gss-foot{ padding:0 16px 22px; }
+  .gss-feat-n{ font-size:20px !important; margin-bottom:12px !important; }
+  .gss-sw{ width:38px; height:38px; }
+}
 
 
 /* ================= Process timeline ================= */
@@ -1414,12 +1425,14 @@ body.ga-pdp .gpx{ position:relative; z-index:1; }
 .gcmp-them .gcmp-v{ color:#9aa79e; }
 @media(prefers-reduced-motion:reduce){ .gcmp-tbl{ transition:none; } }
 @media(max-width:760px){
-  .gcmp{ padding:40px 20px; }
-  .gcmp-row{ grid-template-columns:1.3fr .85fr .85fr; }
-  .gcmp-c{ padding:16px 10px; gap:6px; }
-  .gcmp-feat{ font-size:13.5px; }
-  .gcmp-v{ font-size:12.5px; }
-  .gcmp-hrow .gcmp-c{ font-size:10px; letter-spacing:.1em; }
+  .gcmp{ padding:36px 14px; overflow:hidden; }
+  .gcmp-tbl{ min-width:0; }
+  .gcmp-row{ grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr) minmax(0,.95fr); }
+  .gcmp-c{ padding:14px 6px; gap:5px; min-width:0; overflow-wrap:break-word; }
+  .gcmp-feat{ font-size:12.5px; line-height:1.3; }
+  .gcmp-v{ font-size:11.5px; line-height:1.3; }
+  .gcmp-mk{ width:18px; height:18px; }
+  .gcmp-hrow .gcmp-c{ font-size:9px; letter-spacing:.08em; }
 }
 
 /* ================= Gifting section ================= */
