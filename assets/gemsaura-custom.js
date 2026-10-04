@@ -801,7 +801,7 @@
           +'<div class="gcmp-tbl"><div class="gcmp-row gcmp-hrow"><span class="gcmp-c gcmp-feat">Feature</span><span class="gcmp-c gcmp-us">GemsAura</span><span class="gcmp-c gcmp-them">Others</span></div>'
           +_cmpRows.map(function(r){ return '<div class="gcmp-row"><span class="gcmp-c gcmp-feat">'+r[0]+'</span><span class="gcmp-c gcmp-us"><i class="gcmp-mk">'+_ck+'</i><span class="gcmp-v">'+r[1]+'</span></span><span class="gcmp-c gcmp-them"><i class="gcmp-mk">'+_cx+'</i><span class="gcmp-v">'+r[2]+'</span></span></div>'; }).join('')
           +'</div>';
-        var _ca=(typeof _tl!=='undefined'&&_tl)?_tl:hero; _ca.insertAdjacentElement('afterend', _cmp);
+        var _ca=(typeof _o3!=='undefined'&&_o3)?_o3:((typeof _tl!=='undefined'&&_tl)?_tl:hero); _ca.insertAdjacentElement('afterend', _cmp);
         try{ var _cio=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ _cmp.classList.add('in'); _cio.disconnect(); } }); }, {root:document.querySelector('.page-wrapper')||null, threshold:0.14}); _cio.observe(_cmp); setTimeout(function(){ _cmp.classList.add('in'); }, 3500); }catch(e){ _cmp.classList.add('in'); }
       }catch(e){}
       try{
