@@ -657,7 +657,8 @@
       descItems.push(['Details', detailsHtml]);
       descItems.push(['Benefits', _m.benefits?_wrap(_m.benefits):(benefits.length?benefitsHtml:'<p>A hand-finished natural stone bracelet, energised and lab certified.</p>')]);
       descItems.push(['How to Use', _m.how_to_use?_wrap(_m.how_to_use):howHtml]);
-      var descHtml='<div class="gpx-tabs">'+descItems.map(function(it,i){return '<button class="gpx-tab'+(i===0?' on':'')+'" data-t="'+i+'">'+it[0]+'</button>';}).join('')+'</div>'+'<div class="gpx-panel">'+descItems.map(function(it,i){return '<div class="gpx-tp'+(i===0?' on':'')+'">'+it[1]+'</div>';}).join('')+'</div>';
+      var _defTab=1;
+      var descHtml='<div class="gpx-tabs">'+descItems.map(function(it,i){return '<button class="gpx-tab'+(i===_defTab?' on':'')+'" data-t="'+i+'">'+it[0]+'</button>';}).join('')+'</div>'+'<div class="gpx-panel">'+descItems.map(function(it,i){return '<div class="gpx-tp'+(i===_defTab?' on':'')+'">'+it[1]+'</div>';}).join('')+'</div>';
       // BOTTOM: Specifications (technical only) + Astrology & Energy + rest
       var _spec=[];
       if(_m.specifications){ _m.specifications.split('\n').forEach(function(ln){ ln=_nd(ln); var i=ln.indexOf(':'); if(i>0){ _spec.push([ln.slice(0,i).trim(), ln.slice(i+1).trim()]); } }); }
