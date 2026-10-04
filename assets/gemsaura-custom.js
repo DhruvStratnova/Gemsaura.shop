@@ -660,7 +660,8 @@
       // TOP: Benefits + How to Use (product description)
       var descItems=[];
       descItems.push(['Details', detailsHtml]);
-      descItems.push(['Benefits', _s(_m.benefits)?_wrap(_m.benefits):(benefits.length?benefitsHtml:'<p>A hand-finished natural stone bracelet, energised and lab certified.</p>')]);
+      function _blist(s){ if(s.indexOf('<ul')>-1||s.indexOf('<li')>-1) return s; var its=s.split(/\n+|(?=\u2022)/).map(function(x){return x.replace(/^[\s\u2022\-]+/,'').trim();}).filter(Boolean); if(!its.length) return _wrap(s); return '<ul class="gpx-blist">'+its.map(function(t){ var m=t.match(/^([^,:.]{2,48}[,:.])\s*(.*)$/); return m?'<li><b>'+m[1]+'</b> '+_nd(m[2])+'</li>':'<li>'+_nd(t)+'</li>'; }).join('')+'</ul>'; }
+      descItems.push(['Benefits', _s(_m.benefits)?_blist(_m.benefits):(benefits.length?benefitsHtml:'<p>A hand-finished natural stone bracelet, energised and lab certified.</p>')]);
       descItems.push(['How to Use', _s(_m.how_to_use)?_wrap(_m.how_to_use):howHtml]);
       var _defTab=1;
       var descHtml='<div class="gpx-tabs">'+descItems.map(function(it,i){return '<button class="gpx-tab'+(i===_defTab?' on':'')+'" data-t="'+i+'">'+it[0]+'</button>';}).join('')+'</div>'+'<div class="gpx-panel">'+descItems.map(function(it,i){return '<div class="gpx-tp'+(i===_defTab?' on':'')+'">'+it[1]+'</div>';}).join('')+'</div>';
