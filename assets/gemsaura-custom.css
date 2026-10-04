@@ -64,7 +64,7 @@ header.shopify-section{ position:sticky !important; top:0 !important; transform:
 /* LEFT: big Crystal + Oud feature */
 .ga-feat-col{ display:flex; flex-direction:column; }
 .ga-feature{ position:relative; display:flex; flex-direction:column; justify-content:flex-end; padding:22px; flex:1 1 auto; min-height:0; border-radius:18px; overflow:hidden; text-decoration:none; background:radial-gradient(130% 120% at 70% 12%, #3d2e1d, #100c07 70%); box-shadow:0 22px 54px -26px rgba(20,15,8,.7); }
-.ga-feature-im{ position:absolute; inset:5% 14% 46% 14%; z-index:0; background-size:contain; background-position:center top; background-repeat:no-repeat; }
+.ga-feature-im{ position:absolute; inset:4% 10% 42% 10%; z-index:0; background-size:contain; background-position:center top; background-repeat:no-repeat; }
 .ga-feature-ov{ position:absolute; inset:0; z-index:1; background:linear-gradient(to top, rgba(10,7,4,.94) 0%, rgba(10,7,4,.55) 26%, rgba(10,7,4,.10) 52%, rgba(10,7,4,.30) 100%); }
 .ga-feature-t, .ga-feature-sub{ position:relative; z-index:2; }
 .ga-feature-badge{ z-index:3; }
@@ -722,8 +722,8 @@ html.gcart-lock{ overflow:hidden; }
 .gci-mid{ min-width:0; display:flex; flex-direction:column; }
 .gci-t{ font:600 14.5px var(--font-heading--family, serif); color:#1a1a1a; line-height:1.25; }
 .gci-v{ font:500 12px var(--font-body--family, sans-serif); color:#8a7f72; margin-top:3px; }
-.gci-p{ font:700 13.5px var(--font-body--family, sans-serif); color:#1c2a22; margin-top:6px; }
-.gci-p s{ color:#b3a99b; font-weight:500; margin-left:6px; }
+.gci-p{ font:700 13.5px var(--font-body--family, sans-serif); color:#1c2a22; margin-top:6px; white-space:nowrap; display:flex; align-items:baseline; gap:6px; }
+.gci-p s{ color:#b3a99b; font-weight:500; font-size:11px; margin-left:0; }
 .gci-qty{ display:inline-flex; align-items:center; gap:2px; margin-top:11px; align-self:flex-start; background:rgba(255,255,255,.72); border:1px solid rgba(28,42,34,.14); border-radius:999px; padding:3px; }
 .gci-qty button{ width:27px; height:27px; border:0; background:transparent; border-radius:50%; cursor:pointer; color:#1c2a22; display:grid; place-items:center; transition:background .15s; }
 .gci-qty button:hover{ background:rgba(28,42,34,.1); }
