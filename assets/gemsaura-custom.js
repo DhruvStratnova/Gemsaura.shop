@@ -760,7 +760,7 @@
         try{ var _psc=document.querySelector('.page-wrapper'); var _pio=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ _tl.classList.add('in'); _pio.disconnect(); } }); }, {root:_psc||null, threshold:0.18}); _pio.observe(_tl); setTimeout(function(){ _tl.classList.add('in'); }, 3500); }catch(e){ _tl.classList.add('in'); }
       }catch(e){}
       if(_isOud) try{
-        var _oq=document.createElement('section'); _oq.className='goud-quote'; _oq.style.setProperty('--qbg','url('+GAA('ga-oud-ritual2.webp')+')');
+        var _oq=document.createElement('section'); _oq.className='goud-quote'; _oq.style.setProperty('--qbg','url('+GAA('ga-oud-ritual2.webp')+')'); _oq.style.setProperty('--qbgw','url('+GAA('ga-oud-ritual-w.webp')+')');
         _oq.innerHTML='<div class="goud-quote-in"><span class="goud-eyebrow" style="color:#f0c987">The Ritual</span><h2 class="goud-quote-h">Worn on skin.<br>Not sprayed in air.</h2><p class="goud-quote-p">A roll of the crystal cap, a trace of warmth on the wrist - White Oud the way it was meant to be worn.</p></div>';
         hero.insertAdjacentElement('afterend', _oq);
         var _o3=document.createElement('section'); _o3.className='gss gss-oud';
