@@ -407,7 +407,7 @@
     gaNeutralizeTrigger(); [200,800,1600].forEach(function(ms){ setTimeout(gaNeutralizeTrigger, ms); });
     gaUnlock();
     var pcache={};
-    function getProduct(h){ if(pcache[h]) return Promise.resolve(pcache[h]); return fetch('/products/'+h+'.js?ga='+Date.now()).then(function(r){return r.json();}).then(function(p){ pcache[h]=p; return p; }); }
+    function getProduct(h){ if(pcache[h]) return Promise.resolve(pcache[h]); return fetch('/products/'+h+'.js').then(function(r){return r.json();}).then(function(p){ pcache[h]=p; return p; }); }
     function money(c){ return 'Dhs. '+(c/100).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
     function toast(msg){ var t=document.createElement('div'); t.className='ga-toast'; t.textContent=msg; document.body.appendChild(t); requestAnimationFrame(function(){ t.classList.add('on'); }); setTimeout(function(){ t.classList.remove('on'); setTimeout(function(){ t.remove(); }, 320); }, 2200); }
     var X='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
@@ -600,7 +600,7 @@
     if(document.querySelector('.gpx')) return;
     var handle=(location.pathname.match(/\/products\/([^/?#]+)/)||[])[1]; if(!handle) return;
     Promise.all([
-      fetch('/products/'+handle+'.js?ga='+Date.now()).then(function(r){return r.json();}),
+      fetch('/products/'+handle+'.js').then(function(r){return r.json();}),
       fetch('/products/raw-selenite-plate.js').then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}),
       (window.__gaStonesUrl?fetch(window.__gaStonesUrl).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};}):Promise.resolve({}))
     ]).then(function(_res){

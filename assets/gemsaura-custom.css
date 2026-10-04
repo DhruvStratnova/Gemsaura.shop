@@ -625,7 +625,7 @@ overflow-list.overflow-menu, .facets__form overflow-list, .facets__filters-wrapp
 .ga-mood-ic{ width:19px !important; height:19px !important; background:transparent !important; border:0 !important; box-shadow:none !important; color:#1c2a22 !important; transform:none !important; }
 .ga-mood-ic svg{ width:18px !important; height:18px !important; }
 .ga-mood-card > span:last-child{ font:600 13px var(--font-body--family,sans-serif) !important; color:#3a3540 !important; }
-.ga-mood-card.on{ background:var(--cat,#1c2a22) !important; border-color:var(--cat,#1c2a22) !important; box-shadow:0 8px 20px -10px rgba(0,0,0,.3) !important; }
+.ga-mood-card.on{ background:#141414 !important; border-color:#141414 !important; box-shadow:0 8px 20px -10px rgba(0,0,0,.3) !important; }
 .ga-mood-card.on .ga-mood-ic, .ga-mood-card.on:hover .ga-mood-ic{ color:#fff !important; background:transparent !important; }
 .ga-mood-card.on > span:last-child{ color:#fff !important; }
 .ga-mood-card.on:hover{ background:var(--cat,#1c2a22) !important; border-color:var(--cat,#1c2a22) !important; }
@@ -651,7 +651,7 @@ overflow-list.overflow-menu, .facets__form overflow-list, .facets__filters-wrapp
 /* ===== segmented filter tabs ===== */
 .ga-ftabs{ display:inline-flex; gap:4px; padding:4px; background:rgba(28,42,34,.05); border:1px solid rgba(28,42,34,.10); border-radius:999px; margin:20px 0 15px; }
 .ga-ftab{ appearance:none; border:0; background:transparent; font:inherit; font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:#6f6478; padding:9px 18px; border-radius:999px; cursor:pointer; transition:background .18s, color .18s; white-space:nowrap; }
-.ga-ftab.on{ background:var(--cat,#1c2a22); color:#fff; }
+.ga-ftab.on{ background:#141414; color:#fff; }
 .ga-mood-rail[hidden]{ display:none !important; }
 @media(max-width:600px){
   .ga-ftabs{ display:flex; width:100%; margin:16px 0 10px; }
