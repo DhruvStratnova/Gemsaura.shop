@@ -51,7 +51,7 @@
     var sec=document.querySelector('[id$="collection_list_FFV7jq"]');
     if(!sec || document.querySelector('.ga-collband')) return;
     var CATS=[
-      ['crystal-bracelets','Crystal Bracelet','Everyday energy','ga-crystal.webp'],
+      ['crystal-bracelets','Crystal Bracelet','Everyday energy','ga-crystal-real.webp'],
       ['rashi-bracelets','Zodiac Bracelet','Your sign, your stone','ga-zodiac.webp'],
       ['silver-bracelets','Silver Bracelet','Timeless & pure','ga-silver3d.webp'],
       ['rudraksha','Rudraksha','Sacred & grounding','ga-rudraksha.webp'],
