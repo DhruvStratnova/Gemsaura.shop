@@ -1621,12 +1621,12 @@ product-card button, .ga-gcard button, .ga-add, .product-card button, .card-gall
 .ga-catsec{ width:100%; box-sizing:border-box; padding:4px clamp(14px,2.4vw,40px) 32px; }
 .ga-catsec .ga-accord-head{ padding:0 2px 16px; text-align:center; }
 .ga-accord{ display:flex; gap:9px; width:100%; height:clamp(360px,42vw,480px); }
-.ga-ap{ position:relative; flex:1 1 0%; min-width:0; border-radius:22px; overflow:hidden; text-decoration:none; cursor:pointer; background:linear-gradient(158deg,#ffffff 0%,#f7f5f1 54%,#eeeae3 100%) !important; box-shadow:0 22px 46px -28px rgba(40,30,20,.3); transition:flex-grow .6s cubic-bezier(.22,.72,.2,1), box-shadow .45s ease; will-change:flex-grow; }
-.ga-ap-im{ position:absolute; inset:9% 11% 36% 11% !important; background-size:contain !important; background-position:center bottom !important; background-repeat:no-repeat !important; transition:transform .5s cubic-bezier(.2,.7,.2,1); }
-.ga-ap-shade{ display:none !important; }
-.ga-ap-lb{ position:absolute; left:0 !important; right:0 !important; bottom:0; width:100% !important; box-sizing:border-box; padding:0 14px 20px; color:#1a1a1a; z-index:3; text-align:center !important; pointer-events:none; }
-.ga-ap-t{ display:block; text-align:center !important; font-family:'Anton',Impact,'Arial Narrow',sans-serif; font-weight:400; text-transform:uppercase; font-size:clamp(17px,1.6vw,25px); line-height:1.02; letter-spacing:.02em; color:#1a1a1a; text-shadow:none; }
-.ga-ap-s{ display:none !important; }
+.ga-ap{ position:relative; flex:1 1 0%; min-width:0; border-radius:20px; overflow:hidden; text-decoration:none; cursor:pointer; background:#161008 !important; box-shadow:0 24px 50px -28px rgba(20,14,8,.45); transition:flex-grow .6s cubic-bezier(.22,.72,.2,1), box-shadow .45s ease; will-change:flex-grow; }
+.ga-ap-im{ position:absolute; inset:0 !important; background-size:cover !important; background-position:center !important; background-repeat:no-repeat !important; transition:transform .65s cubic-bezier(.2,.7,.2,1); }
+.ga-ap-shade{ display:block !important; position:absolute; inset:0; z-index:2; background:linear-gradient(to top, rgba(8,5,3,.82) 0%, rgba(8,5,3,.28) 34%, rgba(8,5,3,0) 58%); }
+.ga-ap-lb{ position:absolute; left:0 !important; right:0 !important; bottom:0; width:100% !important; box-sizing:border-box; padding:0 20px 18px; color:#fff; z-index:3; text-align:left !important; pointer-events:none; }
+.ga-ap-t{ display:block; text-align:left !important; font-family:var(--font-heading--family,serif); font-weight:600; text-transform:none; font-size:clamp(17px,1.5vw,24px); line-height:1.1; letter-spacing:.01em; color:#fff; text-shadow:0 1px 14px rgba(0,0,0,.35); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ga-ap-s{ display:block !important; font:500 11.5px var(--font-body--family,sans-serif); letter-spacing:.04em; color:rgba(255,255,255,.72); margin-top:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .ga-ap-go{ display:none !important; }
 .ga-ap-vt{ display:none !important; }
 /* expanded state = default first panel while idle, OR any panel on hover */
@@ -1637,10 +1637,12 @@ product-card button, .ga-gcard button, .ga-add, .product-card button, .card-gall
   /* mobile: stacked full-width banner rows, big left title over the product image */
   .ga-catsec{ padding:2px 14px 26px; }
   .ga-accord{ display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; height:auto !important; }
-  .ga-ap{ flex:none; width:auto; height:auto; aspect-ratio:1/.62; border-radius:15px; box-shadow:0 14px 28px -22px rgba(40,30,20,.3); }
-  .ga-ap:first-child{ height:auto; }
-  .ga-ap-im{ inset:7% 10% 38% 10% !important; background-position:center bottom !important; transform:none !important; }
-  .ga-ap-t{ font-size:clamp(14px,4vw,18px); }
+  .ga-ap{ flex:none; width:auto; height:auto; aspect-ratio:1/1.05; border-radius:16px; box-shadow:0 14px 28px -22px rgba(40,30,20,.35); }
+  .ga-ap:first-child{ grid-column:1/-1; aspect-ratio:16/9; height:auto; }
+  .ga-ap-im{ inset:0 !important; background-position:center !important; transform:none !important; }
+  .ga-ap-t{ font-size:clamp(15px,4.4vw,19px); }
+  .ga-ap-s{ font-size:10.5px; }
+  .ga-ap-lb{ padding:0 14px 13px; }
   
 }
 

@@ -61,14 +61,14 @@
     var sec=document.querySelector('[id$="collection_list_FFV7jq"]');
     if(!sec || document.querySelector('.ga-collband')) return;
     var CATS=[
-      ['crystal-bracelets','Crystal Bracelet','Everyday energy','ga-crystal-real.webp'],
-      ['rashi-bracelets','Zodiac Bracelet','Your sign, your stone','ga-zodiac.webp'],
-      ['silver-bracelets','Silver Bracelet','Timeless & pure','ga-silver3d.webp'],
-      ['rudraksha','Rudraksha','Sacred & grounding','ga-rudraksha.webp'],
-      ['gemstones','Gemstone','Certified & natural','ga-gemstone.webp'],
-      ['pendants','Pendant','Wear your intention','ga-pendant.webp'],
-      ['anklets','Anklet','Subtle & sacred','ga-anklet.webp'],
-      ['crystal-trees','Home Decor','Harmony at home','ga-tree3d.webp']
+      ['crystal-bracelets','Crystal Bracelet','Everyday energy','ga-tile-crystal.webp'],
+      ['rashi-bracelets','Zodiac Bracelet','Your sign, your stone','ga-tile-zodiac.webp'],
+      ['silver-bracelets','Silver Bracelet','Timeless & pure','ga-tile-silver.webp'],
+      ['rudraksha','Rudraksha','Sacred & grounding','ga-tile-rudraksh.webp'],
+      ['gemstones','Gemstone','Certified & natural','ga-tile-gemstone.webp'],
+      ['pendants','Pendant','Wear your intention','ga-tile-pendant.webp'],
+      ['anklets','Anklet','Subtle & sacred','ga-tile-anklet.webp'],
+      ['crystal-trees','Home Decor','Harmony at home','ga-tile-decor.webp']
     ];
     var cards=CATS.map(function(c){ return '<a class="ga-ap" href="/collections/'+c[0]+'"><span class="ga-ap-im" style="background-image:url('+GAA(c[3])+')"></span><span class="ga-ap-shade"></span><span class="ga-ap-lb"><span class="ga-ap-t">'+c[1]+'</span><span class="ga-ap-s">'+c[2]+'</span></span></a>'; }).join('');
     var w=document.createElement('div'); w.className='ga-catsec';
