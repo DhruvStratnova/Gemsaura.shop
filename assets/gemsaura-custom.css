@@ -13,6 +13,8 @@ header.shopify-section{ position:sticky !important; top:0 !important; transform:
   z-index: 60 !important; overflow: visible !important; transition: box-shadow .35s ease;
 }
 #header-component:hover{ box-shadow: 0 30px 70px -30px rgba(40,30,20,0.55) !important; }
+/* PDP: keep the pill but neutralize the shader tint bleeding through the glass */
+body.ga-pdp #header-component{ background:rgba(251,250,247,0.86) !important; -webkit-backdrop-filter:blur(18px) saturate(1.05) !important; backdrop-filter:blur(18px) saturate(1.05) !important; }
 /* reduce nav height (theme drives it via --header-height) */
 #header-component{ --header-height:58px !important; }
 #header-component .header__row, #header-component .header__row--top{ min-height:0 !important; height:58px !important; padding-top:0 !important; padding-bottom:0 !important; row-gap:0 !important; gap:0 !important; align-items:center !important; align-content:center !important; overflow:visible !important; }
