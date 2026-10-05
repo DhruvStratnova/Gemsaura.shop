@@ -61,16 +61,17 @@
     var sec=document.querySelector('[id$="collection_list_FFV7jq"]');
     if(!sec || document.querySelector('.ga-collband')) return;
     var CATS=[
-      ['crystal-bracelets','Crystal Bracelet','Everyday energy','ga-tile-crystal.webp'],
-      ['rashi-bracelets','Zodiac Bracelet','Your sign, your stone','ga-tile-zodiac.webp'],
-      ['silver-bracelets','Silver Bracelet','Timeless & pure','ga-tile-silver.webp'],
-      ['rudraksha','Rudraksha','Sacred & grounding','ga-tile-rudraksh.webp'],
-      ['gemstones','Gemstone','Certified & natural','ga-tile-gemstone.webp'],
-      ['pendants','Pendant','Wear your intention','ga-tile-pendant.webp'],
-      ['anklets','Anklet','Subtle & sacred','ga-tile-anklet.webp'],
-      ['crystal-trees','Home Decor','Harmony at home','ga-tile-decor.webp']
+      ['/products/crystal-oud','Crystal Oud','World\'s first crystal oud','ga-oud-ritual2.webp'],
+      ['crystal-bracelets','Crystal Bracelet','Everyday energy','ga-tile2-crystal.webp'],
+      ['rashi-bracelets','Zodiac Bracelet','Your sign, your stone','ga-tile2-zodiac.webp'],
+      ['silver-bracelets','Silver Bracelet','Timeless & pure','ga-tile2-silver.webp'],
+      ['rudraksha','Rudraksha','Sacred & grounding','ga-tile2-rudraksh.webp'],
+      ['gemstones','Gemstone','Certified & natural','ga-tile2-gemstone.webp'],
+      ['pendants','Pendant','Wear your intention','ga-tile2-pendant.webp'],
+      ['anklets','Anklet','Subtle & sacred','ga-tile2-anklet.webp'],
+      ['crystal-trees','Home Decor','Harmony at home','ga-tile2-decor.webp']
     ];
-    var cards=CATS.map(function(c){ return '<a class="ga-ap" href="/collections/'+c[0]+'"><span class="ga-ap-im" style="background-image:url('+GAA(c[3])+')"></span><span class="ga-ap-shade"></span><span class="ga-ap-lb"><span class="ga-ap-t">'+c[1]+'</span><span class="ga-ap-s">'+c[2]+'</span></span></a>'; }).join('');
+    var cards=CATS.map(function(c){ var href=c[0].charAt(0)==='/'?c[0]:'/collections/'+c[0]; return '<a class="ga-ap" href="'+href+'"><span class="ga-ap-im" style="background-image:url('+GAA(c[3])+')"></span><span class="ga-ap-shade"></span><span class="ga-ap-lb"><span class="ga-ap-t">'+c[1]+'</span><span class="ga-ap-s">'+c[2]+'</span></span></a>'; }).join('');
     var w=document.createElement('div'); w.className='ga-catsec';
     w.innerHTML='<div class=\"ga-collband-head ga-accord-head\"><span class=\"ga-collband-eyebrow\">Shop by category</span><h2 class=\"ga-collband-title\">Crafted for your energy</h2></div><div class=\"ga-accord\">'+cards+'</div>';
     sec.innerHTML=''; sec.appendChild(w); try{ gaReveal(w); }catch(e){}

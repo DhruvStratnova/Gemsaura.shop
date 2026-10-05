@@ -1625,8 +1625,14 @@ product-card button, .ga-gcard button, .ga-add, .product-card button, .card-gall
 .ga-ap-im{ position:absolute; inset:0 !important; background-size:cover !important; background-position:center !important; background-repeat:no-repeat !important; transition:transform .65s cubic-bezier(.2,.7,.2,1); }
 .ga-ap-shade{ display:block !important; position:absolute; inset:0; z-index:2; background:linear-gradient(to top, rgba(8,5,3,.82) 0%, rgba(8,5,3,.28) 34%, rgba(8,5,3,0) 58%); }
 .ga-ap-lb{ position:absolute; left:0 !important; right:0 !important; bottom:0; width:100% !important; box-sizing:border-box; padding:0 20px 18px; color:#fff; z-index:3; text-align:left !important; pointer-events:none; }
-.ga-ap-t{ display:block; text-align:left !important; font-family:var(--font-heading--family,serif); font-weight:600; text-transform:none; font-size:clamp(17px,1.5vw,24px); line-height:1.1; letter-spacing:.01em; color:#fff; text-shadow:0 1px 14px rgba(0,0,0,.35); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.ga-ap-s{ display:block !important; font:500 11.5px var(--font-body--family,sans-serif); letter-spacing:.04em; color:rgba(255,255,255,.72); margin-top:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ga-ap-t{ display:block; text-align:left !important; font-family:var(--font-heading--family,serif); font-weight:600; text-transform:none; font-size:clamp(17px,1.5vw,24px); line-height:1.1; letter-spacing:.01em; color:#fff; text-shadow:0 1px 14px rgba(0,0,0,.35); white-space:nowrap; }
+.ga-ap-s{ display:block !important; font:500 11.5px var(--font-body--family,sans-serif); letter-spacing:.04em; color:rgba(255,255,255,.72); margin-top:4px; white-space:nowrap; }
+@media(min-width:750px){
+  .ga-accord .ga-ap .ga-ap-lb{ opacity:0; transform:translateY(10px); transition:opacity .35s ease .08s, transform .4s cubic-bezier(.2,.7,.2,1) .08s; }
+  .ga-accord .ga-ap:hover .ga-ap-lb, .ga-accord:not(:hover) .ga-ap:first-child .ga-ap-lb{ opacity:1; transform:none; }
+  .ga-accord .ga-ap .ga-ap-shade{ opacity:.45; transition:opacity .4s ease; }
+  .ga-accord .ga-ap:hover .ga-ap-shade, .ga-accord:not(:hover) .ga-ap:first-child .ga-ap-shade{ opacity:1; }
+}
 .ga-ap-go{ display:none !important; }
 .ga-ap-vt{ display:none !important; }
 /* expanded state = default first panel while idle, OR any panel on hover */
