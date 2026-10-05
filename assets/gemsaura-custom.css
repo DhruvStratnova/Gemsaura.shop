@@ -1623,20 +1623,19 @@ product-card button, .ga-gcard button, .ga-add, .product-card button, .card-gall
 .ga-accord{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; width:100%; }
 @media(min-width:750px){
   .ga-accord{ grid-template-columns:repeat(6,minmax(0,1fr)); gap:11px; max-width:1240px; margin:0 auto; }
-  .ga-ap .ga-ap-t{ font-size:16px; }
-  .ga-ap .ga-ap-s{ font-size:10.5px; margin-top:3px; }
-  .ga-ap .ga-ap-lb{ padding:0 15px 13px; }
-  .ga-ap:first-child .ga-ap-t{ font-size:23px; }
-  .ga-ap:first-child .ga-ap-s{ font-size:12px; }
-  .ga-ap:first-child .ga-ap-lb{ padding:0 20px 18px; }
+  .ga-ap .ga-ap-t{ font-size:15.5px; }
+  .ga-ap .ga-ap-lb{ padding:11px 15px; }
+  .ga-ap:first-child .ga-ap-t{ font-size:22px; }
+  .ga-ap:first-child .ga-ap-lb{ padding:14px 20px; }
 }
 .ga-ap{ position:relative; min-width:0; aspect-ratio:1/1.06; border-radius:20px; overflow:hidden; text-decoration:none; cursor:pointer; background:#161008 !important; box-shadow:0 24px 50px -28px rgba(20,14,8,.45); transition:box-shadow .45s ease; }
 .ga-ap:first-child{ grid-column:1/3; grid-row:1/3; aspect-ratio:auto; }
 .ga-ap-im{ position:absolute; inset:0 !important; background-size:cover !important; background-position:center !important; background-repeat:no-repeat !important; transition:transform .65s cubic-bezier(.2,.7,.2,1); }
-.ga-ap-shade{ display:block !important; position:absolute; inset:0; z-index:2; background:linear-gradient(to top, rgba(8,5,3,.82) 0%, rgba(8,5,3,.28) 34%, rgba(8,5,3,0) 58%); }
-.ga-ap-lb{ position:absolute; left:0 !important; right:0 !important; bottom:0; width:100% !important; box-sizing:border-box; padding:0 20px 18px; color:#fff; z-index:3; text-align:left !important; pointer-events:none; }
+.ga-ap-shade{ display:none !important; }
+.ga-ap-lb{ position:absolute; left:0 !important; right:0 !important; bottom:0; width:100% !important; box-sizing:border-box; padding:12px 16px; color:#fff; z-index:3; text-align:left !important; pointer-events:none; background:rgba(10,7,4,.52); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-top:1px solid rgba(255,255,255,.08); }
+.ga-ap-tag{ position:absolute; top:12px; left:12px; z-index:4; background:rgba(12,8,4,.78); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); color:#f0c987; border:1px solid rgba(240,201,135,.45); border-radius:999px; padding:6px 12px; font:700 10px var(--font-body--family,sans-serif); letter-spacing:.14em; text-transform:uppercase; }
 .ga-ap-t{ display:block; text-align:left !important; font-family:var(--font-heading--family,serif); font-weight:600; text-transform:none; font-size:clamp(17px,1.5vw,24px); line-height:1.1; letter-spacing:.01em; color:#fff; text-shadow:0 1px 14px rgba(0,0,0,.35); white-space:nowrap; }
-.ga-ap-s{ display:block !important; font:500 11.5px var(--font-body--family,sans-serif); letter-spacing:.04em; color:rgba(255,255,255,.72); margin-top:4px; white-space:nowrap; }
+.ga-ap-s{ display:none !important; }
 .ga-ap-go{ display:none !important; }
 .ga-ap-vt{ display:none !important; }
 /* expanded state = default first panel while idle, OR any panel on hover */
@@ -1651,7 +1650,8 @@ product-card button, .ga-gcard button, .ga-add, .product-card button, .card-gall
   .ga-ap-im{ inset:0 !important; background-position:center !important; transform:none !important; }
   .ga-ap-t{ font-size:clamp(15px,4.4vw,19px); }
   .ga-ap-s{ display:none !important; }
-  .ga-ap-lb{ padding:0 14px 14px; }
+  .ga-ap-lb{ padding:10px 13px; }
+  .ga-ap-tag{ top:9px; left:9px; padding:5px 10px; font-size:9px; }
   
 }
 
