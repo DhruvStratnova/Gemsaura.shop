@@ -2,6 +2,18 @@
 (function(){
   /* Pin every session to the UAE market: non-AE geo contexts (e.g. India) mark all variants unavailable and block carts. Native ?country param switches server-side, once. */
   try{ if(window.__gaCountry&&window.__gaCountry!=='AE'&&!sessionStorage.getItem('gaLocAE3')){ sessionStorage.setItem('gaLocAE3','1'); var _gu=new URL(location.href); _gu.searchParams.set('country','AE'); location.replace(_gu.toString()); } }catch(e){}
+  /* Smart nav: hide on scroll down, reveal on scroll up */
+  (function(){
+    var last=0, hidden=false, tick=null;
+    function y(){ var w=document.querySelector('.page-wrapper'); return (w&&w.scrollTop>0)?w.scrollTop:(window.scrollY||document.documentElement.scrollTop||0); }
+    function apply(h){ if(h===hidden) return; hidden=h; document.documentElement.classList.toggle('ga-nav-hidden', h); }
+    function onScroll(){ if(tick) return; tick=requestAnimationFrame(function(){ tick=null; var cy=y(); var d=cy-last; last=cy;
+      if(cy<90){ apply(false); return; }
+      if(d>7) apply(true); else if(d<-7) apply(false);
+    }); }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    document.addEventListener('scroll', onScroll, {passive:true, capture:true});
+  })();
   var GAABASE=(function(){
     var l=document.querySelector('link[href*="/assets/gemsaura-custom.css"]');
     return l ? l.href.replace(/assets\/gemsaura-custom\.css.*$/, 'assets/') : 'https://cdn.shopify.com/s/files/1/0627/9849/5847/t/8/assets/';

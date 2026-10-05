@@ -10,8 +10,9 @@ header.shopify-section{ position:sticky !important; top:0 !important; transform:
   -webkit-backdrop-filter: blur(22px) saturate(1.6); backdrop-filter: blur(22px) saturate(1.6);
   border: 1px solid rgba(255,255,255,0.7) !important;
   box-shadow: 0 26px 64px -32px rgba(40,30,20,0.5), inset 0 1px 0 rgba(255,255,255,0.5) !important;
-  z-index: 60 !important; overflow: visible !important; transition: box-shadow .35s ease;
+  z-index: 60 !important; overflow: visible !important; transition: transform .42s cubic-bezier(.32,.72,.28,1), box-shadow .35s ease; will-change: transform;
 }
+html.ga-nav-hidden #header-component{ transform: translateY(calc(-100% - 20px)) !important; }
 #header-component:hover{ box-shadow: 0 30px 70px -30px rgba(40,30,20,0.55) !important; }
 /* PDP: keep the pill but neutralize the shader tint bleeding through the glass */
 body.ga-pdp #header-component{ background:rgba(251,250,247,0.86) !important; -webkit-backdrop-filter:blur(18px) saturate(1.05) !important; backdrop-filter:blur(18px) saturate(1.05) !important; }
