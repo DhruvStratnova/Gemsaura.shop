@@ -282,7 +282,8 @@ product-card.ga-gcard .card-gallery img{ object-fit:cover !important; object-pos
 
 /* marquee smaller */
 [id$="marquee_9AMajF"] h1, [id$="marquee_9AMajF"] h1 a{ font-size:clamp(18px,2.1vw,30px) !important; letter-spacing:.01em !important; line-height:1.15 !important; }
-[id$="marquee_9AMajF"]{ padding-block-start:22px !important; padding-block-end:22px !important; }
+[id$="marquee_9AMajF"]{ padding-block-start:22px !important; padding-block-end:22px !important; margin-bottom:36px !important; }
+@media(max-width:749px){ [id$="marquee_9AMajF"]{ margin-bottom:26px !important; } }
 
 /* authentic testimonial cards */
 .ga-rev-top{ margin-bottom:12px; }

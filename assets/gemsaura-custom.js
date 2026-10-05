@@ -2,6 +2,16 @@
 (function(){
   /* Pin every session to the UAE market: non-AE geo contexts (e.g. India) mark all variants unavailable and block carts. Native ?country param switches server-side, once. */
   try{ if(window.__gaCountry&&window.__gaCountry!=='AE'&&!sessionStorage.getItem('gaLocAE3')){ sessionStorage.setItem('gaLocAE3','1'); var _gu=new URL(location.href); _gu.searchParams.set('country','AE'); location.replace(_gu.toString()); } }catch(e){}
+  /* Marquee watchdog: theme JS eases playbackRate and can strand it near 0, freezing the ticker */
+  setInterval(function(){
+    try{
+      document.querySelectorAll('marquee-component .marquee__wrapper').forEach(function(w){
+        var an=w.getAnimations&&w.getAnimations()[0]; if(!an) return;
+        if(an.playState!=='running') an.play();
+        if(an.playbackRate<0.99) an.updatePlaybackRate(1);
+      });
+    }catch(e){}
+  }, 1200);
   /* Smart nav: hide on scroll down, reveal on scroll up */
   (function(){
     var last=0, hidden=false, tick=null;
