@@ -529,7 +529,8 @@
         +'<button class="gaqv-x" aria-label="Close">&#10005;</button>'
         +'<a class="gaqv-media" href="#"><span class="gaqv-img"></span></a>'
         +'<div class="gaqv-body">'
-          +'<div class="gaqv-toprow"><a class="gaqv-t" href="#"></a><div class="gaqv-price"><b class="gaqv-now"></b><s class="gaqv-cmp"></s></div></div>'
+          +'<a class="gaqv-t" href="#"></a>'
+          +'<div class="gaqv-price"><b class="gaqv-now"></b><s class="gaqv-cmp"></s></div>'
           +'<div class="gaqv-optwrap"><div class="gaqv-optlb"></div><div class="gaqv-opts"></div></div>'
           +'<div class="gaqv-ctas"><button class="gaqv-add">Add to Cart</button><button class="gaqv-buy">Buy Now <span>&#8594;</span></button></div>'
           +'<a class="gaqv-full" href="#">View full details</a>'
@@ -544,6 +545,18 @@
       _qv.querySelector('.gaqv-buy').addEventListener('click', function(){ if(!_qvSel) return; location.href='/cart/'+_qvSel+':1'; });
     }
     function qvClose(){ if(!_qv) return; _qv.classList.remove('on'); _qv.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    function qvSkeleton(title, img, url, card){
+      qvBuild(); _qvCard=card||null; _qvSel=null;
+      _qv.querySelector('.gaqv-img').style.backgroundImage=img?('url('+img+')'):'';
+      _qv.querySelector('.gaqv-media').setAttribute('href', url);
+      var t=_qv.querySelector('.gaqv-t'); t.textContent=title||''; t.setAttribute('href', url);
+      _qv.querySelector('.gaqv-full').setAttribute('href', url);
+      _qv.querySelector('.gaqv-now').innerHTML='&nbsp;';
+      _qv.querySelector('.gaqv-cmp').style.display='none';
+      _qv.querySelector('.gaqv-optwrap').style.display='none';
+      _qv.querySelector('.gaqv-add').disabled=true; _qv.querySelector('.gaqv-buy').disabled=true;
+      _qv.classList.add('on'); _qv.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+    }
     function qvOpen(p, card){
       qvBuild(); _qvCard=card||null;
       var url='/products/'+p.handle;
@@ -554,6 +567,7 @@
       _qv.querySelector('.gaqv-media').setAttribute('href', url);
       var t=_qv.querySelector('.gaqv-t'); t.textContent=p.title; t.setAttribute('href', url);
       _qv.querySelector('.gaqv-full').setAttribute('href', url);
+      _qv.querySelector('.gaqv-add').disabled=false; _qv.querySelector('.gaqv-buy').disabled=false;
       var avail=p.variants.filter(function(v){return v.available;}); var v0=avail[0]||p.variants[0];
       _qvSel=v0.id;
       _qv.querySelector('.gaqv-now').innerHTML=money(v0.price);
@@ -573,8 +587,10 @@
       e.preventDefault(); e.stopPropagation();
       if(btn.dataset.adding) return;
       var card=btn.closest('.ga-gcard'); var h=btn.dataset.handle; if(!h){ if(btn.dataset.href) location.href=btn.dataset.href; return; }
-      var orig=btn.innerHTML; btn.innerHTML='&hellip;';
-      getProduct(h).then(function(p){ btn.innerHTML=orig; qvOpen(p, card); }).catch(function(){ btn.innerHTML=orig; if(btn.dataset.vid){ addVariant(parseInt(btn.dataset.vid,10), btn); } else if(btn.dataset.href) location.href=btn.dataset.href; });
+      var cim=card?card.querySelector('.product-media-container img, .card-gallery img, img'):null;
+      var ctt=card?(card.querySelector('.ga-title')||{}).textContent:'';
+      qvSkeleton((ctt||'').trim(), cim?(cim.currentSrc||cim.src):'', btn.dataset.href||('/products/'+h), card);
+      getProduct(h).then(function(p){ if(_qv&&_qv.classList.contains('on')) qvOpen(p, card); }).catch(function(){ qvClose(); if(btn.dataset.vid){ addVariant(parseInt(btn.dataset.vid,10), btn); } else if(btn.dataset.href) location.href=btn.dataset.href; });
     });
     // intercept header cart icon -> open custom cart
     document.addEventListener('click', function(e){ var btn=e.target.closest('button[aria-label="Cart"], cart-icon'); if(!btn) return; e.preventDefault(); e.stopImmediatePropagation(); openCart(); }, true);
