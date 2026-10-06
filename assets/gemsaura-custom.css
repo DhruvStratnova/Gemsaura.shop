@@ -1940,3 +1940,9 @@ html.ga-hp-ready #MainContent[data-template="index"]{ opacity:1; }
 .ga-mood-card.on .ga-mood-ic{ background:rgba(255,255,255,.14) !important; color:#fff !important; border-color:transparent !important; box-shadow:none !important; transform:none !important; }
 .ga-mood-card.on > span:last-child{ color:#fff !important; }
 .ga-mood-card:active{ background:#141414 !important; border-color:#141414 !important; }
+
+/* UAE dirham symbol: D crossed by the two official bars, drawn in CSS so it scales and never falls back to tofu */
+.ga-dhs{ position:relative; display:inline-block; line-height:inherit; }
+.ga-dhs::before,.ga-dhs::after{ content:""; position:absolute; left:-0.09em; width:0.86em; height:0.07em; background:currentColor; border-radius:.05em; }
+.ga-dhs::before{ top:36%; }
+.ga-dhs::after{ top:57%; }
